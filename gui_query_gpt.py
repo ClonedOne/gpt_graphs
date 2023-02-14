@@ -12,6 +12,7 @@ import pyautogui
 print(pyautogui.size())
 query_dir = "queries"
 resp_dir = "responses"
+error_msg = "An error occurred. If this issue persists please contact us through our help center at help.openai.com."
 
 
 def new_chat():
@@ -55,6 +56,21 @@ def capture_screen_text():
     return text
 
 
+def process_query(query: str) -> str:
+    # Open new chat tab
+    new_chat()
+    type_query(query)
+    # Completion time can be long
+    time.sleep(random.randint(60, 75))
+    response = capture_screen_text()
+
+    # Check for error message, if found raise exception
+    if error_msg in response:
+        raise Exception("Error with query: " + query)
+
+    return response
+
+
 def main():
     os.makedirs(resp_dir, exist_ok=True)
 
@@ -62,19 +78,21 @@ def main():
     for query_file in os.listdir(query_dir):
         query = json.load(open(os.path.join(query_dir, query_file), "r"))["query"]
 
-        # Open new chat tab
-        new_chat()
-        type_query(query)
-        time.sleep(55)
-        response = capture_screen_text()
+        # Process query. If error, delay for a randomized timeout
+        # and try again. Timeout should be at least a minute.
+        response = None
+        while response is None:
+            try:
+                response = process_query(query)
+            except Exception:
+                time.sleep(random.randint(60, 120))
 
         # Save response to file
         with open(os.path.join(resp_dir, query_file), "w") as f:
             f.write(response)
 
         # Wait for a randomized timeout explicitly
-        timeout = random.randint(1, 10)
-        time.sleep(timeout)
+        time.sleep(random.randint(5, 10))
 
 
 if __name__ == "__main__":
