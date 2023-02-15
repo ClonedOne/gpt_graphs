@@ -1,0 +1,5 @@
+Graph G has 11 nodes, numbered from 0 to 10. Graph G has 13 edges.
+This is the list of edge connections:
+[1, 5],[5, 0],[0, 7],[7, 4],[4, 6],[6, 0],[6, 2],[2, 8],[0, 9],[9, 8],[10, 3],[10, 8],[10, 1]
+Perform a rank assignment on the graph. Use node 0 as a source for the graph. Each node must be assigned to a rank that is equal to the shortest path between that node and the source. Thus, node 0 will be assigned to rank 0, and the neighbors of node 0 will be assigned to rank 1.
+Write no explanations, only respond with the id of each node and the rank it has been assigned to in a format <id> - <rank>.
