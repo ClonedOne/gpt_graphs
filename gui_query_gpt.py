@@ -3,20 +3,20 @@ Written for the m1 macbook pro 14"
 """
 
 import os
-import json
 import time
 import random
+import argparse
 import pyperclip
 import pyautogui
+from pathlib import Path
 
-print(pyautogui.size())
-query_dir = "queries"
+
 resp_dir = "responses"
 error_msg = "An error occurred. If this issue persists please contact us through our help center at help.openai.com."
 
 
 def new_chat():
-    """Open new chat tab"""
+    """Open new chat tab in the web interface"""
     pyautogui.moveTo(100, 150, duration=random.uniform(0.5, 1.5))
     # Focus on window
     pyautogui.click()
@@ -25,21 +25,34 @@ def new_chat():
     pyautogui.click()
 
 
-def type_query(query):
-    """Type query into input field"""
+def type_query(query: str):
+    """Type the query in the input field
+
+    Args:
+        query (str): query string
+    """
     pyautogui.moveTo(700, 1100, duration=random.uniform(0.5, 1.5))
     # Focus on window
     pyautogui.click()
     time.sleep(1)
     # Focus on input field
     pyautogui.click()
-    pyautogui.typewrite(query, interval=random.uniform(0.05, 0.1))
+    
+    # Copy-paste instead of typing to avoid issues with newlines
+    pyperclip.copy(query)
+    pyautogui.hotkey("command", "v")
+    time.sleep(random.uniform(0.2, 0.7))
+    
     # press enter
     pyautogui.press("enter")
 
 
-def capture_screen_text():
-    """Use CTRL-A + copy to select and copy all text on screen"""
+def capture_screen_text() -> str:
+    """Use CTRL-A + copy to select and copy all text on screen
+
+    Returns:
+        str: text capture of the screen
+    """
     pyautogui.moveTo(1500, 600, duration=random.uniform(0.5, 1.5))
 
     # Focus on window
@@ -61,7 +74,7 @@ def process_query(query: str) -> str:
     new_chat()
     type_query(query)
     # Completion time can be long
-    time.sleep(random.randint(60, 75))
+    time.sleep(random.randint(100, 135))
     response = capture_screen_text()
 
     # Check for error message, if found raise exception
@@ -71,12 +84,19 @@ def process_query(query: str) -> str:
     return response
 
 
-def main():
-    os.makedirs(resp_dir, exist_ok=True)
+def main(args: dict):
+    # Dir management
+    query_dir = args["query_dir"]
+    experiment_query_dir = Path(query_dir).name
+    resp_path = os.path.join(resp_dir, experiment_query_dir)
+    os.makedirs(resp_path, exist_ok=True)
 
-    # Iterate through the queries, in json files
+    # Iterate through the query files in the directory.
+    # Each query file is a .txt file containing only a single query.
     for query_file in os.listdir(query_dir):
-        query = json.load(open(os.path.join(query_dir, query_file), "r"))["query"]
+        with open(os.path.join(query_dir, query_file), "r") as f:
+            query = f.read()
+        print("Processing query: " + query)
 
         # Process query. If error, delay for a randomized timeout
         # and try again. Timeout should be at least a minute.
@@ -88,7 +108,7 @@ def main():
                 time.sleep(random.randint(60, 120))
 
         # Save response to file
-        with open(os.path.join(resp_dir, query_file), "w") as f:
+        with open(os.path.join(resp_path, query_file), "w") as f:
             f.write(response)
 
         # Wait for a randomized timeout explicitly
@@ -96,4 +116,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--query_dir", type=str, default="queries/test")
+    arguments = parser.parse_args()
+    main(vars(arguments))
