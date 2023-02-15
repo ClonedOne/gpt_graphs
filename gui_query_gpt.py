@@ -1,5 +1,8 @@
 """
 Written for the m1 macbook pro 14"
+Assumes Chromium browser is open and logged in to OpenAI's web interface
+with a full screen window, not maximized.
+All the magic numbers are based on this setup.
 """
 
 import os
@@ -31,7 +34,7 @@ def type_query(query: str):
     Args:
         query (str): query string
     """
-    pyautogui.moveTo(700, 1100, duration=random.uniform(0.5, 1.5))
+    pyautogui.moveTo(700, 1120, duration=random.uniform(0.5, 1.5))
     # Focus on window
     pyautogui.click()
     time.sleep(1)
@@ -74,7 +77,7 @@ def process_query(query: str) -> str:
     new_chat()
     type_query(query)
     # Completion time can be long
-    time.sleep(random.randint(100, 135))
+    time.sleep(random.randint(40, 60))
     response = capture_screen_text()
 
     # Check for error message, if found raise exception
@@ -93,7 +96,7 @@ def main(args: dict):
 
     # Iterate through the query files in the directory.
     # Each query file is a .txt file containing only a single query.
-    for query_file in os.listdir(query_dir):
+    for query_file in os.listdir(query_dir)[:10]:
         with open(os.path.join(query_dir, query_file), "r") as f:
             query = f.read()
         print("Processing query: " + query)
