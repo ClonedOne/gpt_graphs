@@ -1,0 +1,12 @@
+0 - 0
+8 - 1
+1 - 2
+2 - 2
+7 - 2
+3 - 3
+6 - 3
+4 - 4
+5 - INF
+9 - INF
+
+(Note: INF stands for "infinity" and means that these nodes are not reachable from the source node.)

@@ -15,7 +15,10 @@ from pathlib import Path
 
 
 resp_dir = "responses"
-error_msg = "An error occurred. If this issue persists please contact us through our help center at help.openai.com."
+error_msgs = [
+    "An error occurred. If this issue persists please contact us through our help center at help.openai.com.",
+    "Too many requests in 1 hour. Try again later.",
+]
 
 
 def new_chat():
@@ -81,8 +84,9 @@ def process_query(query: str) -> str:
     response = capture_screen_text()
 
     # Check for error message, if found raise exception
-    if error_msg in response:
-        raise Exception("Error with query: " + query)
+    for error_msg in error_msgs:
+        if error_msg in response:
+            raise Exception("Error with query: " + query)
 
     return response
 
@@ -108,7 +112,7 @@ def main(args: dict):
             try:
                 response = process_query(query)
             except Exception:
-                time.sleep(random.randint(60, 120))
+                time.sleep(random.randint(200, 300))
 
         # Save response to file
         with open(os.path.join(resp_path, query_file), "w") as f:
