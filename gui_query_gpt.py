@@ -119,7 +119,7 @@ def main(args: dict):
             f.write(response)
 
         # Wait for a randomized timeout explicitly
-        time.sleep(random.randint(5, 10))
+        time.sleep(random.randint(35, 75))
 
 
 if __name__ == "__main__":

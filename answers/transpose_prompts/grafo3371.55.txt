@@ -1,0 +1,27 @@
+python
+Copy code
+# Solution
+import itertools
+
+for r in range(len(ranks)-1):
+    for i in range(len(ranks[r])):
+        nodes = ranks[r]
+        min_crossings = float("inf")
+        min_permutation = nodes
+        
+        for perm in itertools.permutations(nodes):
+            node_order = {n: i for i, n in enumerate(perm)}
+            crossings = 0
+            
+            for e in edges:
+                if e[0] in nodes and e[1] in nodes:
+                    for m in ranks[r+1]:
+                        if m in node_order:
+                            if (node_order[e[0]] > node_order[m]) != (node_order[e[1]] > node_order[m]):
+                                crossings += 1
+            
+            if crossings < min_crossings:
+                min_crossings = crossings
+                min_permutation = perm
+        
+        ranks[r][i:] = min_permutation

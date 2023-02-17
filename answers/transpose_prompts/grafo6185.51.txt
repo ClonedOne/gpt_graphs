@@ -1,0 +1,18 @@
+python
+Copy code
+from itertools import permutations
+
+for rank in ranks.values():
+    min_crossings = float('inf')
+    best_permutation = rank
+    for permutation in permutations(rank):
+        crossings = 0
+        for i in range(len(edges)):
+            for j in range(i+1, len(edges)):
+                e1, e2 = edges[i], edges[j]
+                if permutation.index(e1[0]) < permutation.index(e2[0]) and permutation.index(e1[1]) > permutation.index(e2[1]):
+                    crossings += 1
+        if crossings < min_crossings:
+            min_crossings = crossings
+            best_permutation = permutation
+    rank[:] = best_permutation

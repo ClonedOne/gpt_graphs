@@ -1,5 +1,6 @@
 rome/
-rome_graphml.tgz
+test.md
+rome-graphml.tgz
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

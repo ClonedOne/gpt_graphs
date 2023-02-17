@@ -1,0 +1,22 @@
+python
+Copy code
+from itertools import permutations
+
+for rank in ranks.values():
+    min_crossings = float('inf')
+    best_perm = rank
+
+    for perm in permutations(rank):
+        crossings = 0
+        node_positions = {node: pos for pos, node in enumerate(perm)}
+
+        for u, v in edges:
+            u_pos, v_pos = node_positions[u], node_positions[v]
+            crossings += sum(1 for x, y in edges if x in (u, v) and y in (u, v)
+                              and node_positions[x] > node_positions[y])
+
+        if crossings < min_crossings:
+            min_crossings = crossings
+            best_perm = perm
+
+    rank[:] = best_perm

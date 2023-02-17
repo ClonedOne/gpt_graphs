@@ -1,0 +1,18 @@
+python
+Copy code
+from itertools import permutations
+
+for r in ranks.values():
+    best_crossings = float('inf')
+    best_perm = r
+    for perm in permutations(r):
+        crossings = 0
+        for i in range(len(perm)):
+            for j in range(i+1, len(perm)):
+                for u, v in edges:
+                    if u in ranks[i] and v in ranks[j] and perm.index(u) > perm.index(v):
+                        crossings += 1
+        if crossings < best_crossings:
+            best_crossings = crossings
+            best_perm = perm
+    r.sort(key=lambda x: best_perm.index(x))
