@@ -1,10 +1,48 @@
 python
 Copy code
 ranks = {
-    0: [0, 7, 8],
-    1: [1, 5],
-    2: [2, 9],
-    3: [3, 6],
-    4: [4],
-    5: [5]
+    0: [0],
+    1: [1, 6, 7, 8],
+    2: [5, 3, 9],
+    3: [4, 2]
 }
+
+# sort nodes in each rank by minimizing crossings
+for i in range(len(ranks)-1):
+    current_rank = ranks[i]
+    next_rank = ranks[i+1]
+
+    # get all possible node permutations for current rank
+    node_permutations = itertools.permutations(current_rank)
+
+    # initialize minimum number of crossings and sorted node order
+    min_crossings = float('inf')
+    sorted_nodes = []
+
+    # try all possible node permutations and find the one with minimum crossings
+    for node_order in node_permutations:
+        # create dictionary of node positions for current rank
+        node_positions = {node_order[j]: j for j in range(len(current_rank))}
+
+        # count the number of crossings between current rank and next rank
+        crossings = 0
+        for edge in edges:
+            source, target = edge
+            if source in node_positions and target in node_positions:
+                source_pos = node_positions[source]
+                target_pos = node_positions[target]
+                for k in range(i+1, len(ranks)):
+                    if target in ranks[k] and source in ranks[k]:
+                        target_rank_pos = ranks[k].index(target)
+                        source_rank_pos = ranks[k].index(source)
+                        if (source_pos > target_pos and source_rank_pos < target_rank_pos) or (source_pos < target_pos and source_rank_pos > target_rank_pos):
+                            crossings += 1
+                            break
+
+        # update minimum crossings and sorted node order if necessary
+        if crossings < min_crossings:
+            min_crossings = crossings
+            sorted_nodes = node_order
+
+    # update current rank with sorted nodes
+    ranks[i] = sorted_nodes

@@ -1,18 +1,8 @@
-python
+yaml
 Copy code
-from itertools import permutations
-
-for rank in ranks:
-    nodes = ranks[rank]
-    best_ordering = nodes
-    best_crossings = float('inf')
-    for ordering in permutations(nodes):
-        crossings = 0
-        for i in range(len(edges)):
-            for j in range(i+1, len(edges)):
-                if (ordering.index(edges[i][0]) < ordering.index(edges[j][0])) and (ordering.index(edges[i][1]) > ordering.index(edges[j][1])):
-                    crossings += 1
-        if crossings < best_crossings:
-            best_ordering = ordering
-            best_crossings = crossings
-    ranks[rank] = list(best_ordering)
+ranks = {
+  0: [6, 0, 8, 7], 
+  1: [1, 2, 5, 3], 
+  2: [4], 
+  3: [9]
+}

@@ -1,3 +1,20 @@
-yaml
+python
 Copy code
-ranks = {0: [6, 0, 8, 5, 7, 1], 1: [2, 3], 2: [9, 4]}
+from itertools import permutations
+
+for rank_number, nodes in ranks.items():
+    if rank_number == 0:
+        continue
+    best_ordering = nodes
+    best_crossings = float('inf')
+    for ordering in permutations(nodes):
+        crossings = 0
+        for i, u in enumerate(ordering):
+            for v in ordering[i+1:]:
+                u_edges = set((u, w) for w in nodes if (u, w) in edges)
+                v_edges = set((v, w) for w in nodes if (v, w) in edges)
+                crossings += len(u_edges & v_edges)
+        if crossings < best_crossings:
+            best_crossings = crossings
+            best_ordering = ordering
+    ranks[rank_number] = best_ordering

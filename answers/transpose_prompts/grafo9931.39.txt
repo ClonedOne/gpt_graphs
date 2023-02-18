@@ -1,8 +1,27 @@
-yaml
+python
 Copy code
-ranks = {0: [0],
-         1: [8, 5],
-         2: [1, 3],
-         3: [4, 7, 6],
-         4: [9],
-         5: [2]}
+# define a function to count the number of crossings between two edges
+def count_crossings(edges, node_order):
+    num_crossings = 0
+    for i in range(len(edges)):
+        for j in range(i + 1, len(edges)):
+            e1 = edges[i]
+            e2 = edges[j]
+            if node_order[e1[0]] < node_order[e2[0]] and node_order[e1[1]] > node_order[e2[1]]:
+                num_crossings += 1
+    return num_crossings
+
+# visit each rank and sort nodes to minimize crossings
+for rank in ranks:
+    node_order = ranks[rank]
+    best_order = node_order
+    best_crossings = count_crossings(edges, node_order)
+    for i in range(len(node_order)):
+        for j in range(i + 1, len(node_order)):
+            temp_order = node_order[:]
+            temp_order[i], temp_order[j] = temp_order[j], temp_order[i]
+            num_crossings = count_crossings(edges, temp_order)
+            if num_crossings < best_crossings:
+                best_crossings = num_crossings
+                best_order = temp_order
+    ranks[rank] = best_order

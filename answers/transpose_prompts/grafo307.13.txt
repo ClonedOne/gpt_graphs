@@ -1,8 +1,19 @@
-yaml
+less
 Copy code
-ranks = {0: [0], 
-         1: [8, 5], 
-         2: [2, 3], 
-         3: [4, 6, 7], 
-         4: [9], 
-         5: [1]}
+ranks = {0: [0], 1: [5, 7], 2: [2], 3: [6, 8], 4: [1, 3], 5: [9], 6: [4]}
+
+for rank in range(1, len(ranks)):
+    nodes = ranks[rank]
+    for i in range(len(nodes)):
+        for j in range(i+1, len(nodes)):
+            crossings = 0
+            for edge in edges:
+                source, target = edge
+                if source in ranks[rank-1] and target in nodes[i:j+1]:
+                    crossings += 1
+                elif target in ranks[rank-1] and source in nodes[i:j+1]:
+                    crossings += 1
+            if crossings < min_crossings:
+                min_crossings = crossings
+                min_transposition = (i, j)
+    ranks[rank] = nodes[:min_transposition[0]] + nodes[min_transposition[0]:min_transposition[1]+1][::-1] + nodes[min_transposition[1]+1:]

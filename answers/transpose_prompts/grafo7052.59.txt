@@ -1,8 +1,32 @@
-{
-0: [6, 7, 0, 8, 5],
-1: [1],
-2: [3],
-3: [9],
-4: [2],
-5: [4]
-}
+python
+Copy code
+# Initialize the graph and ranks
+edges = [(1, 6), (2, 6), (6, 0), (0, 8), (8, 5), (5, 7), (7, 0), (7, 3), (3, 9), (9, 4)]
+ranks = {0: [0], 1: [6, 8, 7], 2: [1, 2, 5, 3], 3: [9], 4: [4]}
+
+# Iterate through each rank, starting from rank 0
+for rank in range(len(ranks)):
+    current_rank = ranks[rank]
+    num_nodes = len(current_rank)
+    min_crossings = float('inf')
+    
+    # Iterate through all possible transpositions of nodes in the current rank
+    for i in range(num_nodes):
+        for j in range(i+1, num_nodes):
+            transposition = current_rank[:]
+            transposition[i], transposition[j] = transposition[j], transposition[i]
+            crossings = 0
+            
+            # Count the number of crossings for the current transposition
+            for e1 in edges:
+                for e2 in edges:
+                    if e1[0] < e2[0] and e1[1] > e2[1]:
+                        if transposition.index(e1[0]) > transposition.index(e2[0]) and transposition.index(e1[1]) < transposition.index(e2[1]):
+                            crossings += 1
+            # If the current transposition produces fewer crossings, record it
+            if crossings < min_crossings:
+                min_crossings = crossings
+                best_transposition = transposition
+                
+    # Update the current rank with the best transposition
+    ranks[rank] = best_transposition

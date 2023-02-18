@@ -1,38 +1,11 @@
-python
+yaml
 Copy code
-# define a helper function to count the number of crossings between two edges
-def count_crossings(edge1, edge2, nodes):
-    s1, t1 = edge1
-    s2, t2 = edge2
-    crossings = 0
-    for i, node in enumerate(nodes):
-        if node == s1 or node == t1 or node == s2 or node == t2:
-            continue
-        if nodes.index(s1) < i < nodes.index(t1) and nodes.index(s2) > nodes.index(t2):
-            crossings += 1
-        elif nodes.index(s1) > nodes.index(t1) and nodes.index(s2) < i < nodes.index(t2):
-            crossings += 1
-    return crossings
-
-# loop through each rank
-for rank_num, nodes in ranks.items():
-    # initialize minimum crossings to infinity and best ordering to the current ordering
-    min_crossings = float('inf')
-    best_ordering = nodes.copy()
-    # loop through each possible transposition of the nodes in the current rank
-    for i in range(len(nodes)):
-        for j in range(i+1, len(nodes)):
-            # swap nodes at indices i and j
-            new_ordering = nodes.copy()
-            new_ordering[i], new_ordering[j] = new_ordering[j], new_ordering[i]
-            # count the number of crossings with each edge in the graph
-            crossings = 0
-            for e1, edge1 in enumerate(edges):
-                for e2, edge2 in enumerate(edges[e1+1:], start=e1+1):
-                    crossings += count_crossings(edge1, edge2, new_ordering)
-            # if this transposition has fewer crossings, update the best ordering and minimum crossings
-            if crossings < min_crossings:
-                min_crossings = crossings
-                best_ordering = new_ordering
-    # replace the nodes in the current rank with the best ordering
-    ranks[rank_num] = best_ordering
+ranks = {
+    0: [0],
+    1: [7],
+    2: [6, 9, 1],
+    3: [3, 2],
+    4: [8, 5, 10],
+    5: [4],
+    6: []
+}

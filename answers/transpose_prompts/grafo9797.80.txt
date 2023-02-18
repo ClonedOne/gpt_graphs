@@ -1,8 +1,19 @@
-yaml
+python
 Copy code
-ranks = {0: [4, 0, 5, 9], 
-         1: [8, 1, 6, 10], 
-         2: [7, 5, 2], 
-         3: [3, 7, 6, 4], 
-         4: [], 
-         5: []}
+from itertools import permutations
+
+for rank in ranks.values():
+    min_crossings = float('inf')
+    best_order = None
+    for order in permutations(rank):
+        crossings = 0
+        for i, (u, v) in enumerate(edges):
+            if u in order and v in order:
+                u_index = order.index(u)
+                v_index = order.index(v)
+                if u_index > v_index:
+                    crossings += 1
+        if crossings < min_crossings:
+            min_crossings = crossings
+            best_order = order
+    rank.sort(key=lambda node: best_order.index(node))

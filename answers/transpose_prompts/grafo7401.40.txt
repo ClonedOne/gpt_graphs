@@ -2,17 +2,21 @@ python
 Copy code
 from itertools import permutations
 
-for r in ranks.values():
-    best_crossings = float('inf')
-    best_perm = r
-    for perm in permutations(r):
+for rank in ranks:
+    nodes = ranks[rank]
+    num_nodes = len(nodes)
+    if num_nodes <= 1:
+        continue
+    best_ordering = nodes
+    min_crossings = float('inf')
+    for node_order in permutations(nodes):
         crossings = 0
-        for i in range(len(perm)):
-            for j in range(i+1, len(perm)):
-                for u, v in edges:
-                    if u in ranks[i] and v in ranks[j] and perm.index(u) > perm.index(v):
+        for i in range(num_nodes):
+            for j in range(i+1, num_nodes):
+                for (u,v) in edges:
+                    if (u in node_order[i+1:j+1] and v in node_order[:i+1]) or (v in node_order[i+1:j+1] and u in node_order[:i+1]):
                         crossings += 1
-        if crossings < best_crossings:
-            best_crossings = crossings
-            best_perm = perm
-    r.sort(key=lambda x: best_perm.index(x))
+        if crossings < min_crossings:
+            min_crossings = crossings
+            best_ordering = node_order
+    ranks[rank] = best_ordering

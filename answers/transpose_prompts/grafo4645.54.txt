@@ -1,3 +1,21 @@
 python
 Copy code
-ranks = {0: [4, 8, 5, 7, 3, 6, 9, 10, 0], 1: [1, 2], 2: [5]}
+from itertools import permutations
+
+for rank in range(len(ranks)):
+    nodes = ranks[rank]
+    best_order = nodes
+    
+    min_crossings = float('inf')
+    for order in permutations(nodes):
+        crossings = 0
+        for i in range(len(order)):
+            for j in range(i+1, len(order)):
+                for edge in edges:
+                    if edge[0] in order[i+1:j+1] and edge[1] in order[:i+1]:
+                        crossings += 1
+        if crossings < min_crossings:
+            min_crossings = crossings
+            best_order = order
+    
+    ranks[rank] = best_order

@@ -1,8 +1,5 @@
 yaml
 Copy code
-ranks = {0: [0], 
-         1: [5, 8], 
-         2: [3, 1], 
-         3: [6, 7, 4], 
-         4: [9], 
-         5: [2]}
+ranks = {0: [0], 1: [9], 2: [10, 5], 3: [8, 7, 1, 3, 4], 4: [6, 2]}
+
+Note: This is the resulting order of nodes that minimizes crossings based on my calculations. However, it's possible that there may be other orders that produce the same minimal number of crossings, or a different ordering that results in even fewer crossings.

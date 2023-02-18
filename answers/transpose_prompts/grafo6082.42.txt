@@ -1,10 +1,3 @@
-Here's the updated ranks dictionary with the nodes ordered based on the least amount of crossings:
-
-yaml
+python
 Copy code
-ranks = {0: [0], 
-         1: [5, 8], 
-         2: [3, 1], 
-         3: [6, 7, 4], 
-         4: [9], 
-         5: [2]}
+ranks = {0: [0], 1: [5, 3], 2: [8, 7, 9], 3: [6, 1, 2, 4]}

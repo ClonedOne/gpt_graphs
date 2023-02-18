@@ -1,8 +1,9 @@
-yaml
-Copy code
+Here is the updated ranks dictionary with the nodes ordered to reduce crossings:
+
 ranks = {0: [0],
-         1: [8, 5],
-         2: [1, 3],
-         3: [7, 4, 2],
-         4: [9],
-         5: [6]}
+1: [6],
+2: [1],
+3: [7],
+4: [3, 2],
+5: [8, 5],
+6: [9, 4]}
