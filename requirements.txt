@@ -1,3 +1,9 @@
 black
 pyautogui
 pyperclip
+pyyaml
+matplotlib
+seaborn
+numpy
+pandas
+jupyter
