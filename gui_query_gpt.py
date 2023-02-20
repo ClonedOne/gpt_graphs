@@ -7,6 +7,7 @@ All the magic numbers are based on this setup.
 
 import os
 import time
+import tqdm
 import random
 import argparse
 import pyperclip
@@ -100,10 +101,10 @@ def main(args: dict):
 
     # Iterate through the query files in the directory.
     # Each query file is a .txt file containing only a single query.
-    for query_file in os.listdir(query_dir):
+    for query_file in tqdm.tqdm(os.listdir(query_dir)):
         with open(os.path.join(query_dir, query_file), "r") as f:
             query = f.read()
-        print("Processing query: " + query)
+        # print("Processing query: " + query)
 
         # Process query. If error, delay for a randomized timeout
         # and try again. Timeout should be at least a minute.
