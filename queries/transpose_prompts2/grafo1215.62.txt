@@ -1,6 +1,6 @@
 We want to reduce crossings on a graph drawing.
 This is the list of edges. Every edge has [<source_id>, <target_id>]:
-edges = [(2, 3), (3, 4), (3, 1), (4, 7), (3, 0), (8, 4), (8, 1), (5, 8), (5, 9), (9, 6), (10, 5)]
+edges = [(7, 1), (7, 2), (2, 6), (6, 3), (3, 5), (5, 2), (4, 8), (6, 0), (8, 9), (10, 8), (10, 6)]
 
 This is the description of what nodes are contained in what layer: 
 ranks = Layer 0: [0] 
