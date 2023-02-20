@@ -101,7 +101,7 @@ def main(args: dict):
 
     # Iterate through the query files in the directory.
     # Each query file is a .txt file containing only a single query.
-    for query_file in tqdm.tqdm(os.listdir(query_dir)):
+    for query_file in tqdm.tqdm(sorted(os.listdir(query_dir))):
         with open(os.path.join(query_dir, query_file), "r") as f:
             query = f.read()
         # print("Processing query: " + query)
