@@ -1,0 +1,26 @@
+We want to reduce crossings on a graph drawing.
+This is the list of edges. Every edge has [<source_id>, <target_id>]:
+edges = [(7, 1), (1, 6), (6, 2), (2, 5), (5, 3), (4, 8), (8, 3), (5, 6), (7, 9), (9, 0), (10, 5)]
+
+This is the description of what nodes are contained in what layer: 
+ranks = Layer 0: [0] 
+Layer 1: [9] 
+Layer 2: [7] 
+Layer 3: [1] 
+Layer 4: [6] 
+Layer 5: [2, 5] 
+Layer 6: [3, 10] 
+Layer 7: [8] 
+Layer 8: [4] 
+
+
+I want to order the nodes in the layers so that there are few crossings in the graph. 
+- visit every rank once, starting from layer 0
+- try different transpositions of the nodes in that layer
+- count the crossings for every transposition. There is a crossing between two edges e1 and e2 if the source of e1 comes before the source of e2, and the target of e1 comes after the target of e2 in the order of nodes in a layer.
+- record the transposition that produces the least amount of crossings, and sort the nodes accordingly.
+
+Nodes can NOT be moved to a different layer. You can only reorder nodes within layers.
+
+write no code and no explanation.
+return the layers dictionary with the nodes ordered, in a code block. I want it formatted like this: {<layer_id>:[<list of ordered nodes>]}
