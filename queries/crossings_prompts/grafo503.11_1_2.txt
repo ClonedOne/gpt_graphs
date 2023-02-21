@@ -1,0 +1,14 @@
+Given the following arrays: 
+A: [5, 7, 10]
+B: [1, 9, 2, 6, 3, 4]
+
+And the following list of tuples:
+Tuples: [(5, 1), (5, 9), (10, 2), (10, 6), (10, 3), (10, 4)]
+
+Where for each tuple the first element of comes from array A, and the second element comes from array B.
+
+Assuming this is a bipartite graph, count the edge crossings. Two edges that share a source or a target can not cross. Two edges cross if the order of their sources is opposite to the order of their targets.
+
+Exclude all edge crossings where edges have the same source or the same target.
+
+Write no explanations and no code. Return the pairs of edges that cross, one per line.

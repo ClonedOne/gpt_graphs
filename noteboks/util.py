@@ -3,30 +3,32 @@ import xml.etree.ElementTree as ET
 from collections import deque
 
 def read_files(node_threshold = 11, base_path = "../rome/"):
+    # print(glob.glob(base_path + "/*.graphml"))
+    # print(base_path + "/*.graphml")
     for filename in glob.glob(base_path + "/*.graphml"):
     # Open the file and read its contents
         with open(filename, "r") as f:
             content = f.read()
 
-        # Parse the GraphML file using ElementTree
-        root = ET.fromstring(content)
+            # Parse the GraphML file using ElementTree
+            root = ET.fromstring(content)
 
-        # Find the <graph> element using the tag name only
-        graph = root.findall("graph")[0]
+            # Find the <graph> element using the tag name only
+            graph = root.findall("graph")[0]
 
-        # Extract the list of nodes
-        nodes = graph.findall("node")
+            # Extract the list of nodes
+            nodes = graph.findall("node")
 
-        # Filter for graphs with less than 10 nodes
-        
-        if len(nodes) <= node_threshold:
-            # count = count+1
-            # Extract the list of edges
-            edges = graph.findall("edge")
-            node_dict = {node.attrib["id"]: i for i, node in enumerate(nodes)}
-            edge_list = [(node_dict[edge.attrib["source"]], node_dict[edge.attrib["target"]]) for edge in edges]
+            # Filter for graphs with less than 10 nodes
+            
+            if len(nodes) <= node_threshold:
+                # count = count+1
+                # Extract the list of edges
+                edges = graph.findall("edge")
+                node_dict = {node.attrib["id"]: i for i, node in enumerate(nodes)}
+                edge_list = [(node_dict[edge.attrib["source"]], node_dict[edge.attrib["target"]]) for edge in edges]
 
-            yield {'filename': filename, 'graph': graph, 'edge_list': edge_list}
+                yield {'filename': filename, 'graph': graph, 'edge_list': edge_list}
 
 def count_edge_crossings(graph, node_order):
     crossings = 0
@@ -103,3 +105,22 @@ def bfs(graph, start_node):
                 queue.append((source, depth + 1))
 
     return node_ranks
+
+def cleanup_edges(edge_list, node_ranks):
+    new_edge_list = []
+    for r in node_ranks:
+        if r == len(node_ranks) - 1:
+            break
+        for u, v in edge_list:
+            if u in node_ranks[r] and v in node_ranks[r]:
+                continue
+            if u in node_ranks[r] and v in node_ranks[r+1]:
+                new_edge_list.append((u, v))
+            if u in node_ranks[r+1] and v in node_ranks[r]:
+                new_edge_list.append((v, u))
+                # new_edge_list.append((u, v))
+        
+    return new_edge_list
+
+def count_edge_length(graph):
+    return len(graph)
