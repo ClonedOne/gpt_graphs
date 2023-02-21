@@ -11,4 +11,4 @@ Assuming this is a bipartite graph, count the edge crossings. Two edges that sha
 
 Exclude all edge crossings where edges have the same source or the same target.
 
-Write no explanations and no code. Return the pairs of edges that cross, one per line.
+Write no explanations and no code. Return the pairs of edges that cross, one per line. There may be no edge crossings - in that case, return 0.
