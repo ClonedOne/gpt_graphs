@@ -18,6 +18,9 @@ from pathlib import Path
 resp_dir = "responses"
 error_msgs = [
     "An error occurred. If this issue persists please contact us through our help center at help.openai.com.",
+    "There was an error generating a response",
+    "Hmm...something seems to have gone wrong. Maybe try me again in a little bit.",
+    "The server had an error while processing your request",
     "Too many requests in 1 hour. Try again later.",
 ]
 
@@ -38,7 +41,8 @@ def type_query(query: str):
     Args:
         query (str): query string
     """
-    pyautogui.moveTo(700, 1120, duration=random.uniform(0.5, 1.5))
+    # pyautogui.moveTo(700, 1120, duration=random.uniform(0.5, 1.5))
+    pyautogui.moveTo(700, 1100, duration=random.uniform(0.5, 1.5))
     # Focus on window
     pyautogui.click()
     time.sleep(1)
@@ -120,7 +124,7 @@ def main(args: dict):
             f.write(response)
 
         # Wait for a randomized timeout explicitly
-        time.sleep(random.randint(35, 75))
+        time.sleep(random.randint(100, 200))
 
 
 if __name__ == "__main__":
