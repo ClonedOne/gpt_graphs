@@ -41,8 +41,8 @@ def type_query(query: str):
     Args:
         query (str): query string
     """
-    # pyautogui.moveTo(700, 1120, duration=random.uniform(0.5, 1.5))
-    pyautogui.moveTo(700, 1100, duration=random.uniform(0.5, 1.5))
+    pyautogui.moveTo(700, 1120, duration=random.uniform(0.5, 1.5))
+    # pyautogui.moveTo(700, 1100, duration=random.uniform(0.5, 1.5))
     # Focus on window
     pyautogui.click()
     time.sleep(1)
@@ -106,6 +106,12 @@ def main(args: dict):
     # Iterate through the query files in the directory.
     # Each query file is a .txt file containing only a single query.
     for query_file in tqdm.tqdm(sorted(os.listdir(query_dir))):
+
+        # Skip if response already exists -- comment out if you want to overwrite
+        out_file_path = os.path.join(resp_path, query_file)
+        if os.path.exists(out_file_path):
+            continue
+
         with open(os.path.join(query_dir, query_file), "r") as f:
             query = f.read()
         # print("Processing query: " + query)
@@ -120,11 +126,11 @@ def main(args: dict):
                 time.sleep(random.randint(200, 300))
 
         # Save response to file
-        with open(os.path.join(resp_path, query_file), "w") as f:
+        with open(out_file_path, "w") as f:
             f.write(response)
 
         # Wait for a randomized timeout explicitly
-        time.sleep(random.randint(100, 200))
+        time.sleep(random.randint(35, 75))
 
 
 if __name__ == "__main__":
