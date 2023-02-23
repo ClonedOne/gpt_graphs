@@ -1,0 +1,59 @@
+Perform a rank assignment on the graph. Use node 0 as a source for the graph. Each node must be assigned to a rank that is equal to the shortest path between that node and the source. Thus, node 0 will be assigned to rank 0, and the neighbors of node 0 will be assigned to rank 1. 
+Write no explanations, only respond with the id of each node and the rank it has been assigned to in a format <id> - <rank>.
+
+Input:
+Graph G has 11 nodes, numbered from 0 to 10. Graph G has 11 edges.
+This is the list of edge connections:
+[0, 5],[5, 1],[1, 6],[6, 2],[6, 3],[8, 4],[5, 4],[7, 9],[9, 3],[10, 8],[7, 5]
+Answer:
+0 - 0
+5 - 1
+1 - 2
+4 - 2
+7 - 2
+6 - 3
+8 - 3
+9 - 3
+2 - 4
+3 - 4
+10 - 4
+
+Input:
+Graph G has 11 nodes, numbered from 0 to 10. Graph G has 13 edges.
+This is the list of edge connections:
+[1, 4],[6, 0],[5, 3],[3, 7],[7, 2],[8, 3],[5, 2],[6, 5],[1, 9],[9, 5],[10, 1],[10, 7],[10, 3]
+Answer:
+0 - 0
+6 - 1
+5 - 2
+3 - 3
+2 - 3
+9 - 3
+7 - 4
+8 - 4
+10 - 4
+1 - 4
+4 - 5
+
+Input:
+Graph G has 11 nodes, numbered from 0 to 10. Graph G has 12 edges.
+This is the list of edge connections:
+[0, 5],[5, 1],[6, 2],[6, 3],[3, 7],[3, 8],[8, 4],[2, 1],[7, 9],[10, 4],[10, 1],[10, 5]
+Answer:
+0 - 0
+5 - 1
+1 - 2
+10 - 2
+2 - 3
+4 - 3
+6 - 4
+8 - 4
+3 - 5
+7 - 6
+9 - 7
+
+Input:
+Graph G has 11 nodes, numbered from 0 to 10. Graph G has 12 edges.
+This is the list of edge connections:
+[5, 2],[2, 6],[6, 1],[1, 7],[7, 0],[0, 5],[0, 8],[8, 3],[3, 9],[9, 1],[3, 10],[10, 4]
+Answer:
