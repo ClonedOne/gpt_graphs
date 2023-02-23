@@ -1,0 +1,40 @@
+{
+0: [0],
+1: [4, 8],
+2: [3, 1, 5],
+3: [7, 6, 10, 2],
+4: [9]
+}
+
+
+
+
+New chat
+Graph node reordering
+
+
+Minimize Crossings in Graph
+Reduce Graph Crossings.
+Graph nodes reorder.
+Reduce graph crossings.
+Graph Ordering Algorithm
+Graph nodes layer sorting.
+Graph node layer ordering.
+Reduce graph crossings.
+Graph Node Ordering
+Ordering Nodes, Reducing Crossings
+Reducing Graph Crossings.
+Graph optimization.
+Graph Node Ordering.
+Order graph nodes efficiently.
+Order nodes for fewer crossings.
+Node ordering for graph.
+Graph Layer Ordering.
+Node ordering to reduce crossings
+Reduce graph crossings.
+Show more
+Clear conversations
+Dark mode
+My account
+Updates & FAQ
+Log out

@@ -1,16 +1,15 @@
 We want to reduce crossings on a graph drawing.
 This is the list of edges. Every edge has [<source_id>, <target_id>]:
-edges = [(7, 1), (2, 6), (6, 3), (3, 5), (5, 2), (5, 4), (8, 4), (0, 8), (7, 9), (9, 2), (10, 6), (10, 7), (10, 2)]
+edges = [(0, 6), (6, 1), (1, 7), (7, 2), (7, 4), (1, 8), (8, 3), (3, 9), (9, 4), (3, 10), (10, 5)]
 
 This is the description of what nodes are contained in what layer: 
 ranks = Layer 0: [0] 
-Layer 1: [8] 
-Layer 2: [4] 
-Layer 3: [5] 
-Layer 4: [3, 2] 
-Layer 5: [6, 9, 10] 
-Layer 6: [7] 
-Layer 7: [1] 
+Layer 1: [6] 
+Layer 2: [1] 
+Layer 3: [7, 8] 
+Layer 4: [2, 4, 3] 
+Layer 5: [9, 10] 
+Layer 6: [5] 
 
 
 I want to order the nodes in the layers so that there are few crossings in the graph. 
