@@ -108,19 +108,31 @@ def bfs(graph, start_node):
 
 def cleanup_edges(edge_list, node_ranks):
     new_edge_list = []
-    for r in node_ranks:
-        if r == len(node_ranks) - 1:
-            break
-        for u, v in edge_list:
-            if u in node_ranks[r] and v in node_ranks[r]:
-                continue
-            if u in node_ranks[r] and v in node_ranks[r+1]:
-                new_edge_list.append((u, v))
-            if u in node_ranks[r+1] and v in node_ranks[r]:
-                new_edge_list.append((v, u))
-                # new_edge_list.append((u, v))
+
+    for u, v in edge_list:
+        # print(u, v)
+
+        # find key based on item
+        u_key = [k for k, v in node_ranks.items() if u in v][0]
+        v_key = [k for k, val in node_ranks.items() if v in val][0]
+
+        if u_key == v_key:
+            continue
+
+        if u_key < v_key:
+            new_edge_list.append((u, v))
+        else:
+            new_edge_list.append((v, u))
         
     return new_edge_list
 
-def count_edge_length(graph):
-    return len(graph)
+def count_edge_length(edge_list, node_ranks):
+    total = 0
+    for u, v in edge_list:
+        # find key based on dictionary item
+        rank_u = [k for k, v in node_ranks.items() if u in v][0]
+        rank_v = [k for k, val in node_ranks.items() if v in val][0]
+        # print(u, ":", rank_u, ",", v, ":", rank_v)
+        total += abs(rank_u - rank_v)
+
+    return total
