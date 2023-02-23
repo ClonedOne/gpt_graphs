@@ -1,0 +1,1 @@
+(6 from A, 1 from B) crosses with (6 from A, 1 from B)

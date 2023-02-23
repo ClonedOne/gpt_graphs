@@ -1,0 +1,1 @@
+(5 from A, 3 from B) crosses with (8 from A, 3 from B).

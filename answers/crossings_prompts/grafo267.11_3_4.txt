@@ -1,0 +1,4 @@
+(4, 10) crosses with:
+
+No other edge. (There are no other edges to cross with.)
+Therefore, the output is an empty list.

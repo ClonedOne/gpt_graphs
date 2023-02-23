@@ -1,0 +1,1 @@
+(8, 6) crosses with (8, 6)
