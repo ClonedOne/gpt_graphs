@@ -1,0 +1,18 @@
+The following is the description of a layered graph. 
+A layered graph is a graph where each node is contained in a single layer.
+The following is the list of directed edges, formatted as [(<source_id>, <target_id>)].
+
+edge_list: [(0, 4), (0, 5), (1, 5), (1, 7), (0, 6), (6, 2), (1, 8), (9, 3), (9, 2)]
+
+The second is a mapping of layers to the nodes contained within. Every array is a different layer, and the numbers in every array indicate the nodes in that layer.
+
+Layer 0: [0] 
+Layer 1: [4, 6, 9] 
+Layer 2: [] 
+Layer 3: [] 
+Layer 4: [1] 
+Layer 5: [2, 3, 5, 7, 8] 
+
+Count the total edge length. The edge length of each edge e is always equal to the absolute value of the number of the layer the target is contained in, minus the number of the layer the source is contained in. The edge length can't be negative.
+
+Write no explanations and no code. Return the total sum of the lengths.
