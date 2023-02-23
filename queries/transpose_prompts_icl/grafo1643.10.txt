@@ -1,0 +1,80 @@
+We want to reduce crossings on a graph drawing.
+We want to order the nodes in the layers so that there are few crossings in the graph. 
+- visit every rank once, starting from layer 0
+- try different transpositions of the nodes in that layer
+- count the crossings for every transposition. There is a crossing between two edges e1 and e2 if the source of e1 comes before the source of e2, and the target of e1 comes after the target of e2 in the order of nodes in a layer.
+- record the transposition that produces the least amount of crossings, and sort the nodes accordingly.
+Nodes can NOT be moved to a different layer. You can only reorder nodes within layers.
+Write no code and no explanation.
+Return the layers dictionary with the nodes ordered, in a code block. I want it formatted like this: {<layer_id>:[<list of ordered nodes>]}
+
+Input:
+This is the list of edges. Every edge has [<source_id>, <target_id>]:
+edges = [(1, 5), (5, 0), (7, 4), (4, 6), (6, 2), (2, 8), (8, 3), (0, 9), (9, 7), (10, 1), (10, 6), (10, 5)]
+This is the description of what nodes are contained in what layer: 
+ranks = Layer 0: [0]
+Layer 1: [5, 9]
+Layer 2: [1, 10, 7]
+Layer 3: [6, 4]
+Layer 4: [2]
+Layer 5: [8]
+Layer 6: [3]
+Answer:
+
+{
+0: [0],
+1: [5, 9],
+2: [1, 10, 7],
+3: [6, 4],
+4: [2],
+5: [8],
+6: [3]
+}
+
+Input:
+This is the list of edges. Every edge has [<source_id>, <target_id>]:
+edges = [(0, 4), (4, 1), (1, 6), (0, 5), (5, 2), (7, 1), (8, 2), (4, 2), (3, 9), (9, 0), (10, 9), (10, 1), (10, 7), (10, 0)]
+This is the description of what nodes are contained in what layer: 
+ranks = Layer 0: [0]
+Layer 1: [4, 5, 9, 10]
+Layer 2: [1, 2, 3, 7]
+Layer 3: [6, 8]
+Answer:
+
+{
+0: [0],
+1: [9, 10, 4, 5],
+2: [3, 7, 1, 2],
+3: [6, 8]
+}
+
+Input:
+This is the list of edges. Every edge has [<source_id>, <target_id>]:
+edges = [(0, 8), (8, 1), (8, 2), (2, 7), (7, 3), (3, 6), (6, 4), (5, 2), (6, 9), (9, 2), (10, 9), (10, 2), (10, 1), (10, 3), (10, 8), (10, 4), (10, 0), (10, 6)]
+This is the description of what nodes are contained in what layer: 
+ranks = Layer 0: [0]
+Layer 1: [8, 10]
+Layer 2: [1, 2, 9, 3, 4, 6]
+Layer 3: [7, 5]
+Answer:
+
+{
+0: [0],
+1: [8, 10],
+2: [1, 2, 9, 4, 6, 3],
+3: [5, 7]
+}
+
+Input:
+This is the list of edges. Every edge has [<source_id>, <target_id>]:
+edges = [(0, 1), (2, 3), (3, 4), (4, 5), (7, 2), (6, 8), (8, 7), (9, 4), (4, 0)]
+This is the description of what nodes are contained in what layer: 
+ranks = Layer 0: [0]
+Layer 1: [1, 4]
+Layer 2: [3, 5, 9]
+Layer 3: [2]
+Layer 4: [7]
+Layer 5: [8]
+Layer 6: [6]
+
+Answer:
