@@ -1,0 +1,31 @@
+Starting from node 0, we can use Breadth First Search to traverse the graph and assign each node a layer number based on its distance from node 0. Here's how we can do it step by step:
+
+We start with node 0 in layer 0.
+
+We find all the neighbors of node 0, which are 6. We assign node 6 to layer 1.
+
+We find all the neighbors of the nodes in layer 1 that do not already belong to a layer, which are 1. We assign node 1 to layer 2.
+
+We find all the neighbors of the nodes in layer 2 that do not already belong to a layer, which are 7. We assign node 7 to layer 3.
+
+We find all the neighbors of the nodes in layer 3 that do not already belong to a layer, which are 2, 3. We assign nodes 2 and 3 to layer 4.
+
+We find all the neighbors of the nodes in layer 4 that do not already belong to a layer, which are 8, 9. We assign nodes 8 and 9 to layer 5.
+
+We find all the neighbors of the nodes in layer 5 that do not already belong to a layer, which are 4, 5. We assign nodes 4 and 5 to layer 6.
+
+There are no more nodes that are not assigned to any layer, so the final result is:
+
+makefile
+Copy code
+0: 0
+6: 1
+1: 2
+7: 3
+2: 4
+3: 4
+8: 5
+9: 5
+4: 6
+5: 6
+Note that there can be multiple valid layer assignments for a given graph, depending on the starting node and the order in which we visit the nodes. However, for acyclic graphs like this one, the resulting layering is unique up to a permutation of the nodes within each layer.

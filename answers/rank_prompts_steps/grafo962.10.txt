@@ -1,0 +1,22 @@
+Starting from node 0 with layer 0, the neighbors of node 0 are nodes 6 and 8. Assign them to layer 1.
+
+Next, we find the neighbors of nodes in layer 1 that are not already assigned a layer. Nodes 6 and 8 are connected to nodes 1, 2, 5, and 7. Assign them to layer 2.
+
+Next, we find the neighbors of nodes in layer 2 that are not already assigned a layer. Nodes 1 and 2 are connected to node 6. Node 5 is connected to node 8. Nodes 7 and 3 are connected to node 7. Node 9 is connected to node 3. Assign them to layer 3.
+
+Next, we find the neighbors of nodes in layer 3 that are not already assigned a layer. Node 4 is connected to node 9. Assign it to layer 4.
+
+All nodes are now assigned to a layer. We can write the final result:
+
+makefile
+Copy code
+0: 0
+6: 1
+8: 1
+1: 2
+2: 2
+5: 2
+7: 2
+3: 3
+9: 3
+4: 4

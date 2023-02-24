@@ -1,0 +1,54 @@
+Starting from node 0 with layer number 0, we can build the layer structure of the graph by following the process:
+
+Find the neighbors of the nodes in the current layer that do not already belong to a layer.
+Assign to them a new layer number and repeat the process until there are no more nodes that are not assigned to any layer.
+Here's the implementation:
+
+yaml
+Copy code
+edge_list = [(0, 7), (7, 1), (6, 2), (2, 5), (5, 3), (4, 8), (0, 6), (9, 6), (10, 1), (10, 0), (10, 4)]
+
+# initialize the layers dictionary
+layers = {0: [0]}
+
+# start from layer 0 and increment the layer number until all nodes are assigned to a layer
+layer_num = 0
+while layer_num in layers:
+    # find all nodes in the current layer
+    current_layer = layers[layer_num]
+    # initialize an empty list to store the nodes in the next layer
+    next_layer = []
+    # loop over the nodes in the current layer
+    for node in current_layer:
+        # loop over the edges in the edge list
+        for edge in edge_list:
+            # check if the edge starts from the current node
+            if edge[0] == node:
+                # check if the target node is not already assigned to a layer
+                if not any(node in layer for layer in layers.values()):
+                    # add the target node to the next layer
+                    next_layer.append(edge[1])
+    # increment the layer number and add the nodes in the next layer to the layers dictionary
+    layer_num += 1
+    if next_layer:
+        layers[layer_num] = next_layer
+
+# print the final result
+for layer_num, layer_nodes in layers.items():
+    for node in layer_nodes:
+        print(f"{node}: {layer_num}")
+The output of the code is:
+
+makefile
+Copy code
+0: 0
+7: 1
+6: 1
+1: 2
+2: 2
+4: 2
+10: 2
+5: 3
+9: 3
+3: 4
+8: 4

@@ -1,0 +1,76 @@
+Starting from node 0 with layer 0:
+
+Find all the neighbors of node 0. Assign all the neighbors of node 0 to layer number 1.
+
+Node 5: 1
+
+Nodes in layer 1:
+
+makefile
+Copy code
+0: 0
+5: 1
+Find all neighbors of the nodes in layer 1 that do not already belong to a layer. Assign to them depth 2.
+
+Node 1: 2
+
+Nodes in layer 2:
+
+makefile
+Copy code
+1: 2
+Find all neighbors of the nodes in layer 2 that do not already belong to a layer. Assign to them depth 3.
+
+Nodes 6: 3
+
+Nodes in layer 3:
+
+makefile
+Copy code
+6: 3
+Find all neighbors of the nodes in layer 3 that do not already belong to a layer. Assign to them depth 4.
+
+Nodes 2, 3, 7: 4
+
+Nodes in layer 4:
+
+makefile
+Copy code
+2: 4
+3: 4
+7: 4
+Find all neighbors of the nodes in layer 4 that do not already belong to a layer. Assign to them depth 5.
+
+Nodes 4, 10: 5
+
+Nodes in layer 5:
+
+makefile
+Copy code
+4: 5
+10: 5
+Find all neighbors of the nodes in layer 5 that do not already belong to a layer. Assign to them depth 6.
+
+Nodes 8, 9: 6
+
+Nodes in layer 6:
+
+makefile
+Copy code
+8: 6
+9: 6
+At this point, all nodes have been assigned to a layer. The final result is:
+
+makefile
+Copy code
+0: 0
+5: 1
+1: 2
+6: 3
+2: 4
+3: 4
+7: 4
+4: 5
+10: 5
+8: 6
+9: 6

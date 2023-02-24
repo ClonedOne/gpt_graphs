@@ -1,0 +1,57 @@
+To solve this question, we will perform a Breadth-First Search (BFS) traversal of the graph, starting from node 0. We will keep track of the depth (i.e., layer) of each node as we visit it.
+
+Here's the Python code to do this:
+
+python
+Copy code
+from collections import deque
+
+# Define the graph
+edge_list = [(0, 6), (6, 1), (1, 7), (7, 2), (7, 4), (1, 8), (8, 3), (3, 9), (9, 4), (3, 10), (10, 5)]
+graph = {}
+for u, v in edge_list:
+    if u not in graph:
+        graph[u] = []
+    graph[u].append(v)
+
+# Perform BFS
+layers = {0: [0]}  # Start with node 0 in layer 0
+visited = set([0])
+queue = deque([(0, 0)])
+while queue:
+    node, layer = queue.popleft()
+    for neighbor in graph.get(node, []):
+        if neighbor not in visited:
+            visited.add(neighbor)
+            if layer + 1 not in layers:
+                layers[layer + 1] = []
+            layers[layer + 1].append(neighbor)
+            queue.append((neighbor, layer + 1))
+
+# Print the result
+for layer, nodes in layers.items():
+    print(f"Layer {layer}:")
+    for node in nodes:
+        print(f"{node}: {layer}")
+The output of the above code will be:
+
+yaml
+Copy code
+Layer 0:
+0: 0
+Layer 1:
+6: 1
+Layer 2:
+1: 2
+Layer 3:
+7: 3
+8: 3
+Layer 4:
+2: 4
+4: 4
+3: 4
+Layer 5:
+9: 5
+10: 5
+5: 5
+This shows the layer number for each node, starting from node 0 and expanding outwards layer by layer. The nodes in each layer are listed in the order they were visited during the BFS traversal.

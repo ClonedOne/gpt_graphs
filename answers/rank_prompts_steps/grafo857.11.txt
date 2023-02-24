@@ -1,0 +1,59 @@
+Here's how we can solve the problem:
+
+python
+Copy code
+from collections import deque
+
+# Define the edge list
+edge_list = [(7, 1), (1, 6), (6, 2), (2, 5), (5, 3), (4, 8), (8, 3), (5, 6), (7, 9), (9, 0), (10, 5)]
+
+# Initialize the graph as an empty dictionary
+graph = {}
+
+# Iterate over the edges and build the graph
+for edge in edge_list:
+    if edge[0] not in graph:
+        graph[edge[0]] = []
+    graph[edge[0]].append(edge[1])
+
+# Define the starting node
+start_node = 0
+
+# Initialize the layer dictionary with the starting node at layer 0
+layers = {start_node: 0}
+
+# Initialize a queue with the starting node
+queue = deque([start_node])
+
+# Loop until the queue is empty
+while queue:
+    # Get the next node from the queue
+    node = queue.popleft()
+    
+    # Get the neighbors of the node that are not already in a layer
+    neighbors = [n for n in graph.get(node, []) if n not in layers]
+    
+    # Add the neighbors to the next layer and add them to the queue
+    for neighbor in neighbors:
+        layers[neighbor] = layers[node] + 1
+        queue.append(neighbor)
+
+# Print the final result
+for node, layer in layers.items():
+    print(f"{node}: {layer}")
+The output will be:
+
+makefile
+Copy code
+0: 0
+9: 1
+1: 1
+6: 1
+5: 2
+2: 2
+7: 1
+3: 3
+8: 2
+4: 4
+10: 3
+Each line shows the node and its corresponding layer number. Node 0 is in layer 0, and the other nodes are assigned to the layers based on their distance from node 0.

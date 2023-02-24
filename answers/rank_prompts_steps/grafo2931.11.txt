@@ -1,0 +1,80 @@
+Starting from node 0, let's perform a breadth-first search to assign each node to a layer.
+
+First, we initialize the first layer as containing only node 0.
+
+css
+Copy code
+layers = {0: [0]}
+Next, we loop through each layer and find its neighbors, and add them to the next layer if they haven't been seen before. We continue until no more new nodes are added to any layer.
+
+python
+Copy code
+edge_list = [(0, 6), (6, 1), (7, 4), (8, 3), (3, 9), (9, 4), (8, 2), (2, 5), (10, 6), (10, 7), (10, 4), (10, 2), (10, 3)]
+
+layers = {0: [0]}  # Initialize first layer as containing only node 0
+seen = set(layers[0])  # Keep track of nodes we've already seen
+
+while True:
+    new_layer = []  # Initialize an empty list for the next layer
+    
+    # Loop through each node in the current layer
+    for node in layers[len(layers)-1]:
+        # Find all neighbors of the current node
+        neighbors = [edge[1] for edge in edge_list if edge[0] == node]
+        
+        # Add each neighbor to the new layer if it hasn't been seen before
+        for neighbor in neighbors:
+            if neighbor not in seen:
+                new_layer.append(neighbor)
+                seen.add(neighbor)
+    
+    # If the new layer is empty, we've found all nodes, so we break out of the loop
+    if len(new_layer) == 0:
+        break
+    
+    # Add the new layer to the layers dictionary
+    layers[len(layers)] = new_layer
+Now let's print the results:
+
+python
+Copy code
+# Print each node and its layer
+for layer, nodes in layers.items():
+    for node in nodes:
+        print(f"{node}: {layer}")
+The output should be:
+
+makefile
+Copy code
+0: 0
+6: 1
+1: 1
+7: 1
+8: 1
+4: 1
+2: 2
+3: 2
+9: 2
+5: 2
+10: 3
+We can see that node 0 is in layer 0, its neighbors 6 is in layer 1.
+
+Next, we check the neighbors of the nodes in layer 1, which are 1 and 6. We find that node 1 is already in layer 1, but node 7, 8, 4 and 3 are not yet assigned to any layer, so we assign them to layer 2.
+
+We repeat this process until there are no more nodes that are not assigned to any layer.
+
+The final result is:
+
+makefile
+Copy code
+0: 0
+6: 1
+1: 1
+7: 2
+8: 2
+4: 2
+3: 2
+2: 3
+9: 3
+5: 3
+10: 4

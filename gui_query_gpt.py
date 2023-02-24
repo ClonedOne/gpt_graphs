@@ -27,7 +27,7 @@ error_msgs = [
 
 def new_chat():
     """Open new chat tab in the web interface"""
-    pyautogui.moveTo(100, 180, duration=random.uniform(0.5, 1.5))
+    pyautogui.moveTo(100, 150, duration=random.uniform(0.5, 1.5))
     # Focus on window
     pyautogui.click()
     time.sleep(1)
@@ -41,7 +41,7 @@ def type_query(query: str):
     Args:
         query (str): query string
     """
-    pyautogui.moveTo(700, 1000, duration=random.uniform(0.5, 1.5))
+    pyautogui.moveTo(700, 1120, duration=random.uniform(0.5, 1.5))
     # pyautogui.moveTo(700, 1100, duration=random.uniform(0.5, 1.5))
     # Focus on window
     pyautogui.click()
@@ -85,7 +85,7 @@ def process_query(query: str) -> str:
     new_chat()
     type_query(query)
     # Completion time can be long
-    time.sleep(random.randint(60, 70))
+    time.sleep(random.randint(90, 100))
     response = capture_screen_text()
 
     # Check for error message, if found raise exception

@@ -1,0 +1,40 @@
+Starting from node 0, we can follow the edges and assign layers to the nodes using Breadth-First Search (BFS).
+
+Initially, node 0 belongs to layer 0.
+
+Layer 1:
+
+Node 6 (0 -> 6)
+Node 5 (0 -> 5)
+Layer 2:
+
+Node 1 (6 -> 1)
+Layer 3:
+
+Node 9 (6 -> 9)
+Layer 4:
+
+Node 2 (7 -> 2)
+Node 4 (7 -> 4)
+Layer 5:
+
+Node 8 (3 -> 8)
+Node 10 (10 -> 5, 10 -> 8, 10 -> 1)
+Note that node 7 is not included in any of the layers as it is not connected to node 0.
+
+The final result, with all nodes and their corresponding layers, is:
+
+makefile
+Copy code
+0: 0
+6: 1
+5: 1
+1: 2
+9: 3
+2: 4
+4: 4
+8: 5
+10: 5
+3: 6
+7: -1
+Note that node 7 is not reachable from node 0, so it is not included in any of the layers and is assigned a layer of -1.

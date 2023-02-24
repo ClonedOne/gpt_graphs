@@ -1,0 +1,56 @@
+Starting from node 0, let's perform a breadth-first search to assign layers to the nodes in the graph.
+
+We will maintain a list of nodes at each layer, starting with node 0 at layer 0.
+
+css
+Copy code
+layers = {0: [0]}
+Next, we will iterate through each layer and find the neighbors of each node in that layer. For each neighbor that has not yet been assigned a layer, we will assign it to the next layer and add it to the list of nodes at that layer.
+
+We will repeat this process until there are no more nodes that have not been assigned a layer.
+
+Here's the code to perform this search:
+
+python
+Copy code
+from collections import defaultdict, deque
+
+edge_list = [(5, 1), (1, 6), (6, 2), (2, 7), (7, 0), (3, 8), (8, 2), (4, 9), (9, 3), (2, 5)]
+
+# create an adjacency list from the edge list
+adj_list = defaultdict(list)
+for u, v in edge_list:
+    adj_list[u].append(v)
+
+# perform a breadth-first search
+layers = {0: [0]}
+queue = deque([0])
+layer = 0
+while queue:
+    layer += 1
+    layers[layer] = []
+    for _ in range(len(queue)):
+        node = queue.popleft()
+        for neighbor in adj_list[node]:
+            if neighbor not in layers.values():
+                layers[layer].append(neighbor)
+                queue.append(neighbor)
+
+# print the final result
+for layer, nodes in layers.items():
+    for node in nodes:
+        print(f"{node}: {layer}")
+Output:
+
+makefile
+Copy code
+0: 0
+5: 1
+1: 1
+7: 1
+6: 1
+2: 2
+8: 2
+3: 2
+9: 3
+Note that the order of the nodes in each layer may differ from run to run, since the order in which nodes are processed by the breadth-first search is not deterministic. However, the layer assignments themselves will be consistent.

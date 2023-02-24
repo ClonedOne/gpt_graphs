@@ -1,0 +1,53 @@
+Starting from node 0 in layer 0:
+
+Neighbors of node 0 are nodes 1 and 3. Assign them to layer 1.
+Nodes in layer 1:
+
+makefile
+Copy code
+0: 0
+1: 1
+3: 1
+Neighbors of nodes in layer 1 that do not already belong to a layer are nodes 2 and 5. Assign them to layer 2.
+Nodes in layer 2:
+
+makefile
+Copy code
+2: 2
+5: 2
+Neighbors of nodes in layer 2 that do not already belong to a layer are node 9. Assign it to layer 3.
+Nodes in layer 3:
+
+makefile
+Copy code
+9: 3
+Neighbors of nodes in layer 3 that do not already belong to a layer are nodes 6 and 10. Assign them to layer 4.
+Nodes in layer 4:
+
+makefile
+Copy code
+6: 4
+10: 4
+Neighbors of nodes in layer 4 that do not already belong to a layer are nodes 7 and 1 (already in layer 1) and nodes 3 and 8 (already in layer 2).
+Nodes in layer 5:
+
+makefile
+Copy code
+7: 5
+There are no more nodes that are not assigned to a layer.
+
+Final result:
+
+makefile
+Copy code
+0: 0
+1: 1
+3: 1
+2: 2
+5: 2
+9: 3
+6: 4
+10: 4
+7: 5
+8: 2
+4: 1

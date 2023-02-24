@@ -1,0 +1,91 @@
+Using the given edge list, we can construct the following graph:
+
+rust
+Copy code
+10 ---| 
+      v
+ 0 -> 1 -> 2 -> 4 -> 5
+ ^    |    ^    |
+ |    v    |    v
+  --- 6 -> 7 -> 8
+       ^
+       |
+       v
+      3
+Starting from node 0, we can perform a breadth-first search to find all nodes and their layers. We will use a dictionary to store the layer for each node. Initially, only node 0 is in layer 0.
+
+css
+Copy code
+layers = {0: 0}
+Next, we will find the neighbors of node 0, which are nodes 1 and 10, and assign them to layer 1.
+
+css
+Copy code
+layers.update({1: 1, 10: 1})
+The nodes in layer 1 are:
+
+makefile
+Copy code
+0: 0
+1: 1
+10: 1
+Next, we will find the neighbors of nodes 1 and 10 that do not already belong to a layer, and assign them to layer 2. The neighbors of node 1 are nodes 2, 5, 7, and 8. The neighbors of node 10 are node 9.
+
+yaml
+Copy code
+layers.update({2: 2, 5: 2, 7: 2, 8: 2, 9: 2})
+The nodes in layer 2 are:
+
+makefile
+Copy code
+0: 0
+1: 1
+10: 1
+2: 2
+5: 2
+7: 2
+8: 2
+9: 2
+Next, we will find the neighbors of nodes 2, 5, 7, 8, and 9 that do not already belong to a layer, and assign them to layer 3. The neighbors of node 2 are node 4 and 9. The neighbors of node 5 are node 4. The neighbors of node 7 are node 8. The neighbors of node 8 are node 1. The neighbors of node 9 do not have any new nodes that are not already in a layer.
+
+css
+Copy code
+layers.update({4: 3, 1: 3})
+The nodes in layer 3 are:
+
+makefile
+Copy code
+0: 0
+1: 1
+10: 1
+2: 2
+5: 2
+7: 2
+8: 2
+9: 2
+4: 3
+3: 4
+Next, we will find the neighbors of nodes 4, 1, and 3 that do not already belong to a layer, and assign them to layer 4. The neighbors of node 4 do not have any new nodes that are not already in a layer. The neighbors of node 1 are nodes 2, 5, 7, and 8. The neighbors of node 3 are node 4 and 1.
+
+yaml
+Copy code
+layers.update({2: 4, 5: 4, 7: 4, 8: 4})
+The nodes in layer 4 are:
+
+makefile
+Copy code
+0: 0
+1: 1
+10: 1
+2: 2
+5: 2
+7: 2
+8: 2
+9: 2
+4: 3
+3: 4
+2: 4
+5: 4
+7: 4
+8: 4
+Next, we will find the neighbors of nodes 2, 5, 7,
