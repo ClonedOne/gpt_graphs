@@ -1,0 +1,27 @@
+For each edge, we can look at the layers of the source and target nodes based on the provided layer mapping:
+
+(0, 5): layer 0 to layer 1
+(5, 1): layer 1 to layer 5
+(6, 1): layer 2 to layer 5
+(2, 6): layer 2 to layer 3
+(7, 1): layer 4 to layer 5
+(4, 8): layer 1 to layer 5
+(4, 10): layer 1 to layer 3
+(4, 3): layer 1 to layer 3
+
+To calculate the length of each edge, we take the absolute difference between the layers of the source and target nodes. We can use the layer mapping to determine the layer number of each node:
+
+Length of (0, 5): |1-0| = 1
+Length of (5, 1): |5-1| = 4
+Length of (6, 1): |5-2| = 3
+Length of (2, 6): |3-2| = 1
+Length of (7, 1): |5-4| = 1
+Length of (4, 8): |5-1| = 4
+Length of (4, 10): |3-1| = 2
+Length of (4, 3): |3-1| = 2
+
+To get the total edge length, we sum up the lengths of all edges:
+
+1 + 4 + 3 + 1 + 1 + 4 + 2 + 2 = 18
+
+Therefore, the total sum of the lengths is 18.

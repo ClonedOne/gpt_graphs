@@ -1,0 +1,1 @@
+The total sum of the lengths of the given layered graph is 24.

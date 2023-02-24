@@ -1,0 +1,23 @@
+Layer of source and target nodes for each edge:
+(0, 6): source in layer 0, target in layer 2
+(6, 1): source in layer 2, target in layer 5
+(7, 1): source in layer 1, target in layer 5
+(7, 2): source in layer 1, target in layer 2
+(7, 4): source in layer 1, target in layer 2
+(9, 3): source in layer 3, target in layer 5
+(4, 9): source in layer 2, target in layer 3
+(5, 10): source in layer 3, target in layer 5
+
+Edge lengths:
+(0, 6): abs(2 - 0) = 2
+(6, 1): abs(5 - 2) = 3
+(7, 1): abs(5 - 1) = 4
+(7, 2): abs(2 - 1) = 1
+(7, 4): abs(2 - 1) = 1
+(9, 3): abs(5 - 3) = 2
+(4, 9): abs(3 - 2) = 1
+(5, 10): abs(5 - 3) = 2
+
+Total edge length: 16
+
+The final sum is 16.

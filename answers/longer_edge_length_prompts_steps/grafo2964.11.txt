@@ -1,0 +1,25 @@
+Based on the provided description, we can visualize the layered graph as follows:
+
+rust
+Copy code
+Layer 0: 0
+Layer 1: 10
+Layer 2: 4
+Layer 3: 2  9
+Layer 4: 1  6  7
+Layer 5: 3  5  8
+
+Edges:
+0 -> 9 (length 3-0 = 3)
+0 -> 4 (length 2-0 = 2)
+4 -> 1 (length 4-2 = 2)
+6 -> 3 (length 5-3 = 2)
+1 -> 5 (length 5-4 = 1)
+2 -> 5 (length 5-3 = 2)
+1 -> 8 (length 5-4 = 1)
+10 -> 2 (length 3-1 = 2)
+4 -> 2 (length 3-2 = 1)
+9 -> 3 (length 5-3 = 2)
+
+Total edge length: 18
+Therefore, the total edge length is 18.

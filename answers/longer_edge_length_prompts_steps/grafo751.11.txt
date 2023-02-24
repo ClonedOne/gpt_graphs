@@ -1,0 +1,27 @@
+Layer of the source and target nodes for each edge:
+
+(0, 5): source in Layer 0, target in Layer 2
+(5, 1): source in Layer 2, target in Layer 4
+(1, 6): source in Layer 4, target in Layer 5
+(2, 6): source in Layer 2, target in Layer 5
+(2, 8): source in Layer 2, target in Layer 3
+(0, 8): source in Layer 0, target in Layer 3
+(7, 1): source in Layer 1, target in Layer 4
+(3, 9): source in Layer 1, target in Layer 4
+(2, 9): source in Layer 2, target in Layer 4
+(3, 10): source in Layer 1, target in Layer 3
+Edge lengths for each edge:
+
+(0, 5): absolute value of 2 - 0 = 2
+(5, 1): absolute value of 4 - 2 = 2
+(1, 6): absolute value of 5 - 4 = 1
+(2, 6): absolute value of 5 - 2 = 3
+(2, 8): absolute value of 3 - 2 = 1
+(0, 8): absolute value of 3 - 0 = 3
+(7, 1): absolute value of 4 - 1 = 3
+(3, 9): absolute value of 4 - 1 = 3
+(2, 9): absolute value of 4 - 2 = 2
+(3, 10): absolute value of 3 - 1 = 2
+Total sum of edge lengths: 2 + 2 + 1 + 3 + 1 + 3 + 3 + 3 + 2 + 2 = 20
+
+Final sum: 20

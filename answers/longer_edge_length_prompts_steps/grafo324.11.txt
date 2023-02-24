@@ -1,0 +1,31 @@
+For each edge, the layer of the source node and the layer of the target node are as follows:
+
+(0, 5) -> Layer 0, Layer 3
+(5, 1) -> Layer 3, Layer 4
+(2, 6) -> Layer 1, Layer 5
+(2, 8) -> Layer 1, Layer 4
+(3, 8) -> Layer 3, Layer 4
+(7, 8) -> Layer 2, Layer 4
+(9, 5) -> Layer 2, Layer 3
+(2, 10) -> Layer 1, Layer 3
+(9, 10) -> Layer 2, Layer 3
+(10, 1) -> Layer 3, Layer 4
+
+For each edge, its associated length is as follows:
+
+(0, 5) -> 3 - 0 = 3
+(5, 1) -> 4 - 3 = 1
+(2, 6) -> 5 - 1 = 4
+(2, 8) -> 4 - 1 = 3
+(3, 8) -> 4 - 3 = 1
+(7, 8) -> 4 - 2 = 2
+(9, 5) -> 3 - 2 = 1
+(2, 10) -> 3 - 1 = 2
+(9, 10) -> 3 - 2 = 1
+(10, 1) -> 4 - 3 = 1
+
+The total sum of the lengths is:
+
+3 + 1 + 4 + 3 + 1 + 2 + 1 + 2 + 1 + 1 = 19
+
+So the final answer is 19.
