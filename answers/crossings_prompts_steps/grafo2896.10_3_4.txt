@@ -1,0 +1,32 @@
+Based on the given arrays and edges, here are the steps to count the number of edge crossings in a bipartite graph:
+
+Step 1: Examine the given arrays A and B to see if either of them has a length of 1 or if there is only a single edge. If either of these conditions is met, the answer is 0, so we stop writing. In this case, array B has a length of 1 and there is a single edge, so we can immediately conclude that the answer is 0.
+
+Answer: 0
+
+If neither of the conditions is met, we proceed to the next step.
+
+Step 2: Consider all the combinations of edge pairs, excluding pairs that have the same first element or the same second element. The only pair of edges given in this case does not violate either of these conditions, so we don't need to exclude any pairs.
+
+Step 3: For every pair of edges left, consider the first one and the second one separately. Say that s1 is the index of its first element in A, and t1 is the index of its second element in B. Say that s2 is the index of the first element of the second edge in A, and t2 is the index of its second element in B. Write down s1, t1, s2, and t2 for every pair.
+
+In this case, there is only one pair of edges, so we calculate s1, t1, s2, and t2 for that pair:
+(4, 9) => s1 = 1, t1 = -1, s2 = 0, t2 = 0
+
+(Note that t1 is -1 because the second element of the first edge is not in array B.)
+
+Step 4: Exclude all the pairs for which s1 > s2 and t1 < t2.
+
+In this case, we have only one pair and it does not violate this condition, so we don't need to exclude any pairs.
+
+Step 5: Exclude all the pairs for which s1 < s2 and t1 > t2.
+
+In this case, we have only one pair and it does not violate this condition, so we don't need to exclude any pairs.
+
+Step 6: Write the number of edges left as a number.
+
+In this case, there is only one edge left after all the exclusions, so the answer is 1.
+
+Answer: 1
+
+Therefore, the number of edge crossings in the bipartite graph defined by the arrays A and B and the given edge is 1.

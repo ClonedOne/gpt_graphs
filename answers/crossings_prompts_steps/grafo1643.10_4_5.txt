@@ -1,0 +1,1 @@
+Based on the provided information, the graph has one edge connecting vertex 7 in array A to vertex 8 in array B. Since there is only one edge, the answer is 0, and we can stop writing.

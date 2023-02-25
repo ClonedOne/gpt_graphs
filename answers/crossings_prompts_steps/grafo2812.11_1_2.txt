@@ -1,0 +1,1 @@
+Based on the provided arrays and list of edges, there is only one edge (6, 1). Therefore, the answer is 0, according to the very important conditions given in the prompt.

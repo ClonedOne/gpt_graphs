@@ -1,0 +1,1 @@
+Based on the given arrays A and B and the list of edges, there is only a single edge between vertex 1 in A and vertex 6 in B. Therefore, the answer is 0 as per the very important conditions provided in the question.

@@ -1,0 +1,45 @@
+First, let's list the neighbors of nodes in layer 0 and their indices in the next layer:
+
+Layer 0: [0]
+Neighbors of 0: [5]
+Index of 5: 0
+
+Now, let's list the nodes in every layer and their associated medians:
+
+Layer 0:
+0 -> 0
+
+Layer 1:
+5 -> 0
+
+Layer 2:
+1 -> 0
+9 -> 0
+
+Layer 3:
+10 -> 0
+
+Layer 4:
+2 -> 1.5
+
+Layer 5:
+6 -> 0
+8 -> 1
+
+Layer 6:
+3 -> 0
+7 -> 1
+
+Layer 7:
+4 -> 0
+
+Next, let's write the layers and the nodes in them, sorted according to their associated median values:
+
+Layer 0: [0]
+Layer 1: [5]
+Layer 2: [1, 9]
+Layer 3: [10]
+Layer 4: [2]
+Layer 5: [6, 8]
+Layer 6: [3, 7]
+Layer 7: [4]

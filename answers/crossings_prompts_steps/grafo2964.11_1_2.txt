@@ -1,0 +1,69 @@
+First, let's visualize the bipartite graph using the arrays and edges provided:
+
+css
+Copy code
+  A   B
+ / \ /|\
+9   3 1 2
+ \ / \|/
+  4
+Since there is only one edge, the answer is 0.
+
+If either array A or B has length 1, the answer is also 0.
+
+Assuming that neither array A nor B has length 1, we proceed to count the number of edge crossings as follows:
+
+First, we exclude all pairs of edges that have the same first element or the same second element. After doing this, the remaining pairs of edges are:
+css
+Copy code
+[(9, 3), (4, 1)]
+[(9, 3), (4, 2)]
+[(4, 1), (9, 3)]
+[(4, 2), (9, 3)]
+[(4, 1), (4, 2)]
+[(4, 2), (4, 1)]
+For each pair of edges left, we consider the indices of their elements in arrays A and B, as follows:
+markdown
+Copy code
+(9, 3) and (4, 1):
+  - s1 = 0 (index of 9 in A)
+  - t1 = 0 (index of 3 in B)
+  - s2 = 1 (index of 4 in A)
+  - t2 = 1 (index of 1 in B)
+
+(9, 3) and (4, 2):
+  - s1 = 0
+  - t1 = 0
+  - s2 = 1
+  - t2 = 2 (index of 2 in B)
+
+(4, 1) and (9, 3):
+  - s1 = 1
+  - t1 = 1
+  - s2 = 0
+  - t2 = 0
+
+(4, 2) and (9, 3):
+  - s1 = 1
+  - t1 = 2
+  - s2 = 0
+  - t2 = 0
+
+(4, 1) and (4, 2):
+  - s1 = 1
+  - t1 = 1
+  - s2 = 1
+  - t2 = 2
+
+(4, 2) and (4, 1):
+  - s1 = 1
+  - t1 = 2
+  - s2 = 1
+  - t2 = 1
+Finally, we exclude all pairs of edges for which s1 > s2 and t1 < t2, or s1 < s2 and t1 > t2. After doing this, we are left with the following pairs of edges:
+css
+Copy code
+[(9, 3), (4, 1)]
+[(4, 1), (4, 2)]
+[(4, 2), (9, 3)]
+Therefore, the number of edge crossings in the bipartite graph is 3.

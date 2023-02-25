@@ -1,0 +1,31 @@
+Here are the requested outputs:
+
+List of Neighbors for each node in Layer 0 and their Indices:
+Layer 0: [0]
+Neighbors of 0: [1, 5, 3, 7]
+Index of 1: 0
+Index of 5: 1
+Index of 3: 2
+Index of 7: 3
+Median of Indices: 1.5
+
+List of Nodes and their Associated Medians:
+Layer 0:
+0 -> 1.5
+Layer 1:
+1 -> 0.0
+5 -> 1.0
+3 -> 2.0
+7 -> 3.0
+Layer 2:
+2 -> 3.5
+8 -> 3.5
+10 -> 3.5
+4 -> 4.0
+6 -> 4.0
+9 -> 4.0
+
+Sorted Nodes in Each Layer by Associated Median:
+Layer 0: [0]
+Layer 1: [1, 5, 3, 7]
+Layer 2: [2, 8, 10, 4, 6, 9]

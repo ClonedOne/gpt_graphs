@@ -1,0 +1,1 @@
+Since there is only one edge in the given list, the answer is 0, as per the instructions provided.

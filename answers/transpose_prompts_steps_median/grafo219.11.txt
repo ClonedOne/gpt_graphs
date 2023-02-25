@@ -1,0 +1,71 @@
+Here are the requested outputs:
+
+First output:
+
+Layer 0: [0]
+Neighbors of 0: []
+
+Layer 1: [1]
+Neighbors of 1: [6, 8, 2, 9]
+
+Layer 2: [6, 8, 2, 9]
+Neighbors of 6: [3]
+Neighbors of 8: []
+Neighbors of 2: [5, 4, 7]
+Neighbors of 9: [5]
+
+Layer 3: [3, 5, 4, 7]
+Neighbors of 3: []
+Neighbors of 5: [10]
+Neighbors of 4: []
+Neighbors of 7: [10]
+
+Layer 4: [10]
+Neighbors of 10: []
+
+Indices:
+
+Index of 6: 0
+Index of 8: 1
+Index of 2: 2
+Index of 9: 3
+Median of indices: 1.5
+
+Index of 3: 0
+Index of 5: 1
+Index of 4: 2
+Index of 7: 3
+Median of indices: 1.5
+
+Second output:
+
+Layer 0:
+0 -> 0
+
+Layer 1:
+1 -> 1.5
+
+Layer 2:
+6 -> 0
+8 -> 0
+2 -> 2
+9 -> 3
+Median of layer: 1.5
+
+Layer 3:
+3 -> 0
+5 -> 1
+4 -> 2
+7 -> 3
+Median of layer: 1.5
+
+Layer 4:
+10 -> 0
+
+Third output:
+
+Layer 0: [0]
+Layer 1: [1]
+Layer 2: [8, 6, 2, 9]
+Layer 3: [5, 3, 4, 7]
+Layer 4: [10]

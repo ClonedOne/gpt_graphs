@@ -1,0 +1,65 @@
+First, let's check the conditions for early stopping:
+
+Since there is more than one edge, we can continue with the algorithm. However, since array A has length 2 and array B has length 4, we don't need to consider the case where one of the arrays has length 1.
+
+Now we will proceed with the algorithm step by step:
+
+Excluding pairs with the same first element:
+
+Only one edge has a first element of 10, so we can exclude all the other edges with different first elements:
+
+New list of edges: [(10, 7), (10, 4), (10, 2), (10, 3)]
+
+Excluding pairs with the same second element:
+
+There are no pairs with the same second element.
+
+New list of edges: [(10, 7), (10, 4), (10, 2), (10, 3)]
+
+Writing down s1, t1, s2, and t2 for each pair:
+
+(10, 7), (10, 4)
+s1 = 1, t1 = 0, s2 = 1, t2 = 1
+
+(10, 7), (10, 2)
+s1 = 1, t1 = 0, s2 = 1, t2 = 2
+
+(10, 7), (10, 3)
+s1 = 1, t1 = 0, s2 = 1, t2 = 3
+
+(10, 4), (10, 2)
+s1 = 1, t1 = 1, s2 = 1, t2 = 2
+
+(10, 4), (10, 3)
+s1 = 1, t1 = 1, s2 = 1, t2 = 3
+
+(10, 2), (10, 3)
+s1 = 1, t1 = 2, s2 = 1, t2 = 3
+
+Excluding pairs with s1 > s2 and t1 < t2:
+
+(10, 7), (10, 4)
+s1 = 1, t1 = 0, s2 = 1, t2 = 1
+
+(10, 7), (10, 2)
+s1 = 1, t1 = 0, s2 = 1, t2 = 2
+
+(10, 7), (10, 3)
+s1 = 1, t1 = 0, s2 = 1, t2 = 3
+
+(10, 4), (10, 3)
+s1 = 1, t1 = 1, s2 = 1, t2 = 3
+
+(10, 2), (10, 3)
+s1 = 1, t1 = 2, s2 = 1, t2 = 3
+
+Excluding pairs with s1 < s2 and t1 > t2:
+
+(10, 7), (10, 4)
+s1 = 1, t1 = 0, s2 = 1, t2 = 1
+
+(10, 7), (10, 2)
+s1 = 1, t1 = 0, s2 = 1, t2 = 2
+
+(10, 7), (10, 3)
+s1 = 1, t1

@@ -1,0 +1,37 @@
+First, we create a bipartite graph with the given arrays and edges.
+
+yaml
+Copy code
+   A: [3, 1]
+   B: [6, 4, 7]
+
+    3  -->(6)
+   / \
+  |   \
+  |   (4)
+  |   
+  1  -->(7)
+Since there are multiple edges, we continue with the counting process.
+
+Exclude all pairs that have the same first element:
+
+(3, 6), (1, 7)
+Exclude all pairs that have the same second element:
+
+(3, 6), (3, 4)
+(1, 7), (3, 6)
+(1, 7), (3, 4)
+Consider the first edge in each remaining pair and note their indices:
+
+(3, 6), (1, 7) => s1=0, t1=0, s2=1, t2=2
+(3, 6), (3, 4) => s1=0, t1=0, s2=0, t2=1
+(1, 7), (3, 6) => s1=1, t1=2, s2=0, t2=0
+(1, 7), (3, 4) => s1=1, t1=2, s2=0, t2=1
+Exclude pairs where s1 > s2 and t1 < t2:
+
+(3, 6), (3, 4) => s1=0, t1=0, s2=0, t2=1
+(1, 7), (3, 4) => s1=1, t1=2, s2=0, t2=1
+Exclude pairs where s1 < s2 and t1 > t2:
+
+(3, 6), (3, 4) => s1=0, t1=0, s2=0, t2=1
+Only one edge pair remains, which is (1, 7), (3, 6). Therefore, the final answer is 1.

@@ -1,0 +1,63 @@
+Listing the nodes and neighbors:
+Layer 0: [0]
+Neighbors of 0: [1, 6, 5, 3, 7, 8]
+Index of 1: 0
+Index of 6: 1
+Index of 5: 2
+Index of 3: 3
+Index of 7: 4
+Index of 8: 5
+Median indices: 2.5
+
+Layer 1: [1, 6, 5, 3, 7, 8]
+Neighbors of 1: [9]
+Index of 9: 0
+Median indices: 0.0
+Neighbors of 6: [10]
+Index of 10: 0
+Median indices: 0.0
+Neighbors of 5: [10, 4]
+Index of 10: 0
+Index of 4: 1
+Median indices: 0.5
+Neighbors of 3: [4, 2]
+Index of 4: 0
+Index of 2: 1
+Median indices: 0.5
+Neighbors of 7: []
+Median indices: 0
+Neighbors of 8: []
+Median indices: 0
+
+Layer 2: [9, 10, 4, 2]
+Neighbors of 9: []
+Median indices: 0
+Neighbors of 10: []
+Median indices: 0
+Neighbors of 4: []
+Median indices: 0
+Neighbors of 2: []
+Median indices: 0
+
+Listing the nodes and their associated medians:
+Layer 0:
+0 -> 2.5
+
+Layer 1:
+1 -> 0.0
+6 -> 0.0
+5 -> 0.5
+3 -> 0.5
+7 -> 0.0
+8 -> 0.0
+
+Layer 2:
+9 -> 0
+10 -> 0
+4 -> 0
+2 -> 0
+
+Sorting the nodes in each layer based on their associated medians:
+Layer 0: [0]
+Layer 1: [5, 3, 1, 6, 7, 8]
+Layer 2: [9, 10, 4, 2]

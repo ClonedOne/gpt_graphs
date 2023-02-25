@@ -1,0 +1,36 @@
+First part:
+Layer 0: [0]
+Neighbors of 0: [6]
+Index of 6: 0
+Median of indices: 0
+
+Second part:
+Layer 0:
+0 -> 0
+
+Layer 1:
+6 -> 0
+
+Layer 2:
+1 -> 0
+10 -> 0
+
+Layer 3:
+7 -> 0
+4 -> 1
+2 -> 2
+3 -> 3
+
+Layer 4:
+9 -> 1
+8 -> 2
+5 -> 2
+
+Third part:
+Layer 0: [0]
+Layer 1: [6]
+Layer 2: [1, 10]
+Layer 3: [7, 2, 5, 4, 3]
+Layer 4: [9, 8]
+
+Note: In Layer 3, the order of nodes with equal median values can be arbitrary.

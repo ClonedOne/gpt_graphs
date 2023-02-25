@@ -1,0 +1,3 @@
+Based on the given arrays and edges, we have a bipartite graph with one node in set A and one node in set B, connected by a single edge. Since there is only one edge, the answer is 0.
+
+Note: As per the instructions, if there is a single edge or if either of the arrays has length 1, the answer is 0 and no further calculations need to be performed.

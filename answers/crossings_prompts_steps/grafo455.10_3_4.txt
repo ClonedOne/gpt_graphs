@@ -1,0 +1,32 @@
+First, we can create the bipartite graph with vertices from arrays A and B, and edges from the list of tuples. The graph would look like this:
+
+markdown
+Copy code
+ 1 - - - - - - - 7
+ |               |
+ 8               3
+ |               |
+ 9 - - - - - - -  |
+                 |
+ 
+Next, we can proceed with the edge crossing counting algorithm:
+
+Since there are only two edges, we can directly apply the formula for counting edge crossings:
+
+Number of edge crossings = (number of pairs of edges with different first elements) x (number of pairs of edges with different second elements) - (number of pairs of edges that cross)
+
+We can start by counting the number of pairs of edges with different first elements, excluding pairs with the same first element. In this case, we have only one such pair:
+
+(1, 7) and (9, 3)
+
+Next, we count the number of pairs of edges with different second elements, excluding pairs with the same second element. Again, we have only one such pair:
+
+(1, 7) and (9, 3)
+
+Now, we need to count the number of pairs of edges that cross. We can do this by considering every pair of edges and checking if they cross. However, we can simplify the process by observing that if (s1, t1) is to the left of (s2, t2) and t1 > t2, or if (s1, t1) is to the right of (s2, t2) and t1 < t2, then the edges cross. Otherwise, they do not cross.
+
+So, we can list all the pairs of edges and check each one:
+
+(1, 7) and (9, 3): s1 = 0, t1 = 1, s2 = 2, t2 = 0, does not cross
+
+There is only one pair of edges that cross, so the number of edge crossings is 1.

@@ -1,0 +1,29 @@
+Given the arrays A = [1] and B = [7, 8], and the list of edges tuples = [(1, 7), (1, 8)], we can follow the steps to count the number of edge crossings in the bipartite graph:
+
+Step 1: As there is a single edge, we write 0 and stop writing.
+
+The answer is 0.
+
+Note: If array A had length 1, or array B had length 1, we would have written 0 and stopped writing as well.
+
+If there were more edges, we would proceed with the following steps:
+
+Step 2: Exclude all pairs with the same first element. We are left with:
+
+[(1, 7), (1, 8)]
+
+Step 3: Exclude all pairs with the same second element. We are left with:
+
+[(1, 7), (1, 8)]
+
+Step 4: For each remaining pair of edges, write down s1, t1, s2, and t2. We have only one pair of edges, so we write:
+
+(1, 7), (1, 8) => s1 = 1, t1 = 1, s2 = 1, t2 = 2
+
+Step 5: Exclude all pairs for which s1 > s2 and t1 < t2. We have only one pair of edges, so this step does not apply.
+
+Step 6: Exclude all pairs for which s1 < s2 and t1 > t2. We have only one pair of edges, so this step does not apply.
+
+Step 7: Write the number of edges left as a number. We have only one pair of edges left, so the answer is 1.
+
+Therefore, the number of edge crossings in the bipartite graph for the given data is 0.

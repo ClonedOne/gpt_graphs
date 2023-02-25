@@ -1,0 +1,45 @@
+First, we need to create the bipartite graph based on the given arrays and edges. The graph will have two sets of nodes, one set for array A and one set for array B. The edges will connect nodes from set A to nodes from set B.
+
+makefile
+Copy code
+A: [0]
+B: [7, 6, 10]
+
+Edges:
+(0, 7)
+(0, 6)
+(0, 10)
+The bipartite graph will look like this:
+
+css
+Copy code
+  A | B
+  -----
+  0 | 7
+  0 | 6
+  0 | 10
+We can see that there is only one edge, so the answer is 0.
+
+If there were more edges, we would proceed with the following steps:
+
+Exclude all pairs that have the same first element:
+scss
+Copy code
+(0, 7), (0, 6), (0, 10)
+Exclude all pairs that have the same second element:
+scss
+Copy code
+(0, 7), (0, 6), (0, 10)
+Consider every pair of edges left and write down s1, t1, s2, and t2 for every pair:
+javascript
+Copy code
+(0, 7), (0, 6) => s1 = 0, t1 = 1, s2 = 0, t2 = 2
+(0, 7), (0, 10) => s1 = 0, t1 = 1, s2 = 0, t2 = 3
+(0, 6), (0, 10) => s1 = 0, t1 = 2, s2 = 0, t2 = 3
+Exclude all pairs for which s1 > s2 and t1 < t2:
+We can see that all pairs satisfy this condition, so we don't need to exclude any pairs.
+
+Exclude all pairs for which s1 < s2 and t1 > t2:
+We can see that all pairs satisfy this condition, so we don't need to exclude any pairs.
+
+Finally, we are left with three pairs of edges. Therefore, the number of edges left is 3.

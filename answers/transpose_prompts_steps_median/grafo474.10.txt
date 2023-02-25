@@ -1,0 +1,35 @@
+First, listing neighbors of nodes in layer 0:
+Layer 0: [0]
+Neighbors of 0: [6, 8, 7]
+Index of 6: 0
+Index of 8: 1
+Index of 7: 2
+Median of neighbors of 0: 1
+
+Next, listing nodes and their associated medians:
+Layer 0:
+0 -> 1
+
+Layer 1:
+6 -> 0
+8 -> 1
+7 -> 2
+
+Layer 2:
+1 -> NaN
+2 -> NaN
+5 -> NaN
+3 -> NaN
+
+Layer 3:
+9 -> NaN
+
+Layer 4:
+4 -> NaN
+
+Next, sorting nodes in each layer based on their associated median value:
+Layer 0: [0]
+Layer 1: [6, 8, 7]
+Layer 2: [1, 2, 5, 3]
+Layer 3: [9]
+Layer 4: [4]

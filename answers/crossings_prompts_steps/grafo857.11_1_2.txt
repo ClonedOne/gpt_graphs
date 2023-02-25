@@ -1,0 +1,1 @@
+Based on the given arrays and list of edges, there is only one edge in the graph, so the answer is 0.

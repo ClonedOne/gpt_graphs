@@ -1,0 +1,5 @@
+The given bipartite graph has two sets of vertices: A and B. Set A has one vertex, which is labeled 6, and set B has two vertices labeled 1 and 10.
+
+There are two edges in the graph: (6, 1) and (6, 10), connecting vertex 6 with vertices 1 and 10 in set B.
+
+Since there are only two edges, we can stop here and write 0, as per the instructions given in the question.

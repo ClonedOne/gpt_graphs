@@ -1,0 +1,27 @@
+Based on the given arrays and edges, we can construct the bipartite graph as follows:
+
+A: [1, 2]
+B: [7, 6]
+
+Edges:
+
+2 (from A) -> 7 (from B)
+2 (from A) -> 6 (from B)
+To count the number of edge crossings in this bipartite graph, we need to consider all pairs of edges and count the number of pairs that cross. However, we can apply the given exclusion rules to reduce the number of pairs we need to consider.
+
+First, we exclude pairs of edges that have the same first element or the same second element, which leaves us with the following pair of edges:
+
+(2, 7) and (2, 6)
+Now, we consider all possible pairs of these remaining edges:
+
+(2, 7) and (2, 6)
+For each pair of edges, we compute the indices of their elements in the arrays A and B as follows:
+
+(2, 7) and (2, 6) => s1=1, t1=0, s2=1, t2=1
+Applying the next exclusion rule, we exclude the pair of edges where s1 > s2 and t1 < t2:
+
+(2, 7) and (2, 6) => s1=1, t1=0, s2=1, t2=1 (exclude)
+Finally, we exclude the pair of edges where s1 < s2 and t1 > t2:
+
+(2, 7) and (2, 6) => s1=1, t1=0, s2=1, t2=1 (exclude)
+As a result, there are no pairs of edges left, which means that there are no edge crossings in the bipartite graph. Therefore, the number of edge crossings is 0.

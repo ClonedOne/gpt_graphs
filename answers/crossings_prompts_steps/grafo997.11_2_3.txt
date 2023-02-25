@@ -1,0 +1,34 @@
+First, we can observe that there is a single edge, so the answer is 0.
+
+If there were multiple edges, we would follow the remaining steps as described.
+
+If we had a case where array A or B had a length of 1, we would also stop at that point and return 0.
+
+Assuming we have more than one edge and both A and B have a length greater than 1, we can continue with the remaining steps.
+
+We start by excluding pairs that have the same first element:
+
+css
+Copy code
+[(2, 6), (1, 6), (3, 9), (1, 9), (3, 10)]
+After excluding pairs that have the same first element, we get:
+
+css
+Copy code
+[(2, 6), (1, 9), (3, 10)]
+Next, we exclude pairs that have the same second element:
+
+css
+Copy code
+[(2, 6), (1, 9), (3, 10)]
+Since we only have three edges left, we don't need to consider all the pairs of edges.
+
+The only pair we need to check is (2, 6) and (1, 9):
+
+scss
+Copy code
+(2, 6) => s1 = 1, t1 = 0, s2 = 0, t2 = 1
+(1, 9) => s1 = 0, t1 = 1, s2 = 2, t2 = 2
+We can see that the condition s1 > s2 and t1 < t2 is not met for this pair, so we keep it.
+
+Therefore, the number of edges left after all the exclusions is 2.

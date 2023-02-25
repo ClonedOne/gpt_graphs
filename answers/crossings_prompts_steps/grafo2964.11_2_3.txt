@@ -1,0 +1,38 @@
+First, we can count the number of edges given:
+
+Number of edges = 7
+
+Next, we need to exclude the cases where there is only one edge or either array A or array B has length 1:
+
+Number of edges = 7 (after checking conditions)
+
+Since both arrays A and B have more than one element, we can proceed with the next steps.
+
+Excluding pairs with the same first element:
+
+Pairs after excluding edges with the same first element:
+[(1, 6), (3, 6), (1, 5), (2, 5), (1, 7), (1, 8), (2, 10)]
+
+Excluding pairs with the same second element:
+
+Pairs after excluding edges with the same second element:
+[(1, 6), (3, 6), (1, 5), (2, 5), (1, 7), (1, 8), (2, 10)]
+
+Now, we need to consider every pair of edges left and write down s1, t1, s2 and t2 for every pair:
+
+(1, 6), (3, 6): s1 = 1, t1 = 1, s2 = 3, t2 = 1
+(1, 6), (1, 5): s1 = 1, t1 = 1, s2 = 1, t2 = 2
+(1, 6), (2, 5): s1 = 1, t1 = 1, s2 = 2, t2 = 2
+(1, 6), (1, 7): s1 = 1, t1 = 1, s2 = 1, t2 = 3
+(1, 6), (1, 8): s1 = 1, t1 = 1, s2 = 1, t2 = 4
+(1, 6), (2, 10): s1 = 1, t1 = 1, s2 = 2, t2 = 5
+(3, 6), (1, 5): s1 = 3, t1 = 1, s2 = 1, t2 = 2
+(3, 6), (2, 5): s1 = 3, t1 = 1, s2 = 2, t2 = 2
+(3, 6), (1, 7): s1 = 3, t1 = 1, s2 = 1, t2 = 3
+(3, 6), (1, 8): s1 = 3, t1 = 1, s2 = 1, t2 = 4
+(3, 6), (2, 10): s1 = 3, t1 = 1, s2 = 2, t2 = 5
+(1, 5), (2, 5): s1 = 1, t1 = 2, s2 = 2, t2 = 2
+(1, 5), (1, 7): s1 = 1, t1 = 2, s2 = 1, t2 = 3
+(1, 5), (1, 8): s1 = 1, t1 = 2, s2 = 1, t2 = 4
+(1, 5), (2, 10): s1 = 1, t1 = 2, s2 = 2, t2 = 5
+(

@@ -1,0 +1,15 @@
+Given the arrays A = [0] and B = [6, 7, 8], and the list of edges Tuples = [(0, 6), (0, 7), (0, 8)], we can count the number of edge crossings in the following way:
+
+Since array A has length 1, we can immediately write 0 and stop writing.
+
+To exclude all pairs with the same first or second element, we can create two sets, one for the first elements and one for the second elements, and add each element accordingly. If the length of the set is equal to the length of the original array, it means that there are no duplicates. In this case, there are no duplicates, so we can continue.
+
+We have three edges, so we need to consider all possible pairs. The pairs are: (0,6) and (0,7), (0,6) and (0,8), and (0,7) and (0,8).
+
+For the first pair, (0,6) and (0,7), s1 = 0, t1 = 6, s2 = 0, and t2 = 7. For the second pair, (0,6) and (0,8), s1 = 0, t1 = 6, s2 = 0, and t2 = 8. For the third pair, (0,7) and (0,8), s1 = 0, t1 = 7, s2 = 0, and t2 = 8.
+
+We now exclude all pairs for which s1 > s2 and t1 < t2. The only pair that satisfies this condition is (0,6) and (0,7), so we exclude it. The remaining pairs are: (0,6) and (0,8), and (0,7) and (0,8).
+
+We now exclude all pairs for which s1 < s2 and t1 > t2. None of the remaining pairs satisfy this condition.
+
+We are left with two pairs: (0,6) and (0,8), and (0,7) and (0,8). Therefore, the number of edges left is 2.

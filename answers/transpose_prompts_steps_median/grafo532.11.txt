@@ -1,0 +1,44 @@
+Here are the answers to the given questions:
+
+List of neighbors in the next layer for each node in layer 0:
+Layer 0: [0]
+Neighbors of 0: [7, 6, 10]
+Median of indices: 1
+
+Nodes in each layer with their associated medians:
+Layer 0:
+0 -> 1.0
+
+Layer 1:
+7 -> 0.0
+6 -> 3.0
+10 -> 2.0
+
+Layer 2:
+1 -> 0.0
+2 -> 1.0
+9 -> 2.0
+4 -> 3.0
+
+Layer 3:
+5 -> 1.0
+8 -> 2.0
+
+Layer 4:
+3 -> 0.0
+
+Sorted nodes in each layer according to their associated medians:
+Layer 0:
+[0]
+
+Layer 1:
+[7, 10, 6]
+
+Layer 2:
+[1, 2, 9, 4]
+
+Layer 3:
+[5, 8]
+
+Layer 4:
+[3]

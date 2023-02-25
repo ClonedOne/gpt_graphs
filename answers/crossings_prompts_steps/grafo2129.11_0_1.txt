@@ -1,0 +1,17 @@
+Based on the given arrays and edges, there are 2 edge crossings in the bipartite graph.
+
+Explanation:
+
+First, we need to generate all the possible combinations of edge pairs. In this case, we only have one pair of edges: (0, 1) and (0, 3). So we can skip the first step.
+
+Next, we exclude pairs that have the same first element, leaving us with only one pair: (0, 1) and (0, 3).
+
+Then, we exclude pairs that have the same second element, again leaving us with only one pair: (0, 1) and (0, 3).
+
+Now we need to consider all possible pairs of edges, which in this case is just one: (0, 1) and (0, 3). We calculate s1, t1, s2, and t2 for this pair:
+
+(0, 1) => s1 = 0, t1 = 1, s2 = 0, t2 = 3
+
+Since s1 = s2, we cannot exclude this pair based on the condition s1 > s2. However, t1 < t2, so we need to exclude this pair.
+
+Therefore, there are no pairs left, and the number of edge crossings in the bipartite graph is 0.

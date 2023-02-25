@@ -1,0 +1,7 @@
+Based on the given arrays and edges, we have a bipartite graph with two sets of nodes, A and B, where A = {2, 4} and B = {6}. There is a single edge (2, 6) that connects node 2 in set A to node 6 in set B.
+
+As there is only one edge, we can write the answer directly, which is 0.
+
+Note that if array A had length 1 or if array B had length 1, the answer would also be 0. This is because in a bipartite graph with only one node in one of the sets, there are no edges to cross.
+
+Therefore, the answer to the given question is 0.

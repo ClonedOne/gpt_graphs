@@ -1,0 +1,51 @@
+Starting from layer 0:
+Layer 0: [0]
+Neighbors of 0: [5]
+Index of 5: 0
+Median index: 0
+
+Layer 1:
+5 -> 0
+
+Layer 2:
+1 -> 0
+
+Layer 3:
+6 -> 0
+7 -> 0
+
+Index of 1: 0
+Median index: 0
+
+Layer 4:
+2 -> 0
+3 -> 1
+
+Index of 6: 0
+Index of 7: 1
+Median index: 0.5
+
+Layer 5:
+10 -> 0
+4 -> 1
+
+Index of 2: 0
+Index of 3: 1
+Median index: 0.5
+
+Layer 6:
+8 -> 0
+9 -> 1
+
+Index of 10: 0
+Index of 4: 1
+Median index: 0.5
+
+Nodes sorted by median:
+Layer 0: [0]
+Layer 1: [5]
+Layer 2: [1]
+Layer 3: [6, 7]
+Layer 4: [2, 3]
+Layer 5: [10, 4]
+Layer 6: [8, 9]

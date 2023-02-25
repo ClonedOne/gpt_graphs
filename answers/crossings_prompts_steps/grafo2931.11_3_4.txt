@@ -1,0 +1,34 @@
+To start, we need to find all the combinations of edge pairs. There are 5 edges, so there are 10 pairs in total. We can use Python's itertools library to generate all the pairs:
+
+python
+Copy code
+import itertools
+
+A = [7, 4, 2, 3]
+B = [9, 8, 5]
+edges = [(3, 8), (3, 9), (4, 9), (2, 8), (2, 5)]
+
+edge_pairs = list(itertools.combinations(edges, 2))
+Now we can exclude all the pairs that have the same first element or the same second element. We can use a list comprehension for this:
+
+python
+Copy code
+edge_pairs = [pair for pair in edge_pairs if pair[0][0] != pair[1][0] and pair[0][1] != pair[1][1]]
+Next, we need to find the indices of the elements in A and B for each edge in each pair. We can use the index() method for this:
+
+python
+Copy code
+edge_indices = [(A.index(edge[0]), B.index(edge[1])) for edge in itertools.chain(*edge_pairs)]
+Note that we are using chain() to flatten the list of pairs into a single list of edges.
+
+Now we can exclude the pairs that violate the condition s1 > s2 and t1 < t2, and the pairs that violate the condition s1 < s2 and t1 > t2:
+
+python
+Copy code
+edge_pairs = [pair for i, pair in enumerate(edge_pairs) if not (edge_indices[2*i][0] > edge_indices[2*i+1][0] and edge_indices[2*i][1] < edge_indices[2*i+1][1]) and not (edge_indices[2*i][0] < edge_indices[2*i+1][0] and edge_indices[2*i][1] > edge_indices[2*i+1][1])]
+Finally, we can count the number of edges left:
+
+python
+Copy code
+num_edges = len(edge_pairs)
+The value of num_edges is 3. Therefore, the number of edge crossings in this bipartite graph is 3.

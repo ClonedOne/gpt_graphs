@@ -1,0 +1,1 @@
+Since array B has length 1, we can immediately write the answer as 0 and stop writing.

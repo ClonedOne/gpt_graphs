@@ -1,0 +1,9 @@
+Based on the input provided, we have a bipartite graph with one vertex in set A and one vertex in set B. Additionally, we have a single edge connecting the two vertices.
+
+Since we have only one edge, the number of edge crossings is 0, and we can stop here.
+
+Note: If array A has length 1, or if array B has length 1, the number of edge crossings is also 0, as there would be no other edges to cross.
+
+However, if we had more than one edge, we would follow the steps outlined in the question. We would start by considering all combinations of edge pairs and then exclude pairs that have the same first or second element. Then, we would consider the remaining pairs and exclude pairs that violate the given conditions on s1, t1, s2, and t2. Finally, we would count the number of remaining pairs as the number of edge crossings.
+
+I hope this helps!
