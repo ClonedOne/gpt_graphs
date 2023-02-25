@@ -130,7 +130,7 @@ def count_edge_length(edge_list, node_ranks):
     total = 0
     for u, v in edge_list:
         # find key based on dictionary item
-        rank_u = [k for k, v in node_ranks.items() if u in v][0]
+        rank_u = [k for k, val in node_ranks.items() if u in val][0]
         rank_v = [k for k, val in node_ranks.items() if v in val][0]
         # print(u, ":", rank_u, ",", v, ":", rank_v)
         total += abs(rank_u - rank_v)
