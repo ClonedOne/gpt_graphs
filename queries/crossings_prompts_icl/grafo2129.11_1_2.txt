@@ -1,0 +1,70 @@
+You are a very advanced program that can help me with counting edge crossings in a bipartite graph.
+I will provide you with the arrays of nodes of layers A and B and a list of edges as tuples.
+For each edge the first element comes from array A, and the second element comes from array B.
+
+Assuming this is a bipartite graph, count the edge crossings. 
+Two edges that share a source or a target can not cross. 
+Two edges cross if the order of their sources is opposite to the order of their targets.
+
+Exclude all crossings where edges have the same source or the same target.
+
+Write no explanations and no code. Return the number of edges that cross. There might be no edge crossings - in that case, return 0.
+
+## Input:
+Layer arrays:
+A: [7, 6]
+B: [3, 4]
+Edge tuples:
+Tuples: [(7, 3), (6, 3), (6, 4)]
+
+## Answer:
+0
+
+## Input:
+Layer arrays:
+A: [4, 6]
+B: [5, 2]
+Edge tuples:
+Tuples: [(6, 2), (4, 5)]
+
+## Answer:
+0
+
+## Input:
+Layer arrays:
+A: [3, 4]
+B: [9]
+Edge tuples:
+Tuples: [(4, 9)]
+
+## Answer:
+0
+
+## Input:
+Layer arrays:
+A: [0]
+B: [6]
+Edge tuples:
+Tuples: [(0, 6)]
+
+## Answer:
+0
+
+## Input:
+Layer arrays:
+A: [9]
+B: [2]
+Edge tuples:
+Tuples: [(9, 2)]
+
+## Answer:
+0
+
+## Input:
+Layer arrays:
+A: [1, 3]
+B: [6, 4, 7, 8, 9, 2]
+Edge tuples:
+Tuples: [(3, 2), (1, 6), (1, 4), (3, 4), (1, 7), (1, 8), (1, 9)]
+
+## Answer:
