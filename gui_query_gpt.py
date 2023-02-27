@@ -103,6 +103,8 @@ def main(args: dict):
     resp_path = os.path.join(resp_dir, experiment_query_dir)
     os.makedirs(resp_path, exist_ok=True)
 
+    time.sleep(5)
+
     # Iterate through the query files in the directory.
     # Each query file is a .txt file containing only a single query.
     for query_file in tqdm.tqdm(sorted(os.listdir(query_dir))):
