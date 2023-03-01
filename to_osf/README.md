@@ -1,4 +1,4 @@
-# Graphs with LLMs?
+# Graphs with ChatGPT?
 
 **WARNING!** Executing the code on this repository can be potentially **dangerous**. It **will** attempt to evaluate arbitrary text returned from the generative model with minimal to no sanitization. Execute at your own risk.
 
