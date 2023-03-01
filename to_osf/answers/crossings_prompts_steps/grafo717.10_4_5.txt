@@ -1,0 +1,9 @@
+Based on the given arrays and edge list, we can construct the following bipartite graph:
+
+css
+Copy code
+   A = [3, 4]
+  /   \
+ v     v
+  9     B = []
+Since there is only one edge in the graph, the answer is 0, as instructed.

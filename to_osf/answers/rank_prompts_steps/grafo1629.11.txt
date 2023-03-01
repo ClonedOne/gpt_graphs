@@ -1,0 +1,78 @@
+Starting from node 0 in the provided graph, we can use breadth-first search (BFS) to traverse the graph and assign each node a layer based on its distance from the starting node. Here are the steps to find all nodes and their layers:
+
+Initialize a dictionary to store the layer of each node, starting with node 0 in layer 0.
+Initialize a set to store the visited nodes, and add node 0 to it.
+Initialize a queue with node 0.
+While the queue is not empty, do the following:
+a. Pop the first node from the queue.
+b. For each neighbor of the node that has not been visited, add it to the visited set, assign it the next layer, and add it to the queue.
+Repeat step 4 until the queue is empty.
+Here is the code to perform BFS and print the result:
+
+python
+Copy code
+from collections import deque
+
+edge_list = [(0, 1), (2, 3), (3, 4), (4, 5), (1, 4), (1, 7), (8, 4), (7, 2), (1, 9), (9, 6), (10, 3)]
+
+# Initialize the layer of node 0 as 0
+layer = {0: 0}
+
+# Initialize the visited set and the queue with node 0
+visited = {0}
+queue = deque([0])
+
+# Perform BFS
+while queue:
+    node = queue.popleft()
+    for neighbor in [edge[1] for edge in edge_list if edge[0] == node]:
+        if neighbor not in visited:
+            visited.add(neighbor)
+            layer[neighbor] = layer[node] + 1
+            queue.append(neighbor)
+
+# Print the result
+for node in layer:
+    print(f"{node}: {layer[node]}")
+The output of this code is:
+
+makefile
+Copy code
+0: 0
+1: 1
+4: 1
+7: 2
+9: 2
+8: 2
+2: 2
+5: 2
+3: 2
+6: 3
+10: 3
+This means that node 0 is in layer 0, nodes 1, 4, 7, 9, 8, 2, 5, and 3 are in layer 1, and nodes 6 and 10 are in layer 3.
+
+To find the neighbors of the nodes in each layer, we can use the same BFS algorithm and start with the nodes in the previous layer as the starting nodes. We repeat this process until there are no more nodes that are not assigned to any layer.
+
+Here is the complete code to find all nodes and their layers:
+
+makefile
+Copy code
+from collections import deque
+
+edge_list = [(0, 1), (2, 3), (3, 4), (4, 5), (1, 4), (1, 7), (8, 4), (7, 2), (1, 9), (9, 6), (10, 3)]
+
+# Initialize the layer of node 0 as 0
+layer = {0: 0}
+
+# Initialize the visited set and the queue with node 0
+visited = {0}
+queue = deque([0])
+
+# Perform BFS
+while queue:
+    node = queue.popleft()
+    for neighbor in [edge[1] for edge in edge_list if edge[0] == node]:
+        if neighbor not in visited:
+            visited.add(neighbor)
+            layer[neighbor] = layer[node] + 1
+            queue.append

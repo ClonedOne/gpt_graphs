@@ -1,0 +1,99 @@
+Starting from layer 0:
+
+Layer 0: [0]
+Neighbors of 0: [5, 8]
+Index of 5: 0
+Index of 8: 1
+
+Median of the indices: 0.5
+
+Layer 1: [5, 8]
+Neighbors of 5: [1]
+Index of 1: 0
+
+Median of the indices: 0
+
+Neighbors of 8: [2]
+Index of 2: 0
+
+Median of the indices: 0
+
+Layer 2: [1, 2]
+Neighbors of 1: [6, 7]
+Index of 6: 0
+Index of 7: 1
+
+Median of the indices: 0.5
+
+Neighbors of 2: [6, 9]
+Index of 6: 0
+Index of 9: 1
+
+Median of the indices: 0.5
+
+Layer 3: [6, 7, 9]
+Neighbors of 6: []
+Median of the indices: 0
+
+Neighbors of 7: [3]
+Index of 3: 0
+
+Median of the indices: 0
+
+Neighbors of 9: [3]
+Index of 3: 1
+
+Median of the indices: 1
+
+Layer 4: [3]
+Neighbors of 3: [10]
+Index of 10: 0
+
+Median of the indices: 0
+
+Layer 5: [10]
+Neighbors of 10: [4]
+Index of 4: 0
+
+Median of the indices: 0
+
+Layer 6: [4]
+Neighbors of 4: []
+Median of the indices: 0
+
+Nodes and their associated medians:
+
+Layer 0:
+0 -> 0.5
+
+Layer 1:
+5 -> 0
+8 -> 0
+
+Layer 2:
+1 -> 0.5
+2 -> 0.5
+
+Layer 3:
+6 -> 0
+7 -> 0
+9 -> 1
+
+Layer 4:
+3 -> 0
+
+Layer 5:
+10 -> 0
+
+Layer 6:
+4 -> 0
+
+Nodes sorted by associated median:
+
+Layer 0: [0]
+Layer 1: [5, 8]
+Layer 2: [1, 2]
+Layer 3: [7, 6, 9]
+Layer 4: [3]
+Layer 5: [10]
+Layer 6: [4]

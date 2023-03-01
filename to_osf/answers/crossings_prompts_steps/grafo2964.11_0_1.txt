@@ -1,0 +1,20 @@
+First, we construct the bipartite graph where the vertices in set A are connected to the vertices in set B by the given edges.
+
+markdown
+Copy code
+   0     9
+   |     |
+   |     |
+   4     |
+    \____|
+Since there are only two edges, we can compute the number of edge crossings directly. The two edges intersect at vertex 0, so there is one edge crossing. Thus, the answer is 1.
+
+Note that none of the special cases apply (i.e., there is more than one edge, and both arrays A and B have length greater than 1). Therefore, we proceed with the remaining steps:
+
+Excluding pairs with the same first element: there are no such pairs, so we skip this step.
+Excluding pairs with the same second element: there are no such pairs, so we skip this step.
+Considering pairs of edges: there is only one pair of edges, so we consider it.
+The first edge is (0, 9), which corresponds to s1 = 0 and t1 = 0.
+The second edge is (0, 4), which corresponds to s2 = 0 and t2 = 1.
+We exclude this pair because s1 < s2 but t1 > t2.
+The only pair of edges that we considered has been excluded, so the final answer is 0 (i.e., there are no edges left after applying all the exclusion criteria).

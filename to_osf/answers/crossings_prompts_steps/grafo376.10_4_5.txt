@@ -1,0 +1,25 @@
+Based on the given arrays and edges, we can create a bipartite graph with vertices in array A on the left and vertices in array B on the right. Each edge in the given list represents a connection between a vertex in A and a vertex in B.
+
+First, we check the number of edges. If there is only one edge or either of the arrays A or B has a length of 1, then the number of edge crossings is 0, so we can stop writing.
+
+In this case, there are two edges, so we continue with the following steps:
+
+Exclude all pairs that have the same first element:
+[(3, 8)]
+
+Exclude all pairs that have the same second element:
+[(3, 8)]
+
+For each pair of remaining edges, consider their indices in arrays A and B:
+(3, 8), (3, 9) => (s1 = 1, t1 = 0, s2 = 1, t2 = 1), (s1 = 1, t1 = 0, s2 = 1, t2 = 0)
+
+Exclude all pairs for which s1 > s2 and t1 < t2:
+(3, 8), (3, 9) => (s1 = 1, t1 = 0, s2 = 1, t2 = 1)
+
+Exclude all pairs for which s1 < s2 and t1 > t2:
+No pairs left after step 4.
+
+The final list of edges after applying all the steps is:
+[(3, 8)]
+
+Therefore, the number of edge crossings in the bipartite graph is 1.

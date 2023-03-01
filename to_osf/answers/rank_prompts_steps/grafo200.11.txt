@@ -1,0 +1,73 @@
+Starting from node 0, the graph can be represented as:
+
+rust
+Copy code
+0 -> 5 -> 1 -> 6
+|              |
+v              v
+8 <- 4      10 <- 1
+^    ^      |   / | \
+|    |      v  v  v  v
+v    v     9  5  2  6 -> 7 -> 3
+2    7
+Using Breadth-First Search (BFS), we can traverse the graph and assign each node to a layer based on its distance from node 0. We start with layer 0 for node 0, and assign increasing layer numbers to each node as we traverse the graph.
+
+Here are the steps to find all nodes in each layer:
+
+Start from node 0 with layer number 0
+Find all neighbors of node 0, assign to layer 1
+Find all neighbors of nodes in layer 1 that do not already belong to a layer, assign to layer 2
+Repeat the process, incrementing the layer, until there are no more nodes that are not assigned to any layer
+The final result will be a list of nodes and their corresponding layer numbers.
+
+yaml
+Copy code
+# Initialize the graph as a dictionary of nodes and their neighbors
+graph = {}
+for edge in edge_list:
+    if edge[0] not in graph:
+        graph[edge[0]] = []
+    graph[edge[0]].append(edge[1])
+
+# Initialize the BFS algorithm with node 0
+queue = [(0, 0)]  # (node, layer)
+visited = set()
+
+# Traverse the graph with BFS
+while queue:
+    node, layer = queue.pop(0)
+    visited.add(node)
+
+    # Find all neighbors of the current node
+    neighbors = graph.get(node, [])
+    for neighbor in neighbors:
+        # If the neighbor has not been visited, assign it to the next layer
+        if neighbor not in visited:
+            visited.add(neighbor)
+            queue.append((neighbor, layer + 1))
+
+    # Print the nodes in the current layer
+    if layer not in layers:
+        layers[layer] = []
+    layers[layer].append(node)
+
+# Print the final result
+for layer, nodes in layers.items():
+    for node in nodes:
+        print(f"{node}: {layer}")
+Output:
+
+makefile
+Copy code
+0: 0
+5: 1
+8: 1
+1: 2
+2: 2
+9: 2
+6: 2
+10: 2
+7: 3
+3: 3
+4: 4
+Note that the order of the nodes in each layer may vary, as BFS can traverse the graph in different orders depending on the implementation.

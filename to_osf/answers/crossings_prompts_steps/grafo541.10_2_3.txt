@@ -1,0 +1,8 @@
+Based on the given arrays and edges, we can represent the bipartite graph as follows:
+
+css
+Copy code
+A --9---> 7
+|        8
+3 
+There is only one edge in the graph, and therefore we can write the answer as 0 and stop writing, as per the instructions.

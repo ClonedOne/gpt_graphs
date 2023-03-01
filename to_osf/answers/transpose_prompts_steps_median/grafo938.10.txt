@@ -1,0 +1,103 @@
+First, let's list every node in layer 0 and their neighbors in the next layer:
+
+Layer 0: [0]
+Neighbors of 0: [9]
+
+Index of 9: 0
+
+Layer 1: [9]
+Neighbors of 9: [2, 3, 8, 6, 7, 0]
+Index of 2: 0
+Index of 3: 1
+Index of 8: 2
+Index of 6: 3
+Index of 7: 4
+Index of 0: 5
+
+Median indices: 2
+
+Layer 2: [2, 3, 8, 6, 7]
+Neighbors of 2: [5]
+Index of 5: 0
+
+Median indices: 0
+
+Neighbors of 3: [1]
+Index of 1: 0
+
+Median indices: 0
+
+Neighbors of 8: []
+
+Median indices: 0
+
+Neighbors of 6: [1]
+Index of 1: 0
+
+Median indices: 0
+
+Neighbors of 7: []
+
+Median indices: 0
+
+Layer 3: [5, 1]
+Neighbors of 5: []
+
+Median indices: 0
+
+Neighbors of 1: [4]
+Index of 4: 0
+
+Median indices: 0
+
+Layer 4: [4]
+Neighbors of 4: []
+
+Median indices: 0
+
+Next, let's list the nodes in each layer and their associated medians:
+
+Layer 0:
+0 -> 2.0
+
+Layer 1:
+9 -> 0.0
+
+Median of layer 1: 0.0
+
+Layer 2:
+2 -> 0.0
+3 -> 0.0
+8 -> 0.0
+6 -> 0.0
+7 -> 0.0
+
+Median of layer 2: 0.0
+
+Layer 3:
+5 -> 0.0
+1 -> 0.0
+
+Median of layer 3: 0.0
+
+Layer 4:
+4 -> 0.0
+
+Median of layer 4: 0.0
+
+Finally, let's list the nodes in each layer sorted by their associated median:
+
+Layer 0:
+[0]
+
+Layer 1:
+[9]
+
+Layer 2:
+[2, 3, 6, 7, 8]
+
+Layer 3:
+[1, 5]
+
+Layer 4:
+[4]

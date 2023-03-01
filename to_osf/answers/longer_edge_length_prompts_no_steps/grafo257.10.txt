@@ -1,0 +1,12 @@
+The total sum of the edge lengths is 12.
+
+Explanation:
+
+Edge (0, 5) has length |3 - 0| = 3.
+Edge (1, 6) has length |4 - 1| = 3.
+Edge (0, 7) has length |4 - 0| = 4.
+Edge (2, 8) has length |5 - 2| = 3.
+Edge (9, 4) has length |2 - 4| = 2.
+Edge (9, 3) has length |1 - 2| = 1.
+Edge (1, 9) has length |2 - 1| = 1.
+The sum of these lengths is 3 + 3 + 4 + 3 + 2 + 1 + 1 = 12.

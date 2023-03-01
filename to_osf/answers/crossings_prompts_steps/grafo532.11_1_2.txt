@@ -1,0 +1,60 @@
+To count the number of edge crossings in a bipartite graph given the arrays A and B, and the list of edges in the format specified in the question, we can follow the steps outlined below:
+
+First, we check if there is a single edge, or if either array A or B has length 1, in which case the number of edge crossings is 0. In this case, we write 0 and stop writing.
+
+Next, we consider all combinations of pairs of edges and exclude those that have the same first or second element. Let's call the resulting list of pairs of edges "edge_pairs".
+
+less
+Copy code
+A = [7, 6, 10]
+B = [1, 2, 9, 4]
+edges = [(7, 1), (6, 2), (6, 9), (10, 1), (10, 4)]
+
+if len(edges) == 1 or len(A) == 1 or len(B) == 1:
+    print(0)
+else:
+    edge_pairs = []
+    for i in range(len(edges)):
+        for j in range(i+1, len(edges)):
+            if edges[i][0] != edges[j][0] and edges[i][1] != edges[j][1]:
+                edge_pairs.append((edges[i], edges[j]))
+Next, for every pair of edges left in "edge_pairs", we find the indices s1, t1, s2, and t2 as specified in the question, and exclude pairs that satisfy the conditions s1 > s2 and t1 < t2 or s1 < s2 and t1 > t2. We then count the number of remaining edge pairs and output this as the number of edge crossings.
+
+less
+Copy code
+count = 0
+for i in range(len(edge_pairs)):
+    e1, e2 = edge_pairs[i]
+    s1, t1 = A.index(e1[0]), B.index(e1[1])
+    s2, t2 = A.index(e2[0]), B.index(e2[1])
+    if not (s1 > s2 and t1 < t2 or s1 < s2 and t1 > t2):
+        count += 1
+
+print(count)
+Putting it all together, the code to count the number of edge crossings is:
+
+less
+Copy code
+A = [7, 6, 10]
+B = [1, 2, 9, 4]
+edges = [(7, 1), (6, 2), (6, 9), (10, 1), (10, 4)]
+
+if len(edges) == 1 or len(A) == 1 or len(B) == 1:
+    print(0)
+else:
+    edge_pairs = []
+    for i in range(len(edges)):
+        for j in range(i+1, len(edges)):
+            if edges[i][0] != edges[j][0] and edges[i][1] != edges[j][1]:
+                edge_pairs.append((edges[i], edges[j]))
+    
+    count = 0
+    for i in range(len(edge_pairs)):
+        e1, e2 = edge_pairs[i]
+        s1, t1 = A.index(e1[0]), B.index(e1[1])
+        s2, t2 = A.index(e2[0]), B.index(e2[1])
+        if not (s1 > s2 and t1 < t2 or s1 < s2 and t1 > t2):
+            count += 1
+    
+    print(count)
+In this case, the output is 3, which is the number of edge crossings in the bipartite graph defined by the

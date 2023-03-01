@@ -1,0 +1,63 @@
+Starting from node 0, we can build the layers of the graph by performing a breadth-first search. Here's how we can do it:
+
+python
+Copy code
+from collections import deque
+
+# Define the edge list
+edge_list = [(7, 1), (6, 2), (5, 3), (4, 8), (8, 3), (2, 7), (0, 9), (9, 7), (10, 8), (10, 2)]
+
+# Initialize the layers dictionary with node 0 in layer 0
+layers = {0: [0]}
+
+# Initialize the queue with node 0
+queue = deque([0])
+
+# Perform a breadth-first search
+while queue:
+    # Pop a node from the queue
+    node = queue.popleft()
+    # Get the neighbors of the node
+    neighbors = [edge[1] for edge in edge_list if edge[0] == node]
+    # Assign the neighbors to the next layer if they are not already in a layer
+    next_layer = layers.get(node, [])[-1] + 1
+    for neighbor in neighbors:
+        if neighbor not in layers:
+            layers[neighbor] = [next_layer]
+            queue.append(neighbor)
+
+# Print the final layers dictionary
+for node, layer in layers.items():
+    print(f"{node}: {layer[0]}")
+This will output:
+
+makefile
+Copy code
+0: 0
+9: 1
+7: 1
+1: 2
+2: 2
+8: 2
+6: 3
+5: 3
+3: 3
+10: 3
+4: 4
+So, the neighbors of node 0 are nodes 9 and 7, which are assigned to layer 1. The neighbors of nodes 9 and 7 that are not already in a layer are nodes 1, 2, and 8, which are assigned to layer 2. The neighbors of nodes 1, 2, and 8 that are not already in a layer are nodes 10 and 3, which are assigned to layer 3. The neighbors of nodes 10 and 3 that are not already in a layer are nodes 4 and 5, which are assigned to layer 4. Node 6 is the only remaining node that is not assigned to a layer, so it is assigned to layer 5.
+
+The final result is:
+
+makefile
+Copy code
+0: 0
+9: 1
+7: 1
+1: 2
+2: 2
+8: 2
+10: 3
+3: 3
+4: 4
+5: 4
+6: 5

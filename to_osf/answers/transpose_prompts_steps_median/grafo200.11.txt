@@ -1,0 +1,34 @@
+Listing neighbors of Layer 0 nodes:
+
+Layer 0: [0]
+Neighbors of 0: [5, 8]
+Index of 5: 0
+Index of 8: 1
+Median of indices: 0.5
+
+Listing nodes and their associated medians:
+
+Layer 0:
+0 -> 0.5
+
+Layer 1:
+5 -> 0
+8 -> 1
+1 -> 2
+10 -> 2.5
+4 -> 2
+9 -> 2.5
+
+Layer 2:
+6 -> 0
+2 -> 1
+7 -> 2
+3 -> 3
+
+Listing sorted nodes in each layer by their associated median:
+
+Layer 0: [0]
+
+Layer 1: [5, 8, 1, 4, 9, 10]
+
+Layer 2: [6, 2, 7, 3]

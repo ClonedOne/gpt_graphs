@@ -1,0 +1,31 @@
+First, we can create a bipartite graph with nodes from arrays A and B, and connect nodes between A and B according to the given list of edges. The resulting bipartite graph looks like:
+
+lua
+Copy code
+   7   6
+   |   |
+   3---4
+Next, we can follow the steps outlined in the prompt to count the number of edge crossings in this graph.
+
+First, we exclude pairs of edges that have the same first element or the same second element. After this step, the list of edges becomes:
+
+css
+Copy code
+[(7, 3), (6, 3), (6, 4)]
+Next, we consider every pair of edges left and record the indices of their corresponding elements in arrays A and B. For example, for the pair of edges (7, 3) and (6, 3), we have:
+
+scss
+Copy code
+(7, 3) => s1 = 0, t1 = 0, s2 = 1, t2 = 0
+(6, 3) => s1 = 1, t1 = 0, s2 = 1, t2 = 0
+We exclude the pair (7, 3) and (6, 3) because s1 > s2 and t1 < t2.
+
+For the remaining pair of edges, (6, 3) and (6, 4), we have:
+
+scss
+Copy code
+(6, 3) => s1 = 1, t1 = 0, s2 = 1, t2 = 1
+(6, 4) => s1 = 1, t1 = 1, s2 = 1, t2 = 0
+We exclude the pair (6, 3) and (6, 4) because s1 < s2 and t1 > t2.
+
+Therefore, there are no edge crossings in this graph, and the number of edges left is 0.

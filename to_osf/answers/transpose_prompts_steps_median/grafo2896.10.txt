@@ -1,0 +1,78 @@
+Starting from layer 0, the neighbors of the nodes in layer 0 are:
+
+Layer 0: [0]
+Neighbors of 0: [8, 5]
+
+Index of 8: 0
+Index of 5: 1
+
+Median of indices: 0.5
+
+So the associated median for node 0 is 0.5.
+
+Moving on to the next layer, we have:
+
+Layer 1: [8, 5]
+Neighbors of 8: [3]
+Neighbors of 5: [1]
+
+Index of 3: 0
+Index of 1: 1
+
+Median of indices for layer 1: 0.5
+
+So the associated median for nodes 8 and 5 is 0.5.
+
+Continuing with the next layer:
+
+Layer 2: [3, 1]
+Neighbors of 3: [6, 4]
+Neighbors of 1: [7]
+
+Index of 6: 0
+Index of 4: 1
+Index of 7: 2
+
+Median of indices for layer 2: 1
+
+So the associated medians for nodes 3 and 1 are 1.
+
+Next layer:
+
+Layer 3: [6, 4, 7]
+Neighbors of 6: []
+Neighbors of 4: [9]
+Neighbors of 7: []
+
+Index of 9: 1
+
+Median of indices for layer 3: 1
+
+So the associated medians for nodes 6, 4, and 7 are 1.
+
+And the final layers:
+
+Layer 4: [9]
+Neighbors of 9: [2]
+
+Index of 2: 0
+
+Median of indices for layer 4: 0
+
+So the associated median for node 9 is 0.
+
+Layer 5: [2]
+Neighbors of 2: []
+
+Median of indices for layer 5: 0
+
+So the associated median for node 2 is 0.
+
+Sorted layers:
+
+Layer 0: [0]
+Layer 1: [8, 5]
+Layer 2: [3, 1]
+Layer 3: [4, 6, 7]
+Layer 4: [9]
+Layer 5: [2]

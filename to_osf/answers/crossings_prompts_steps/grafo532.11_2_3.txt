@@ -1,0 +1,33 @@
+First, let's check the conditions. As there are two edges, we can proceed. Also, since array A has more than one element and array B has more than one element, we can proceed with the edge crossings calculation.
+
+To begin, we can visualize the bipartite graph with the given arrays and edges as follows:
+
+yaml
+Copy code
+   A: [1, 2, 9, 4]
+   B: [5, 8]
+   
+   1 -|
+   2 -|- 5
+   9 -|
+   4 -|- 8
+We can see that there are two edges crossing in the graph, from vertex 2 in A to vertex 5 in B, and from vertex 4 in A to vertex 8 in B. Therefore, the answer is 2.
+
+Now let's follow the steps outlined in the prompt to get the same answer:
+
+Exclude pairs with the same first element:
+
+No pairs to exclude.
+Exclude pairs with the same second element:
+
+No pairs to exclude.
+Write down s1, t1, s2, and t2 for each pair:
+
+(2, 1, 4, 2) for the pair (2, 5) and (4, 8)
+Exclude pairs with s1 > s2 and t1 < t2:
+
+No pairs to exclude.
+Exclude pairs with s1 < s2 and t1 > t2:
+
+No pairs to exclude.
+Since no pairs were excluded in steps 1-5, the number of edge crossings is still 2.

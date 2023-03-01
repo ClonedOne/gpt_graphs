@@ -1,0 +1,87 @@
+Starting from node 0 and following the given edge list, we can perform a breadth-first search to determine the layers of each node in the graph. We will maintain a queue of nodes to visit next and a dictionary to store the layer of each visited node. We will start by assigning node 0 to layer 0 and adding its neighbors to the queue with layer 1.
+
+css
+Copy code
+queue = [(0, 0)]
+visited = {0: 0}
+edge_list = [(2, 3), (0, 3), (4, 5), (6, 1), (4, 1), (4, 3), (1, 7), (7, 8), (8, 1), (2, 8), (6, 4), (9, 3)]
+
+# Find neighbors of node 0 and assign them to layer 1
+for u, v in edge_list:
+    if u == 0:
+        queue.append((v, 1))
+        visited[v] = 1
+Next, we will iterate through the queue, adding the neighbors of each node to the next layer if they have not already been visited.
+
+c
+Copy code
+layer = 1
+while queue:
+    node, layer = queue.pop(0)
+    for u, v in edge_list:
+        if u == node and v not in visited:
+            queue.append((v, layer + 1))
+            visited[v] = layer + 1
+We can repeat this process until there are no more unvisited nodes. The resulting layers for each node are:
+
+makefile
+Copy code
+0: 0
+3: 1
+1: 1
+Next, we will find the neighbors of the nodes in layer 1 that have not already been assigned to a layer, and assign them to layer 2.
+
+yaml
+Copy code
+# Find neighbors of nodes in layer 1 and assign them to layer 2
+for node in visited:
+    if visited[node] == 1:
+        for u, v in edge_list:
+            if u == node and v not in visited:
+                queue.append((v, 2))
+                visited[v] = 2
+We can repeat the process for each subsequent layer until there are no more unvisited nodes.
+
+yaml
+Copy code
+# Find neighbors of nodes in layer 2 and assign them to layer 3
+layer = 3
+while queue:
+    node, layer = queue.pop(0)
+    for u, v in edge_list:
+        if u == node and v not in visited:
+            queue.append((v, layer + 1))
+            visited[v] = layer + 1
+
+# Find neighbors of nodes in layer 3 and assign them to layer 4
+layer = 4
+while queue:
+    node, layer = queue.pop(0)
+    for u, v in edge_list:
+        if u == node and v not in visited:
+            queue.append((v, layer + 1))
+            visited[v] = layer + 1
+
+# Find neighbors of nodes in layer 4 and assign them to layer 5
+layer = 5
+while queue:
+    node, layer = queue.pop(0)
+    for u, v in edge_list:
+        if u == node and v not in visited:
+            queue.append((v, layer + 1))
+            visited[v] = layer + 1
+The final layers for each node are:
+
+makefile
+Copy code
+0: 0
+3: 1
+1: 1
+5: 2
+7: 2
+8: 2
+2: 3
+4: 3
+6: 4
+9: 4
+Therefore,

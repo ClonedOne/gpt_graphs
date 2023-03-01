@@ -1,0 +1,85 @@
+First part:
+Layer 0: [0]
+Neighbors of 0: [7, 2]
+Index of 7: 0
+Index of 2: 1
+Median of neighbors: 0.5
+
+Layer 1: [7, 2]
+Neighbors of 7: [1]
+Index of 1: 0
+Median of neighbors: 0
+
+Neighbors of 2: [6, 5]
+Index of 6: 0
+Index of 5: 1
+Median of neighbors: 0.5
+
+Layer 2: [1, 6, 5]
+Neighbors of 1: []
+Median of neighbors: 0
+
+Neighbors of 6: [10]
+Index of 10: 1
+Median of neighbors: 1
+
+Neighbors of 5: [3]
+Index of 3: 2
+Median of neighbors: 2
+
+Layer 3: [10, 3]
+Neighbors of 10: [9]
+Index of 9: 0
+Median of neighbors: 0
+
+Neighbors of 3: []
+Median of neighbors: 0
+
+Layer 4: [9]
+Neighbors of 9: [8]
+Index of 8: 0
+Median of neighbors: 0
+
+Layer 5: [8]
+Neighbors of 8: [4]
+Index of 4: 0
+Median of neighbors: 0
+
+Layer 6: [4]
+Neighbors of 4: []
+Median of neighbors: 0
+
+Second part:
+Layer 0:
+0 -> 0.5
+
+Layer 1:
+7 -> 0
+2 -> 0.5
+
+Layer 2:
+1 -> 0
+6 -> 1
+5 -> 2
+
+Layer 3:
+10 -> 0
+3 -> 0
+
+Layer 4:
+9 -> 0
+
+Layer 5:
+8 -> 0
+
+Layer 6:
+4 -> 0
+
+Third part:
+Layer 0: [0]
+Layer 1: [7, 2]
+Layer 2: [1, 5, 6]
+Layer 3: [3, 10]
+Layer 4: [9]
+Layer 5: [8]
+Layer 6: [4]

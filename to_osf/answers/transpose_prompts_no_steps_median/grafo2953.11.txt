@@ -1,0 +1,7 @@
+Layer 0: [0]
+Layer 1: [5]
+Layer 2: [1]
+Layer 3: [7, 6]
+Layer 4: [2, 3]
+Layer 5: [4, 10]
+Layer 6: [8, 9]

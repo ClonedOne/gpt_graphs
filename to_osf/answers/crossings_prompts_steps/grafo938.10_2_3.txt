@@ -1,0 +1,21 @@
+We have two arrays, A and B, and a list of edges represented as tuples, where the first element of each tuple comes from array A and the second element comes from array B.
+
+To count the number of edge crossings in this bipartite graph, we need to consider all pairs of edges and count the number of pairs that cross. If there is only a single edge, or if array A or B has length 1, then the answer is 0.
+
+First, we exclude all pairs of edges that have the same first element or the same second element. The remaining pairs of edges are:
+
+[(2, 5), (3, 1), (6, 1)]
+
+For each pair of edges, we consider the indices of their elements in arrays A and B. The pairs and their corresponding indices are:
+
+(2, 5), (3, 1) => s1 = 0, t1 = 1, s2 = 1, t2 = 0
+(2, 5), (6, 1) => s1 = 0, t1 = 1, s2 = 3, t2 = 0
+(3, 1), (6, 1) => s1 = 1, t1 = 0, s2 = 3, t2 = 0
+
+Next, we exclude pairs of edges that do not cross. Specifically, we exclude pairs where s1 > s2 and t1 < t2, as well as pairs where s1 < s2 and t1 > t2. After this step, we are left with only one pair of edges:
+
+(2, 5), (3, 1)
+
+Therefore, the number of edge crossings in this bipartite graph is 0.
+
+Note: Edge crossing refers to the situation where two edges in a bipartite graph cross if the first element of one edge is less than the first element of another edge, and the second element of the first edge is greater than the second element of the other edge.

@@ -1,0 +1,1 @@
+There are no edge crossings in this scenario, so the empty list should be returned.

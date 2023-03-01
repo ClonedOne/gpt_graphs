@@ -1,0 +1,24 @@
+Here's the step-by-step solution to the problem:
+
+Start from node 0, and assign it to layer 0.
+Find all neighbors of node 0, which are nodes 9 and 3. Assign them to layer 1.
+Find all neighbors of the nodes in layer 1 that do not already belong to a layer. These are nodes 10, 5, and 1. Assign them to layer 2.
+Find all neighbors of the nodes in layer 2 that do not already belong to a layer. These are nodes 2, 8, and 6. Assign them to layer 3.
+Find all neighbors of the nodes in layer 3 that do not already belong to a layer. These are nodes 7 and 4. Assign them to layer 4.
+Find all neighbors of the nodes in layer 4 that do not already belong to a layer. This is node 5. Assign it to layer 5.
+No more nodes can be added to the graph, so we stop here.
+Here's the final list of nodes and their corresponding layers:
+
+makefile
+Copy code
+0: 0
+3: 1
+9: 1
+1: 2
+5: 2
+10: 2
+2: 3
+6: 3
+8: 3
+4: 4
+7: 4

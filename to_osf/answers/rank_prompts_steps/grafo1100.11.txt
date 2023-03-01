@@ -1,0 +1,56 @@
+Starting from node 0, with layer number 0:
+
+The neighbors of node 0 are nodes 5 and 8. They belong to layer number 1.
+
+Layer 1:
+
+makefile
+Copy code
+5: 1
+8: 1
+The neighbors of nodes 5 and 8 that do not already belong to a layer are nodes 1 and 0. They belong to layer number 2.
+
+Layer 2:
+
+makefile
+Copy code
+1: 2
+2: 2
+The neighbors of nodes 1 and 2 that do not already belong to a layer are nodes 6 and 9. They belong to layer number 3.
+
+Layer 3:
+
+makefile
+Copy code
+6: 3
+9: 3
+The neighbors of nodes 6 and 9 that do not already belong to a layer are node 2 and 3. Node 2 is already in layer 2, so we add only node 3 to layer number 4.
+
+Layer 4:
+
+makefile
+Copy code
+3: 4
+The neighbor of node 3 that does not already belong to a layer is node 10. It belongs to layer number 5.
+
+Layer 5:
+
+makefile
+Copy code
+10: 5
+All nodes are now assigned to a layer, so we have the final result:
+
+makefile
+Copy code
+0: 0
+5: 1
+8: 1
+1: 2
+2: 2
+6: 3
+9: 3
+3: 4
+10: 5
+7: 2
+4: 5
+Note that we also found nodes 7 and 4 during the process, but they were assigned to layers based on other nodes, so their order may not be the same as in the original list.

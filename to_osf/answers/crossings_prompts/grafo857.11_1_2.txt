@@ -1,0 +1,2 @@
+(9 from A) -> (7 from B)
+No other pairs of edges exist, so there are no edge crossings. The output is an empty list.

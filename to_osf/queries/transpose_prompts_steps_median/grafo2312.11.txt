@@ -1,0 +1,33 @@
+This is a list of directed edges in a layered graph.
+[(0, 6), (6, 1), (7, 2), (7, 4), (8, 3), (0, 5), (9, 7), (6, 9), (5, 10), (10, 8)]
+
+This is the description of what nodes are contained in what layer:  Layer 0: [0] 
+Layer 1: [6, 5] 
+Layer 2: [1, 9, 10] 
+Layer 3: [7, 8] 
+Layer 4: [2, 4, 3] 
+
+Start from layer 0. 
+List every node in layer 0, and for each node list its neighbors in the next layer. 
+Like this: 
+Layer 0: [<node1>, <node2>, ...]
+Neighbors of <node1>: [<neighbor1>, <neighbor2>, ...]
+
+Then, for every one of the neighbors, write their index in their layer. So if node 6 belongs to layer 2 and is in the fourth position in layer 2, its index is 3.
+Like this:
+Index of <neighbor1>: <value>
+And under each set of indices write the median of the indices.
+
+Now I want you to start again from layer 0, and this time I want you to list the nodes in every layer and their associated medians.
+Like this:
+Layer 0:
+<node 0> -> <median of the neighbors of node 0>
+
+If a number is NaN, then it is equal to 0.
+If a node has no neighbors, assign an associated median of 0.
+
+Finally, I want you to write the layers and the nodes in them once more, but the nodes in the layers have to be sorted according to their associated median value. 
+Like this:
+Layer 0: [<sorted nodes in layer 0>]
+If node A has an associated median value that is less than the associated median value of node B, then node A must come before node B. 
+This time, write no additional information other than the layers and the sorted nodes.

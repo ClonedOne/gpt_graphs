@@ -1,0 +1,14 @@
+First, we can create a bipartite graph from the given arrays and edges, where the elements in array A correspond to the vertices on the left side, and the elements in array B correspond to the vertices on the right side. The edges connect the vertices in A to the vertices in B as specified.
+
+The number of edge crossings in this bipartite graph can be calculated using the FKT algorithm. However, since the number of elements in array A is 3 and array B is 2, we can use a simpler method to count the edge crossings.
+
+Since array B has length 2, there can be at most one edge crossing. If there is a single edge or array A has length 1, then there are no edge crossings, and we can stop here.
+
+Otherwise, we consider all the pairs of edges and exclude the pairs that have the same first or second element. The remaining pairs can be represented as follows:
+
+(3, 9), (4, 9): s1=1, t1=2, s2=2, t2=2
+(3, 9), (3, 10): s1=1, t1=2, s2=1, t2=1
+(4, 9), (3, 10): s1=2, t1=2, s2=1, t2=1
+Next, we exclude the pairs for which s1 > s2 and t1 < t2. In this case, there are no such pairs.
+
+Finally, we exclude the pairs for which s1 < s2 and t1 > t2. This leaves us with a single pair: (3, 9), (3, 10). Therefore, the number of edge crossings is 1.

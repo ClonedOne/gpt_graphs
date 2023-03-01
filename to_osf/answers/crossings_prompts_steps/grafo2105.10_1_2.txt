@@ -1,0 +1,20 @@
+Using the given arrays A and B and the list of edges, we can create the bipartite graph G = (A, B, E) where E is the set of edges defined by the given tuples.
+
+For a pair of edges e1 = (a1, b1) and e2 = (a2, b2), we say that they cross if a1 < a2 and b1 > b2, or if a1 > a2 and b1 < b2. In other words, they cross if they form an "X" shape in the bipartite graph.
+
+If there is a single edge or one of the arrays has length 1, there can be no edge crossings, so the answer is 0.
+
+Otherwise, we need to consider all pairs of edges and exclude those that have the same first or second element. This gives us the following pairs of edges:
+
+(3, 2), (3, 4)
+(3, 2), (3, 9)
+(3, 4), (3, 9)
+
+Next, we need to exclude pairs for which s1 > s2 and t1 < t2, as well as pairs for which s1 < s2 and t1 > t2. For each pair, we compute the indices s1, t1, s2, and t2 as described in the prompt:
+
+(3, 2), (3, 4) => s1 = 0, t1 = 1, s2 = 0, t2 = 2 (exclude)
+(3, 2), (3, 9) => s1 = 0, t1 = 1, s2 = 0, t2 = 0 (exclude)
+(3, 2), (3, 9) => s1 = 0, t1 = 1, s2 = 0, t2 = 2 (exclude)
+(3, 4), (3, 9) => s1 = 0, t1 = 2, s2 = 0, t2 = 2 (exclude)
+
+So, there are no pairs of edges that cross, and the answer is 0.

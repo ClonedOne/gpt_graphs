@@ -1,0 +1,1 @@
+Since there is only one edge, we can stop writing and output 0.

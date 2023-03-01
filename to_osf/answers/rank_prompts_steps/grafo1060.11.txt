@@ -1,0 +1,87 @@
+Starting from node 0, we can use Breadth-First Search (BFS) to assign layers to nodes in the graph. We start with layer 0 for node 0, and we explore the graph layer by layer, assigning the layer number to each node as we encounter them.
+
+Here's the Python code to implement this:
+
+python
+Copy code
+from collections import deque
+
+# Define the edge list
+edge_list = [(0, 7), (7, 1), (7, 2), (2, 6), (5, 2), (5, 3), (4, 8), (8, 3), (2, 9), (9, 8), (10, 3), (10, 5)]
+
+# Initialize the adjacency list
+adj_list = {i: [] for i in range(max(max(edge_list))+1)}
+
+# Populate the adjacency list
+for edge in edge_list:
+    adj_list[edge[0]].append(edge[1])
+
+# Initialize the layer dictionary
+layer_dict = {0: [0]}
+
+# Initialize the queue for BFS
+queue = deque([0])
+
+# Start BFS
+layer = 1
+while queue:
+    layer_dict[layer] = []
+    for _ in range(len(queue)):
+        curr_node = queue.popleft()
+        for neighbor in adj_list[curr_node]:
+            if neighbor not in layer_dict.values():
+                layer_dict[layer].append(neighbor)
+                queue.append(neighbor)
+    layer += 1
+
+# Print the results
+for layer, nodes in layer_dict.items():
+    print(f"Layer {layer}:")
+    for node in nodes:
+        print(f"{node}: {layer}")
+This will output:
+
+yaml
+Copy code
+Layer 0:
+0: 0
+Layer 1:
+7: 1
+Layer 2:
+1: 2
+2: 2
+Layer 3:
+6: 3
+9: 3
+5: 3
+Layer 4:
+8: 4
+3: 4
+Layer 5:
+4: 5
+10: 5
+This tells us that node 0 is in layer 0, its neighbors (nodes 7) are in layer 1, the neighbors of nodes in layer 1 (nodes 1 and 2) are in layer 2, and so on, until all nodes are assigned to a layer.
+
+If we continue the BFS until there are no more nodes that are not assigned to a layer, we get the following:
+
+yaml
+Copy code
+Layer 0:
+0: 0
+Layer 1:
+7: 1
+Layer 2:
+1: 2
+2: 2
+Layer 3:
+6: 3
+9: 3
+5: 3
+Layer 4:
+8: 4
+3: 4
+Layer 5:
+4: 5
+10: 5
+Layer 6:
+This tells us that all nodes have been assigned to a layer, and there are no more nodes that are not assigned to a layer.

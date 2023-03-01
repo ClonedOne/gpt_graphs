@@ -1,0 +1,23 @@
+First, we create a bipartite graph with two sets of vertices A and B, where A = [7, 5, 8] and B = [1, 2, 3]. Then, we add the following edges to the graph:
+
+(7, 1)
+(5, 2)
+(8, 3)
+To count the number of edge crossings, we first check if there is a single edge or if either A or B has length 1. Since there are three edges and both A and B have length greater than 1, we proceed with the calculations.
+
+We start by considering all combinations of edge pairs and exclude the pairs that have the same first or second element. Since there are only three edges, we don't need to exclude any pairs.
+
+Next, we consider every pair of edges left and write down s1, t1, s2, and t2 for each pair:
+
+(7, 1), (5, 2): s1 = 0, t1 = 1, s2 = 1, t2 = 0
+(7, 1), (8, 3): s1 = 0, t1 = 1, s2 = 2, t2 = 2
+(5, 2), (8, 3): s1 = 1, t1 = 0, s2 = 2, t2 = 2
+Then, we exclude all pairs for which s1 > s2 and t1 < t2. From the above list, we exclude the first pair ((7, 1), (5, 2)) because s1 = 0 < 1 = s2 and t1 = 1 > 0 = t2.
+
+Next, we exclude all pairs for which s1 < s2 and t1 > t2. From the above list, we don't need to exclude any pairs.
+
+After applying all the exclusions, we are left with two pairs of edges:
+
+(7, 1), (8, 3)
+(5, 2), (8, 3)
+Therefore, there are 2 edge crossings in the bipartite graph.

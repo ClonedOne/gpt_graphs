@@ -1,0 +1,5 @@
+Sorted nodes in Layer 0: [0]
+Sorted nodes in Layer 1: [9]
+Sorted nodes in Layer 2: [3, 10]
+Sorted nodes in Layer 3: [8, 1, 2, 4, 5, 7]
+Sorted nodes in Layer 4: [6]

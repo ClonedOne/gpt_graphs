@@ -1,0 +1,5 @@
+Given the arrays A = [1] and B = [7], and the edges [(1, 7)].
+
+Since there is only a single edge, we can write the number of edge crossings as 0 and stop.
+
+Therefore, the answer is 0.

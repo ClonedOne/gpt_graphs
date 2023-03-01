@@ -1,0 +1,13 @@
+0 - 0
+7 - 1
+1 - 2
+8 - 2
+9 - 3
+6 - 4
+2 - 4
+5 - 5
+3 - 6
+4 - inf
+10 - inf
+
+(Note: Nodes 4 and 10 are not reachable from the source node 0, so they are assigned a rank of "inf", meaning they are at an infinite distance from the source.)

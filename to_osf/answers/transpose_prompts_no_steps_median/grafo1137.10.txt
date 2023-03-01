@@ -1,0 +1,11 @@
+Layer 0: [0]
+Layer 1: [5, 3]
+Layer 2: [9, 7, 8]
+Layer 3: [6, 1, 2, 4]
+
+Note:
+
+For Layer 0, there is only one node, so it is already sorted.
+For Layer 1, node 5 has no neighbors in the next layer, so it is assigned a median of 0.
+For Layer 2, node 9 has only one neighbor in the next layer, so it is assigned the same position as that neighbor. Nodes 7 and 8 both have two neighbors in the next layer, so their median position is the average of the positions of their neighbors.
+For Layer 3, all nodes have two neighbors in the previous layer, so their median position is the average of the positions of their neighbors.

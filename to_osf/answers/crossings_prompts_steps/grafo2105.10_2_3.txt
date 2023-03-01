@@ -1,0 +1,40 @@
+First, we need to create a bipartite graph from the arrays and the list of edges. Each element of A will correspond to a vertex on the left side of the graph, and each element of B will correspond to a vertex on the right side of the graph. Then, each edge will connect a vertex on the left side to a vertex on the right side.
+
+The resulting graph will look like this:
+
+markdown
+Copy code
+    2     4     9
+    |     |     |
+    8     5     1     6
+Next, we need to find all the pairs of edges and exclude those that have the same first element or the same second element. There are only four edges, so we can do this manually:
+
+scss
+Copy code
+(4, 5), (4, 1)
+(2, 8), (4, 5)
+(2, 8), (4, 1)
+(4, 5), (4, 6)
+(2, 8), (4, 6)
+Next, we need to consider each pair of edges and write down the indices of their first and second elements in the arrays. For example, for the first pair (4, 5) and (4, 1), we have:
+
+scss
+Copy code
+(4, 5) => s1 = 1, t1 = 2
+(4, 1) => s2 = 1, t2 = 3
+We can do this for all pairs of edges:
+
+javascript
+Copy code
+(4, 5), (4, 1) => s1 = 1, t1 = 2, s2 = 1, t2 = 3
+(2, 8), (4, 5) => s1 = 0, t1 = 0, s2 = 1, t2 = 2
+(2, 8), (4, 1) => s1 = 0, t1 = 0, s2 = 1, t2 = 3
+(4, 5), (4, 6) => s1 = 1, t1 = 2, s2 = 1, t2 = 3
+(2, 8), (4, 6) => s1 = 0, t1 = 0, s2 = 1, t2 = 3
+Next, we need to exclude all pairs for which s1 > s2 and t1 < t2, as well as those for which s1 < s2 and t1 > t2. This leaves us with the following pairs:
+
+javascript
+Copy code
+(4, 5), (4, 1) => s1 = 1, t1 = 2, s2 = 1, t2 = 3
+(4, 5), (4, 6) => s1 = 1, t1 = 2, s2 = 1, t2 = 3
+There are two pairs of edges left, and each pair crosses one edge. Therefore, the number of edge crossings in the graph is 2.

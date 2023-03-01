@@ -1,0 +1,1 @@
+(2, 5), (4, 8) do not cross. There are no edge crossings.

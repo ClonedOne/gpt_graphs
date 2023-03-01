@@ -1,0 +1,19 @@
+Given the arrays A = [2] and B = [7], and the edges Tuples = [(2, 7)], there is only one edge. Therefore, the answer is 0, and we can stop writing.
+
+However, if there were multiple edges, we would follow the steps as described. If the length of A or B is 1, the answer would be 0, and we would stop writing.
+
+Assuming that both A and B have a length greater than 1, we would proceed with the following steps:
+
+Consider all combinations of edge pairs and exclude pairs with the same first or second element.
+[(2, 7)]
+
+For every remaining pair of edges, consider the indices of the first and second elements in arrays A and B as instructed:
+(2, 7) => s1 = 0, t1 = 0, s2 = 0, t2 = 0
+
+Exclude pairs for which s1 > s2 and t1 < t2:
+(2, 7) is the only pair left, and we can keep it.
+
+Exclude pairs for which s1 < s2 and t1 > t2:
+There are no more pairs left, so we can stop.
+
+Therefore, the number of edges left is 1.

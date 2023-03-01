@@ -1,0 +1,25 @@
+Starting from node 0, we can perform a Breadth First Search (BFS) to traverse the graph and assign a depth level to each node. We start with layer 0 at node 0, then find its neighbors and assign them to layer 1, then find their neighbors and assign them to layer 2, and so on.
+
+Here's the step-by-step process:
+
+Step 1: Start from node 0 with layer 0
+Step 2: Find all neighbors of node 0, which are nodes 1 and 6. Assign them to layer 1.
+Step 3: Find all neighbors of nodes in layer 1 that do not already belong to a layer. These are nodes 9, 8, and 1. Assign them to layer 2.
+Step 4: Find all neighbors of nodes in layer 2 that do not already belong to a layer. These are nodes 5, 3, and 6. Assign them to layer 3.
+Step 5: Find all neighbors of nodes in layer 3 that do not already belong to a layer. These are nodes 2, 10, and 7. Assign them to layer 4.
+Step 6: Find all neighbors of nodes in layer 4 that do not already belong to a layer. There are no more nodes to assign.
+Therefore, the final result is:
+
+makefile
+Copy code
+0: 0
+1: 1
+6: 1
+8: 2
+9: 2
+5: 3
+3: 3
+2: 4
+7: 4
+10: 4
+4: 5

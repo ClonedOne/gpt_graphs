@@ -1,0 +1,3 @@
+(2, 8), (4, 1)
+
+Note: These pairs of edges cross because the order of their sources and targets are opposite: (2, 8) goes from A[0] to B[1], while (4, 1) goes from A[1] to B[2]. Similarly, (4, 5) goes from A[1] to B[0], but it has the same source as the previous edge (A[1]), so it does not count as a crossing. The other two edges have the same target as one of the previous edges, so they also do not count as crossings.

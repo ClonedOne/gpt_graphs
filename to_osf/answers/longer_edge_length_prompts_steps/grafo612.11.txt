@@ -1,0 +1,22 @@
+Layer of source and target nodes for each edge:
+
+Edge (1, 6) : Source in layer 1, target in layer 5
+Edge (4, 8) : Source in layer 2, target in layer 4
+Edge (9, 5) : Source in layer 1, target in layer 5
+Edge (0, 1) : Source in layer 0, target in layer 1
+Edge (10, 6) : Source in layer 3, target in layer 5
+Edge (0, 10) : Source in layer 0, target in layer 3
+Edge (4, 10) : Source in layer 2, target in layer 3
+Edge lengths:
+
+Edge (1, 6) : Target in layer 5, source in layer 1, length = 4
+Edge (4, 8) : Target in layer 4, source in layer 2, length = 2
+Edge (9, 5) : Target in layer 5, source in layer 1, length = 4
+Edge (0, 1) : Target in layer 1, source in layer 0, length = 1
+Edge (10, 6) : Target in layer 5, source in layer 3, length = 2
+Edge (0, 10) : Target in layer 3, source in layer 0, length = 3
+Edge (4, 10) : Target in layer 3, source in layer 2, length = 1
+Total sum of edge lengths = 4 + 2 + 4 + 1 + 2 + 3 + 1 = 17
+
+Final answer:
+17

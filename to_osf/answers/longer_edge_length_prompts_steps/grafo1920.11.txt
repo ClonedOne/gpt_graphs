@@ -1,0 +1,48 @@
+For each edge, the layer of the source node and the layer of the target node are as follows:
+
+(0, 1) : Layer 0 -> Layer 2
+(1, 2) : Layer 2 -> Layer 4
+(0, 3) : Layer 0 -> Layer 4
+(5, 4) : Layer 4 -> Layer 5
+(6, 7) : Layer 1 -> Layer 4
+(6, 1) : Layer 1 -> Layer 2
+(1, 4) : Layer 2 -> Layer 5
+(3, 4) : Layer 4 -> Layer 5
+(1, 8) : Layer 2 -> Layer 5
+(9, 8) : Layer 4 -> Layer 5
+(1, 9) : Layer 2 -> Layer 5
+(10, 7) : Layer 1 -> Layer 4
+(10, 4) : Layer 1 -> Layer 5
+(10, 5) : Layer 1 -> Layer 5
+(0, 10) : Layer 0 -> Layer 1
+(10, 2) : Layer 1 -> Layer 4
+(10, 1) : Layer 1 -> Layer 2
+(10, 8) : Layer 1 -> Layer 5
+
+For each edge, the associated length is calculated as follows:
+
+For edges that go from layer i to layer j, the length is j - i.
+For example, the edge (0, 1) goes from layer 0 to layer 2, so the length is 2 - 0 = 2.
+If the edge goes from a layer to itself, the length is 0.
+If the edge goes from a higher layer to a lower layer, the length is 0 (i.e., it is not allowed).
+The lengths of the edges are as follows:
+(0, 1) : 2
+(1, 2) : 2
+(0, 3) : 4
+(5, 4) : 1
+(6, 7) : 3
+(6, 1) : 1
+(1, 4) : 3
+(3, 4) : 1
+(1, 8) : 3
+(9, 8) : 1
+(1, 9) : 3
+(10, 7) : 3
+(10, 4) : 4
+(10, 5) : 4
+(0, 10) : 1
+(10, 2) : 3
+(10, 1) : 1
+(10, 8) : 4
+
+The total sum of the lengths is: 37

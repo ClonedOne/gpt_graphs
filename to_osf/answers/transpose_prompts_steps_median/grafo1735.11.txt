@@ -1,0 +1,48 @@
+List of neighbors:
+
+Layer 0: [0]
+Neighbors of 0: [1, 3]
+Index of 1: 0
+Index of 3: 1
+Median of neighbors of 0: 0.5
+
+Layer 1: [1, 3]
+Neighbors of 1: [2, 6, 5, 7, 8]
+Index of 2: 0
+Index of 6: 1
+Index of 5: 2
+Index of 7: 3
+Index of 8: 4
+Median of neighbors of 1: 2
+
+Neighbors of 3: [9]
+Index of 9: 0
+Median of neighbors of 3: 0
+
+Layers with associated medians:
+
+Layer 0:
+0 -> 0.5
+
+Layer 1:
+1 -> 2
+3 -> 0
+
+Layer 2:
+2 -> 0
+5 -> 2
+6 -> 1
+7 -> 3
+8 -> 4
+9 -> 0
+
+Layer 3:
+4 -> 0
+10 -> 3
+
+Sorted nodes in layers by associated median:
+
+Layer 0: [0]
+Layer 1: [3, 1]
+Layer 2: [2, 6, 5, 7, 8, 9]
+Layer 3: [4, 10]

@@ -1,0 +1,21 @@
+Based on the given arrays and edges, we can create the following bipartite graph:
+
+lua
+Copy code
+7 -- 2
+  \-- 3
+Since there are only two edges in this graph, we can stop here and return 0 as the answer, as per the instructions.
+
+If we had more than one edge, we would proceed as follows:
+
+Exclude pairs with the same first element:
+There are no such pairs in this example.
+Exclude pairs with the same second element:
+There are no such pairs in this example.
+For every pair of remaining edges, consider the indices of their elements:
+(7,2) and (7,3): s1 = 0, t1 = 0, s2 = 0, t2 = 1
+Exclude pairs where s1 > s2 and t1 < t2:
+(7,2) and (7,3) satisfy this condition, so we exclude this pair.
+Exclude pairs where s1 < s2 and t1 > t2:
+There are no such pairs in this example.
+Since we only had one pair of edges, and we excluded it in step 4, we are left with 0 edges. Therefore, the answer is 0.

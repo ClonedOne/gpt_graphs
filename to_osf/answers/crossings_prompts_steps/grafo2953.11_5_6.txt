@@ -1,0 +1,16 @@
+Based on the given arrays and list of edges, we can construct the following bipartite graph:
+
+markdown
+Copy code
+    10        4
+     |         |
+     8         9
+Since there is only one edge in the list of edges, we can stop here and write 0, as requested.
+
+If there were more edges, we would continue as follows:
+
+Excluding pairs with the same first element, we are left with the pairs [(4, 8), (4, 9)].
+Excluding pairs with the same second element, we are still left with the same pairs.
+For the pair (4, 8), (4, 9), we have s1=1, t1=2, s2=1, and t2=1.
+Since s1=s2, we exclude this pair and are left with no pairs.
+The final answer is 0.

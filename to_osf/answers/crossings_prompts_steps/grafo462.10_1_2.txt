@@ -1,0 +1,31 @@
+First, we can create a bipartite graph from the given arrays A and B and the list of edges. Each vertex in A is connected to the vertices in B that it is paired with in the edges list. We can represent this graph using an adjacency matrix M, where M[i][j] = 1 if there is an edge from A[i] to B[j], and 0 otherwise.
+
+lua
+Copy code
+M = [[0, 1, 1, 0, 0],
+     [0, 0, 0, 0, 0],
+     [0, 0, 0, 0, 1]]
+There are no single edges, and both arrays A and B have more than one element, so we can continue with the next step.
+
+We first exclude all the pairs that have the same first element:
+
+css
+Copy code
+[(6, 1), (8, 5), (7, 5)]
+And then exclude all the pairs that have the same second element:
+
+css
+Copy code
+[(6, 1), (8, 5)]
+We are left with two pairs of edges. We can now compute s1, t1, s2, and t2 for each pair:
+
+scss
+Copy code
+(6, 1) => s1 = 0, t1 = 0, s2 = 1, t2 = 1
+(8, 5) => s1 = 1, t1 = 2, s2 = 2, t2 = 1
+Now we can exclude the pairs for which s1 > s2 and t1 < t2, and the pairs for which s1 < s2 and t1 > t2. We are left with one pair of edges:
+
+scss
+Copy code
+(8, 5) => s1 = 1, t1 = 2, s2 = 2, t2 = 1
+Therefore, the number of edges left is 1.

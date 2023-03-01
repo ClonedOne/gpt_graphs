@@ -1,0 +1,36 @@
+Based on the given arrays and edges, the bipartite graph can be represented as follows:
+
+css
+Copy code
+   A = [2, 5]
+   B = [3, 10]
+
+   2  o
+      |
+   5  o--o
+      |  |
+  --3    10
+From the given edges, we have two edges, (5, 3) and (5, 10), which can be represented as follows:
+
+css
+Copy code
+   2  o
+      |
+   5  o--o
+      |  |
+   x    10
+   | 
+   3
+To count the number of edge crossings in this bipartite graph, we need to consider all the pairs of edges and count the number of pairs that cross. However, we can exclude some pairs of edges based on the conditions given in the prompt.
+
+First, we exclude all the pairs of edges that have the same first or second element. This leaves us with only one pair of edges: [(5, 3), (5, 10)].
+
+Next, we consider the pair of edges [(5, 3), (5, 10)] and calculate their indices in arrays A and B as follows:
+
+scss
+Copy code
+(5, 3) => s1 = 1, t1 = 0
+(5, 10) => s2 = 1, t2 = 1
+Since s1 = s2, we exclude this pair of edges.
+
+Therefore, the number of edge crossings in the given bipartite graph is 0.

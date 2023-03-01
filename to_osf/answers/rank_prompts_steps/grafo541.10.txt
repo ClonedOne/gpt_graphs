@@ -1,0 +1,21 @@
+Starting from node 0, we can perform a breadth-first search to assign a layer number to each node in the graph. Here's the algorithm step by step:
+
+Assign node 0 to layer 0
+Find all neighbors of node 0: nodes 5. Assign them to layer 1.
+Find all neighbors of nodes in layer 1 that do not already belong to a layer: nodes 3, 6. Assign them to layer 2.
+Find all neighbors of nodes in layer 2 that do not already belong to a layer: nodes 1, 2, 7. Assign them to layer 3.
+Find all neighbors of nodes in layer 3 that do not already belong to a layer: nodes 4, 8, 9. Assign them to layer 4.
+Now all nodes have been assigned to a layer, so we can write the final result:
+
+makefile
+Copy code
+0: 0
+5: 1
+3: 2
+6: 1
+1: 3
+2: 3
+7: 3
+4: 4
+8: 4
+9: 4

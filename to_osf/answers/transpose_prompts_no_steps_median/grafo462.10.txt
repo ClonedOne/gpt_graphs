@@ -1,0 +1,15 @@
+Sorted medians for nodes in each layer:
+
+Layer 0: [0]
+Layer 1: [6, 7, 8]
+Layer 2: [2, 1, 5, 3]
+Layer 3: [9]
+Layer 4: [4]
+
+Layers with sorted nodes based on median value:
+
+Layer 0: [0]
+Layer 1: [6, 7, 8]
+Layer 2: [2, 1, 5, 3]
+Layer 3: [9]
+Layer 4: [4]

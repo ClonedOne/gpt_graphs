@@ -1,0 +1,55 @@
+First, we list every node in layer 0 and their neighbors in the next layer:
+
+less
+Copy code
+Layer 0: [0]
+Neighbors of 0: [6, 7, 8]
+
+Next, we list the indices of the neighbors in their layer and calculate their median:
+
+yaml
+Copy code
+Index of 6: 0
+Index of 7: 1
+Index of 8: 2
+
+Median of indices: 1
+So the associated median for node 0 is 1.
+
+Now we list the nodes in every layer and their associated medians:
+
+rust
+Copy code
+Layer 0:
+0 -> 1
+
+Layer 1:
+6 -> 3
+7 -> 2
+8 -> 3
+
+Layer 2:
+1 -> 0
+2 -> 1
+5 -> 2
+3 -> 3
+9 -> 4
+
+Layer 3:
+4 -> 2
+
+Layer 4:
+10 -> 0
+Finally, we sort the nodes in the layers based on their associated median:
+
+less
+Copy code
+Layer 0: [0]
+
+Layer 1: [7, 6, 8]
+
+Layer 2: [1, 2, 5, 3, 9]
+
+Layer 3: [4]
+
+Layer 4: [10]

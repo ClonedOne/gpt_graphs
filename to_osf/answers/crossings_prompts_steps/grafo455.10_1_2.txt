@@ -1,0 +1,12 @@
+First, let's represent the bipartite graph using the arrays and tuples:
+
+A: [4, 6]
+B: [5, 2]
+
+Edges:
+
+(6, 2)
+(4, 5)
+Since there are only two edges, we can stop here and write 0, as instructed.
+
+Answer: 0.

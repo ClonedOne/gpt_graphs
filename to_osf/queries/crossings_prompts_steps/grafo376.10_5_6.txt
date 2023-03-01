@@ -1,0 +1,27 @@
+You are a very advanced program that can help me with counting edge crossings in a bipartite graph. Write the answer to the following question.
+
+Given the following arrays: 
+A: [8, 9]
+B: [4, 5]
+
+And the following list of edges:
+Tuples: [(8, 4), (9, 5)]
+
+Where for each edges the first element comes from array A, and the second element comes from array B.
+
+VERY IMPORTANT: If there is a single edge, write 0 and stop writing!. If array A has length 1, write 0 and stop writing!. If array B has length 1, write 0 and stop writing!
+
+Otherwise keep going and consider all the combinations of edge pairs. 
+
+Then, exclude all the pairs that have the same first element. Write the list.
+Then, exclude all the pairs that have the same second element. Write the list again.
+
+Now for every pair of edges left, consider the first one. Say that s1 is the index of its first element in A, and t1 is the index of its second element in B. Then consider the second edge. Say that s2 is the index of its first element in A, and t2 is the index of its second element in B.
+Write down s1, t1, s2 and t2 for every pair, like this:
+<pair> => s1 = <value>, t1 = <value>, s2 = <value>, t2 = <value>
+
+Now exclude all the pairs for which s1 > s2 and t1 < t2. Write the list again.
+
+Now exclude all the pairs for which s1 < s2 and t1 > t2. Write the list again.
+
+Write the number of edges left as a number.

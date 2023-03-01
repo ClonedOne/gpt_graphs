@@ -1,0 +1,51 @@
+First, we need to construct the bipartite graph using the arrays and edges given:
+
+yaml
+Copy code
+A: [0]
+B: [7, 5, 8]
+
+Edges:
+(0, 7)
+(0, 5)
+(0, 8)
+
+Bipartite graph:
+0 -> 7, 5, 8
+Since array A has length 1, we can stop here and write 0.
+
+If we had more than one element in A and B, we would continue with the following steps:
+
+Exclude all pairs of edges that have the same first element:
+css
+Copy code
+[(0, 7), (0, 5), (0, 8)]
+Exclude all pairs of edges that have the same second element:
+css
+Copy code
+[(0, 7), (0, 5), (0, 8)]
+For every remaining pair of edges, write down the indices of their elements in A and B:
+makefile
+Copy code
+(0, 7), (0, 5):
+s1 = 0, t1 = 1, s2 = 0, t2 = 2
+
+(0, 7), (0, 8):
+s1 = 0, t1 = 1, s2 = 0, t2 = 0
+
+(0, 5), (0, 8):
+s1 = 0, t1 = 2, s2 = 0, t2 = 0
+Exclude all pairs of edges for which s1 > s2 and t1 < t2:
+makefile
+Copy code
+(0, 7), (0, 5):
+s1 = 0, t1 = 1, s2 = 0, t2 = 2
+
+(0, 5), (0, 8):
+s1 = 0, t1 = 2, s2 = 0, t2 = 0
+Exclude all pairs of edges for which s1 < s2 and t1 > t2:
+scss
+Copy code
+(0, 7), (0, 5):
+s1 = 0, t1 = 1, s2 = 0, t2 = 2
+So we are left with a single pair of edges. Therefore, the final answer is 0.

@@ -1,0 +1,5 @@
+First, we can see that there is only one edge in the list of tuples, so we can write 0 and stop writing.
+
+If there were multiple edges, we would need to continue with the process. However, since array A has only one element, we can also write 0 and stop writing.
+
+Therefore, the answer is 0.

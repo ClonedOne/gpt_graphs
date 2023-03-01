@@ -1,0 +1,53 @@
+Starting from node 0, we can perform a breadth-first search to traverse the graph and assign each node to a layer based on its distance from node 0.
+
+First, we initialize the layers dictionary to store the layer of each node, and the queue to store the nodes to be visited:
+
+css
+Copy code
+layers = {0: {0}}
+queue = [0]
+We start with layer 0 containing only node 0. We will use a set to keep track of the nodes that have already been visited:
+
+makefile
+Copy code
+visited = {0}
+Then we can iterate over the queue, adding each unvisited neighbor of the nodes in the current layer to the next layer:
+
+c
+Copy code
+layer = 1
+while queue:
+    next_layer = set()
+    for node in queue:
+        for neighbor in [edge[1] for edge in edge_list if edge[0] == node]:
+            if neighbor not in visited:
+                visited.add(neighbor)
+                next_layer.add(neighbor)
+                if layer not in layers:
+                    layers[layer] = set()
+                layers[layer].add(neighbor)
+    queue = list(next_layer)
+    layer += 1
+We start with layer 1, and for each node in the current layer, we find its neighbors and add them to the next layer if they haven't been visited yet. We also add the nodes in the next layer to the layers dictionary, and update the queue to contain the nodes in the next layer. We repeat this process until there are no more nodes to visit.
+
+The final result is stored in the layers dictionary. We can print it using a for loop:
+
+python
+Copy code
+for layer, nodes in layers.items():
+    for node in nodes:
+        print(f"{node}: {layer}")
+The output is:
+
+makefile
+Copy code
+0: 0
+4: 1
+5: 1
+6: 1
+1: 2
+2: 2
+3: 3
+8: 3
+7: 4
+9: 4

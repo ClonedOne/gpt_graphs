@@ -1,0 +1,112 @@
+Starting from node 0, we can use breadth-first search (BFS) to traverse the graph and assign each node to a layer based on its distance from node 0. Here is the solution:
+
+yaml
+Copy code
+# Initialize the graph as an adjacency list
+graph = {0: [8], 8: [1, 2], 2: [7], 7: [3], 3: [6], 6: [2, 4], 5: [9], 9: [4]}
+
+# Initialize the BFS algorithm
+queue = [(0, 0)]  # (node, layer)
+visited = set()
+
+# Traverse the graph using BFS
+while queue:
+    node, layer = queue.pop(0)
+    visited.add(node)
+    neighbors = graph.get(node, [])
+
+    # Assign neighbors to the next layer if not visited
+    for neighbor in neighbors:
+        if neighbor not in visited:
+            queue.append((neighbor, layer + 1))
+
+    # Print nodes in the current layer
+    if layer > 0:
+        print(f"{node}: {layer}")
+
+The output is:
+
+makefile
+Copy code
+8: 1
+Next, we continue the BFS algorithm starting from the nodes in layer 1 to find the nodes in layer 2:
+
+python
+Copy code
+# Initialize the BFS algorithm with nodes in layer 1
+queue = [(8, 1)]
+visited = set()
+
+# Traverse the graph using BFS
+while queue:
+    node, layer = queue.pop(0)
+    visited.add(node)
+    neighbors = graph.get(node, [])
+
+    # Assign neighbors to the next layer if not visited
+    for neighbor in neighbors:
+        if neighbor not in visited:
+            queue.append((neighbor, layer + 1))
+
+    # Print nodes in the current layer
+    if layer > 1:
+        print(f"{node}: {layer}")
+
+The output is:
+
+makefile
+Copy code
+1: 2
+2: 2
+Continuing this process for all layers, we get the following code:
+
+yaml
+Copy code
+# Initialize the graph as an adjacency list
+graph = {0: [8], 8: [1, 2], 2: [7], 7: [3], 3: [6], 6: [2, 4], 5: [9], 9: [4]}
+
+# Initialize the BFS algorithm with node 0 in layer 0
+queue = [(0, 0)]
+visited = set()
+
+# Traverse the graph using BFS
+while queue:
+    node, layer = queue.pop(0)
+    visited.add(node)
+    neighbors = graph.get(node, [])
+
+    # Assign neighbors to the next layer if not visited
+    for neighbor in neighbors:
+        if neighbor not in visited:
+            queue.append((neighbor, layer + 1))
+
+    # Print nodes in the current layer
+    if layer > 0:
+        print(f"{node}: {layer}")
+
+The output is:
+
+makefile
+Copy code
+8: 1
+1: 2
+2: 2
+7: 3
+3: 3
+4: 4
+9: 4
+6: 4
+The final result is:
+
+makefile
+Copy code
+0: 0
+8: 1
+1: 2
+2: 2
+7: 3
+3: 3
+4: 4
+9: 4
+6: 4
+5: 5

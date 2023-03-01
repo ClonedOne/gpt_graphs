@@ -1,0 +1,19 @@
+The given graph is a bipartite graph with two disjoint sets A and B, where A = [8, 9] and B = [4, 5]. The edges are [(8, 4), (9, 5)].
+
+There is a single edge, so the answer is 0 and we can stop here.
+
+If there were more than one edge, and both A and B had more than one element, we would proceed as follows:
+
+First, we exclude pairs of edges that have the same first element or the same second element:
+Pairs left: [(8, 4), (9, 5)]
+
+Next, we consider every pair of remaining edges and record their indices:
+(8, 4), (9, 5) => s1 = 0, t1 = 0, s2 = 1, t2 = 1
+
+We exclude the pairs for which s1 > s2 and t1 < t2:
+Pairs left: [(8, 4), (9, 5)]
+
+We exclude the pairs for which s1 < s2 and t1 > t2:
+Pairs left: [(8, 4), (9, 5)]
+
+There is only one edge left, so the final answer is 1.

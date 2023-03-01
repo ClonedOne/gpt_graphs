@@ -1,0 +1,1 @@
+There is a single edge, so the answer is 0.

@@ -1,0 +1,5 @@
+The given bipartite graph has two sets of vertices A and B, with A = [0] and B = [4, 6]. There are two edges in the graph: (0, 4) and (0, 6).
+
+Since there are only two edges in the graph, we write 0 and stop writing, as instructed.
+
+Therefore, the number of edge crossings in the bipartite graph is 0.

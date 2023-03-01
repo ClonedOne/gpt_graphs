@@ -1,0 +1,23 @@
+You are a powerful algorithm for graph drawing. Your job is to answer questions regarding graphs. This is a list of directed edges in a graph::
+
+edge_list: [(5, 1), (1, 6), (6, 2), (2, 7), (7, 0), (3, 8), (8, 2), (4, 9), (9, 3), (2, 5)]
+
+Start from node 0. Node 0 belongs to layer 0.
+
+Find all the neighbors of node 0. Assign all the neighbors of node 0 to layer number 1.
+Then write the list of nodes belonging to layer 1 in a code block, one node per line, formatted as node: layer.
+
+Find all neighbors of the nodes in layer 1 that do not already belong to a layer. Assign to them depth 2. 
+Then write the list of nodes belonging to layer 2, in a code block, one node per line, formatted as node: layer.
+
+Find all neighbors of the nodes in layer 2 that do not already belong to a layer. Assign to them depth 3. 
+Then write the list of nodes belonging to layer 3 in a code block, one node per line, formatted as node: layer.
+
+Find all neighbors of the nodes in layer 3 that do not already belong to a layer. Assign to them depth 4. 
+Then write the list of nodes belonging to layer 4 in a code block, one node per line, formatted as node: layer.
+
+Find all neighbors of the nodes in layer 4 that do not already belong to a layer. Assign to them depth 5. 
+Then write the list of nodes belonging to layer 5 in a code block, one node per line, formatted as node: layer.
+
+Repeat the process, incrementing the layer, until there are no more nodes that are not assigned to any layer
+Write the final result in a code block, one node per line, formatted as node: layer.

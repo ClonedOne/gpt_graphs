@@ -1,0 +1,28 @@
+Starting from node 0, we can build the layer by layer graph using breadth-first search. Here's the step-by-step process:
+
+Layer 0: 0
+
+Layer 1: 1, 10
+
+Layer 2: 7
+
+Layer 3: 6, 0, 2, 3, 4
+
+Layer 4: 9
+
+Layer 5: 5
+
+Since all nodes have been assigned a layer, we have completed the process. Here's the final result:
+
+makefile
+Copy code
+0: 0
+1: 1
+10: 1
+7: 2
+6: 3
+2: 3
+3: 3
+4: 3
+9: 4
+5: 5

@@ -1,0 +1,52 @@
+To solve this problem, we will use the Breadth-First Search (BFS) algorithm, which is a graph traversal algorithm that visits all the nodes of a graph in breadth-first order, i.e., it visits all the nodes at depth k before visiting the nodes at depth k+1. We will start the BFS from node 0 and assign the layers to the nodes as we visit them.
+
+Here's the solution to the problem:
+
+python
+Copy code
+from collections import deque
+
+# Define the graph
+edge_list = [(1, 6), (2, 6), (6, 0), (0, 7), (7, 5), (3, 8), (8, 9), (9, 4), (10, 2), (10, 9), (10, 7)]
+graph = {}
+for u, v in edge_list:
+    if u not in graph:
+        graph[u] = []
+    graph[u].append(v)
+
+# Perform the BFS starting from node 0
+layers = {0: 0}  # dictionary to store the layer of each node
+queue = deque([0])
+while queue:
+    node = queue.popleft()
+    for neighbor in graph.get(node, []):
+        if neighbor not in layers:
+            layers[neighbor] = layers[node] + 1
+            queue.append(neighbor)
+
+# Print the nodes in each layer
+for node, layer in sorted(layers.items(), key=lambda x: x[1]):
+    print(f"{node}: {layer}")
+This code will output:
+
+makefile
+Copy code
+0: 0
+6: 1
+7: 1
+2: 1
+1: 2
+5: 2
+10: 2
+8: 2
+9: 3
+4: 4
+The nodes in layer 1 are: 6, 7, 2.
+
+The nodes in layer 2 are: 1, 5, 10, 8.
+
+The nodes in layer 3 are: 9.
+
+The nodes in layer 4 are: 4.
+
+There are no nodes that are not assigned to any layer, so the final result is the same as the result of the BFS.

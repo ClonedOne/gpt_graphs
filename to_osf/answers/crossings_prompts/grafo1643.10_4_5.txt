@@ -1,0 +1,1 @@
+There are no edge crossings in this bipartite graph, so the list of pairs of edges that cross is empty.

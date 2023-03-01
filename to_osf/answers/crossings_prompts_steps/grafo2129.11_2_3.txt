@@ -1,0 +1,20 @@
+First, let's exclude the cases where there is only one edge or one of the arrays has length 1, as instructed:
+
+There is more than one edge, so we keep going.
+Array A has more than one element, so we keep going.
+Array B has more than one element, so we keep going.
+Next, let's exclude the pairs that have the same first element and the pairs that have the same second element:
+
+Pairs with the same first element: [(6, 5), (6, 10)].
+Pairs with the same second element: [(4, 10)].
+Now, let's consider every pair of edges left:
+
+(4, 5) and (6, 5): (4,5) => s1 = 1, t1 = 0, s2 = 0, t2 = 0; (6,5) => s1 = 2, t1 = 0, s2 = 0, t2 = 0.
+(4, 5) and (4, 10): (4,5) => s1 = 1, t1 = 0, s2 = 0, t2 = 1; (4,10) => s1 = 1, t1 = 0, s2 = 0, t2 = 1.
+(6, 5) and (4, 10): (6,5) => s1 = 2, t1 = 0, s2 = 0, t2 = 1; (4,10) => s1 = 1, t1 = 0, s2 = 0, t2 = 1.
+Next, let's exclude the pairs for which s1 > s2 and t1 < t2, and s1 < s2 and t1 > t2:
+
+(4, 5) and (6, 5): s1 < s2 and t1 < t2, so we keep this pair.
+(4, 5) and (4, 10): s1 = s2, so we exclude this pair.
+(6, 5) and (4, 10): s1 > s2 and t1 > t2, so we exclude this pair.
+Therefore, we are left with only one edge pair that satisfies all the conditions, which is (4, 5) and (6, 5). Hence, the number of edges left is 1.

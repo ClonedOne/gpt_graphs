@@ -1,0 +1,36 @@
+Starting from layer 0:
+Layer 0: [0]
+Neighbors of 0: [5]
+Index of 5: 0
+
+Median of indices: 0
+
+Layer 1:
+5 -> 0
+
+Layer 2:
+9 -> 0
+3 -> 0
+
+Layer 3:
+7 -> 0.5
+8 -> 1.0
+
+Layer 4:
+2 -> 0.0
+4 -> 1.0
+
+Layer 5:
+6 -> 0.0
+
+Layer 6:
+1 -> 0.0
+
+Sorting the nodes in each layer according to their associated median:
+Layer 0: [0]
+Layer 1: [5]
+Layer 2: [9, 3]
+Layer 3: [7, 8]
+Layer 4: [2, 4]
+Layer 5: [6]
+Layer 6: [1]

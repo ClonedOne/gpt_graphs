@@ -1,0 +1,1 @@
+There are no edge crossings in this case, so the list of pairs of crossing edges is empty.

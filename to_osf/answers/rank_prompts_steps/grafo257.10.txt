@@ -1,0 +1,47 @@
+Starting from node 0 and following the steps provided, we can find the layers of each node in the graph. Here's the solution:
+
+Starting from node 0: layer 0
+Neighbors of node 0: 5
+Nodes in layer 1:
+makefile
+Copy code
+0: 0
+5: 1
+Neighbors of nodes in layer 1: 6
+Nodes in layer 2:
+makefile
+Copy code
+1: 1
+6: 2
+Neighbors of nodes in layer 2: 2, 9
+Nodes in layer 3:
+makefile
+Copy code
+2: 3
+9: 3
+Neighbors of nodes in layer 3: 7, 8, 3
+Nodes in layer 4:
+makefile
+Copy code
+3: 4
+7: 4
+8: 4
+Neighbors of nodes in layer 4:
+Nodes in layer 5:
+makefile
+Copy code
+4: 5
+There are no more nodes that are not assigned to any layer, so we're done. The final result is:
+
+makefile
+Copy code
+0: 0
+5: 1
+1: 1
+6: 2
+2: 3
+9: 3
+3: 4
+7: 4
+8: 4
+4: 5

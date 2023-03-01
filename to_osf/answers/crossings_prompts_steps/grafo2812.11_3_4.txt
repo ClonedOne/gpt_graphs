@@ -1,0 +1,36 @@
+First, we can see that there are 3 edges in the given list.
+
+To find the edge crossings, we need to consider all possible pairs of edges, excluding those with the same first or second element.
+
+We can create all possible pairs of edges using the itertools library in Python:
+
+python
+Copy code
+import itertools
+
+A = [7, 8]
+B = [2, 4, 3]
+edges = [(7, 2), (7, 4), (8, 3)]
+
+# Find all possible pairs of edges
+edge_pairs = list(itertools.combinations(edges, 2))
+Next, we need to exclude the pairs of edges that have the same first or second element. We can do this using a list comprehension:
+
+python
+Copy code
+edge_pairs = [(e1, e2) for (e1, e2) in edge_pairs if e1[0] != e2[0] and e1[1] != e2[1]]
+Now we have a list of edge pairs without any shared elements. We can now loop over the pairs of edges and calculate the edge crossings by comparing their indices in the arrays A and B.
+
+python
+Copy code
+# Loop over all pairs of edges and calculate edge crossings
+edge_crossings = 0
+for pair in edge_pairs:
+    e1, e2 = pair
+    s1, t1 = A.index(e1[0]), B.index(e1[1])
+    s2, t2 = A.index(e2[0]), B.index(e2[1])
+    if s1 > s2 and t1 < t2:
+        edge_crossings += 1
+    elif s1 < s2 and t1 > t2:
+        edge_crossings += 1
+Finally, we have the number of edge crossings as a number. In this case, the number is 0, since there is only one edge.

@@ -1,0 +1,16 @@
+Layer 0: [0]
+Layer 1: [6]
+Layer 2: [1]
+Layer 3: [7]
+Layer 4: [2, 3]
+Layer 5: [8, 9]
+Layer 6: [4, 5]
+
+Sorted based on median position of neighbors:
+Layer 0: [0]
+Layer 1: [6]
+Layer 2: [1]
+Layer 3: [7]
+Layer 4: [2, 3]
+Layer 5: [8, 9]
+Layer 6: [5, 4]

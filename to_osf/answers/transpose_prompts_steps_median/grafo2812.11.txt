@@ -1,0 +1,26 @@
+First part:
+
+Layer 0: [0]
+Neighbors of 0: [6]
+
+Index of 6: 0
+
+Median of indices: 0
+
+Second part:
+
+Layer 0:
+0 -> 0
+
+Layer 1:
+6 -> 0
+
+Third part:
+
+Layer 0: [0]
+Layer 1: [6]
+Layer 2: [1]
+Layer 3: [8, 7]
+Layer 4: [4, 3, 2]
+Layer 5: [10, 9]
+Layer 6: [5]

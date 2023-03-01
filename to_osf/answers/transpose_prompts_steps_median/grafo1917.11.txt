@@ -1,0 +1,77 @@
+First pass:
+Layer 0: [0]
+Neighbors of 0: [1, 3, 10]
+Index of 1: 0
+Index of 3: 1
+Index of 10: 2
+Median of neighbors: 1
+
+Layer 1: [1, 3, 10]
+Neighbors of 1: [7, 6, 4, 8, 9]
+Index of 7: 0
+Index of 6: 1
+Index of 4: 2
+Index of 8: 3
+Index of 9: 4
+Median of neighbors: 2
+
+Neighbors of 3: [2, 4, 8]
+Index of 2: 0
+Index of 4: 1
+Index of 8: 2
+Median of neighbors: 1
+
+Neighbors of 10: [9, 6]
+Index of 9: 0
+Index of 6: 1
+Median of neighbors: 0.5
+
+Layer 2: [7, 6, 4, 8, 9, 2]
+Neighbors of 7: []
+Median of neighbors: 0
+
+Neighbors of 6: [5]
+Index of 5: 0
+Median of neighbors: 0
+
+Neighbors of 4: []
+Median of neighbors: 0
+
+Neighbors of 8: []
+Median of neighbors: 0
+
+Neighbors of 9: []
+Median of neighbors: 0
+
+Neighbors of 2: []
+Median of neighbors: 0
+
+Layer 3: [5]
+Neighbors of 5: []
+Median of neighbors: 0
+
+Second pass:
+Layer 0:
+0 -> 1
+
+Layer 1:
+1 -> 2
+3 -> 1
+10 -> 0.5
+
+Layer 2:
+7 -> 0
+6 -> 0
+4 -> 0
+8 -> 0
+9 -> 0
+2 -> 0
+
+Layer 3:
+5 -> 0
+
+Third pass:
+Layer 0: [0]
+Layer 1: [10, 3, 1]
+Layer 2: [7, 8, 9, 6, 4, 2]
+Layer 3: [5]

@@ -1,0 +1,102 @@
+First step:
+
+Layer 0: [0]
+Neighbors of 0: [7]
+
+Index of 7: 0
+
+Median of indices: 0
+
+Layer 1: [7]
+Neighbors of 7: [1, 10]
+
+Index of 1: 0
+Index of 10: 1
+
+Median of indices: 0.5
+
+Layer 2: [1, 10]
+Neighbors of 1: [2, 9]
+Neighbors of 10: []
+
+Index of 2: 0
+Index of 9: 1
+
+Median of indices: 0.5
+
+Layer 3: [2, 9]
+Neighbors of 2: [6, 5]
+Neighbors of 9: [5]
+
+Index of 6: 0
+Index of 5: 1
+
+Median of indices: 0.5
+
+Layer 4: [6, 5]
+Neighbors of 6: []
+Neighbors of 5: [3]
+
+Index of 3: 0
+
+Median of indices: 0
+
+Layer 5: [3]
+Neighbors of 3: []
+
+Index of 0
+
+Median of indices: 0
+
+Layer 6: [8]
+Neighbors of 8: [4]
+
+Index of 4: 0
+
+Median of indices: 0
+
+Layer 7: [4]
+Neighbors of 4: []
+
+Index of 0
+
+Median of indices: 0
+
+Second step:
+
+Layer 0:
+0 -> 0
+
+Layer 1:
+7 -> 0.5
+
+Layer 2:
+1 -> 0.5
+10 -> 0
+
+Layer 3:
+2 -> 0.5
+9 -> 0.5
+
+Layer 4:
+6 -> 0
+5 -> 0.5
+
+Layer 5:
+3 -> 0
+
+Layer 6:
+8 -> 0
+Layer 7:
+4 -> 0
+
+Third step:
+
+Layer 0: [0]
+Layer 1: [7]
+Layer 2: [10, 1]
+Layer 3: [9, 2]
+Layer 4: [6, 5]
+Layer 5: [3]
+Layer 6: [8]
+Layer 7: [4]

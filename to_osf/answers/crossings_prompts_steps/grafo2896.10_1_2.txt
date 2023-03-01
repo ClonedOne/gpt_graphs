@@ -1,0 +1,12 @@
+First, we can see that there is a single edge, so the answer is 0 and we can stop writing.
+
+If there were multiple edges, we would proceed with the remaining instructions as follows:
+
+First, exclude pairs that have the same first element. In this case, there is only one pair so we don't need to do anything.
+Next, exclude pairs that have the same second element. Again, there is only one pair so we don't need to do anything.
+Now we have only one pair left: (8, 3), (5, 1). We need to consider s1, t1, s2, and t2 for this pair.
+For the first edge (8, 3), s1 = 0 (the index of 8 in array A) and t1 = 1 (the index of 3 in array B).
+For the second edge (5, 1), s2 = 1 (the index of 5 in array A) and t2 = 0 (the index of 1 in array B).
+We need to exclude pairs for which s1 > s2 and t1 < t2. This is not the case for the only pair we have, so we don't need to exclude anything.
+We also need to exclude pairs for which s1 < s2 and t1 > t2. This is also not the case for the only pair we have, so we don't need to exclude anything.
+We are left with only one edge after applying all the exclusions, so the answer is 1.

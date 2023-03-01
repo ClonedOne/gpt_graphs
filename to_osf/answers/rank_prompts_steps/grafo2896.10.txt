@@ -1,0 +1,71 @@
+To perform the tasks, we need to first convert the given edge list into an adjacency list that represents the graph. Here's the Python code to do that:
+
+python
+Copy code
+graph = {}
+for edge in edge_list:
+    if edge[0] not in graph:
+        graph[edge[0]] = []
+    graph[edge[0]].append(edge[1])
+Now that we have the adjacency list, we can use a breadth-first search (BFS) algorithm to assign layers to each node. We start from the starting node (node 0 in this case) and keep track of the current layer. We then visit all the neighbors of the nodes in the current layer and assign them to the next layer.
+
+Here's the Python code that does this:
+
+python
+Copy code
+# Initialize the layers dictionary with the starting node
+layers = {0: [0]}
+
+# Initialize the BFS queue
+queue = [(0, 0)]
+
+# Start BFS
+while queue:
+    node, layer = queue.pop(0)
+    for neighbor in graph.get(node, []):
+        if neighbor not in layers:
+            if layer + 1 not in layers:
+                layers[layer + 1] = []
+            layers[layer + 1].append(neighbor)
+            queue.append((neighbor, layer + 1))
+This code creates a dictionary layers where the keys are the layer numbers and the values are lists of nodes belonging to that layer. The queue variable is a list that keeps track of the nodes to be visited in the BFS algorithm. The code starts by initializing layers with the starting node 0, and the queue with the tuple (0, 0) where the first element is the node and the second element is the layer number (which is 0 for the starting node).
+
+The BFS algorithm then proceeds as follows:
+
+Pop the first node and its layer number from the queue.
+For each neighbor of the current node that is not already in layers, add it to the next layer and append it to the queue.
+Repeat steps 1 and 2 until the queue is empty.
+Now that we have the layers for all the nodes, we can print the nodes in each layer as required. Here's the Python code to do that:
+
+python
+Copy code
+for layer, nodes in layers.items():
+    print(f"Layer {layer}:")
+    for node in nodes:
+        print(f"{node}: {layer}")
+    print()
+This code simply iterates over the layers dictionary and prints the nodes in each layer, one per line, formatted as "node: layer".
+
+The final output is:
+
+yaml
+Copy code
+Layer 0:
+0: 0
+
+Layer 1:
+8: 1
+5: 1
+
+Layer 2:
+3: 2
+1: 2
+4: 2
+
+Layer 3:
+6: 3
+7: 3
+9: 3
+
+Layer 4:
+2: 4

@@ -1,0 +1,84 @@
+A layered graph is a graph where each node is contained in a single layer.
+A layered graph is described by list of directed edges, formatted as [(<source_id>, <target_id>)], and a mapping of layers to the nodes contained within.
+Every array in the mapping is a different layer, and the numbers in every array indicate the nodes in that layer.
+
+Count the total edge length. 
+The edge length of each edge e is always equal to the absolute value of the number of the layer the target is contained in, minus the number of the layer the source is contained in.
+The edge length can't be negative.
+
+Write no explanations and no code. Return the total sum of the lengths.
+
+## Input:
+List of edges formatted as [<source_id>, <target_id>]:
+edges = [(1, 5), (0, 5), (0, 7), (7, 4), (6, 4), (0, 6), (2, 6), (2, 8), (0, 9), (8, 9), (3, 10), (8, 10), (1, 10)]
+Mapping of layers to nodes:
+ranks = Layer 0: [0]
+Layer 1: []
+Layer 2: [2]
+Layer 3: [3]
+Layer 4: [1, 6, 7, 8]
+Layer 5: [4, 5, 9, 10]
+## Answer:
+30
+
+## Input:
+List of edges formatted as [<source_id>, <target_id>]:
+edges = [(0, 6), (1, 6), (7, 3), (3, 10), (4, 8), (9, 4), (9, 5), (0, 5)]
+Mapping of layers to nodes:
+ranks = Layer 0: [0]
+Layer 1: [1, 2, 7]
+Layer 2: [9]
+Layer 3: [4, 5]
+Layer 4: [3, 6, 8]
+Layer 5: [10]
+## Answer:
+17
+
+## Input:
+List of edges formatted as [<source_id>, <target_id>]:
+edges = [(2, 5), (4, 1), (6, 3), (3, 8), (3, 1), (9, 8), (6, 9), (0, 9), (6, 1)]
+Mapping of layers to nodes:
+ranks = Layer 0: [0]
+Layer 1: [4, 6]
+Layer 2: [2, 3, 7, 9]
+Layer 3: [1, 5, 8]
+Layer 4: []
+## Answer:
+12
+
+## Input:
+List of edges formatted as [<source_id>, <target_id>]:
+edges = [(0, 6), (1, 6), (7, 4), (3, 8), (2, 9), (2, 10), (0, 10), (10, 4)]
+Mapping of layers to nodes:
+ranks = Layer 0: [0]
+Layer 1: [1, 2, 3, 7]
+Layer 2: [6]
+Layer 3: [10]
+Layer 4: [5, 8, 9]
+Layer 5: [4]
+## Answer:
+20
+
+## Input:
+List of edges formatted as [<source_id>, <target_id>]:
+edges = [(1, 2), (3, 2), (6, 5), (7, 6), (1, 6), (1, 4), (3, 4), (1, 8), (8, 4), (0, 9), (10, 5), (10, 8)]
+Mapping of layers to nodes:
+ranks = Layer 0: [0]
+Layer 1: [1, 3, 7, 9, 10]
+Layer 2: [2, 8]
+Layer 3: [6]
+Layer 4: [4, 5]
+## Answer:
+21
+
+## Input:
+List of edges formatted as [<source_id>, <target_id>]:
+edges = [(5, 1), (6, 1), (2, 6), (2, 7), (0, 7), (8, 3), (2, 8), (4, 9), (3, 9), (2, 5)]
+Mapping of layers to nodes:
+ranks = Layer 0: [0]
+Layer 1: [2]
+Layer 2: [5, 6]
+Layer 3: [1, 4, 8]
+Layer 4: [3, 7]
+Layer 5: [9]
+## Answer:

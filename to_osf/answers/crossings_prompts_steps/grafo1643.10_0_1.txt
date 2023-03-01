@@ -1,0 +1,15 @@
+Given the arrays A = [0] and B = [1, 4], and the list of edges [(0, 1), (0, 4)], we need to count the number of edge crossings in the bipartite graph.
+
+Since there are only two edges, we can stop here and write the answer as 0.
+
+Explanation:
+
+There is only one edge crossing in this case, since both edges share a common vertex (0 in A).
+As array A has length 1, we can stop writing.
+Since there are two elements in array B, we need to consider all pairs of edges.
+There are two pairs of edges: (0,1)-(0,4)
+We exclude the pairs with the same first or second element, so only (0,1)-(0,4) remains.
+We compare the indices of the elements in each pair of edges: s1 = 0, t1 = 1, s2 = 0, t2 = 4.
+The condition s1 > s2 and t1 < t2 is not satisfied, so we don't exclude this pair.
+The condition s1 < s2 and t1 > t2 is not satisfied either, so we don't exclude this pair either.
+The final number of edges left is 2, but as there is only one pair of edges, the answer is 0.

@@ -1,0 +1,22 @@
+Based on the given arrays and edges, here are the steps to count the number of edge crossings:
+
+Check if there is only one edge or if array A or B has length 1. If any of these conditions is met, the result is 0 and we can stop writing.
+Since we have two edges and array B has length 1, we need to continue with the remaining steps.
+
+Consider all pairs of edges and exclude pairs that have the same first or second element.
+The only pair of edges is [(1, 7), (8, 7)].
+
+For each remaining pair of edges, find the indices of the first and second elements in arrays A and B.
+For the pair [(1, 7), (8, 7)]:
+
+s1 = index of 1 in A = 2
+t1 = index of 7 in B = 1
+s2 = index of 8 in A = 0
+t2 = index of 7 in B = 1
+Exclude pairs for which s1 > s2 and t1 < t2, and pairs for which s1 < s2 and t1 > t2.
+There is only one pair left, so we don't need to exclude any more pairs.
+
+Write the number of edges left.
+There is only one edge left, so the final result is 1.
+
+Therefore, the number of edge crossings in the given bipartite graph is 1.

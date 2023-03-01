@@ -1,0 +1,77 @@
+First task:
+
+Layer 0: [0]
+Neighbors of 0: [6]
+Index of 6: 0
+
+Layer 1: [6]
+Neighbors of 6: [1]
+Index of 1: 0
+Median of indices: 0
+
+Layer 2: [1]
+Neighbors of 1: [7]
+Index of 7: 0
+Median of indices: 0
+
+Layer 3: [7]
+Neighbors of 7: [2, 3]
+Index of 2: 0
+Index of 3: 1
+Median of indices: 0.5
+
+Layer 4: [2, 3]
+Neighbors of 2: []
+Neighbors of 3: [8, 9]
+Index of 8: 0
+Index of 9: 1
+Median of indices: 0.5
+
+Layer 5: [8, 9]
+Neighbors of 8: [4]
+Index of 4: 0
+Median of indices: 0
+Neighbors of 9: [5]
+Index of 5: 1
+Median of indices: 1
+
+Layer 6: [4, 5]
+Neighbors of 4: []
+Neighbors of 5: []
+Median of indices: 0
+
+Second task:
+
+Layer 0:
+0 -> 0
+
+Layer 1:
+6 -> 0
+
+Layer 2:
+1 -> 0
+
+Layer 3:
+7 -> 0.5
+
+Layer 4:
+2 -> 0
+3 -> 0.5
+
+Layer 5:
+8 -> 0.25
+9 -> 1
+
+Layer 6:
+4 -> 0
+5 -> 0
+
+Third task:
+
+Layer 0: [0]
+Layer 1: [6]
+Layer 2: [1]
+Layer 3: [7]
+Layer 4: [2, 3]
+Layer 5: [8, 9]
+Layer 6: [4, 5]
